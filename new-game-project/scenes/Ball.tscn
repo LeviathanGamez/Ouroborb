@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://nbe0h6w1owvy"]
+
+[ext_resource type="Script" uid="uid://cb1pwh6wfxj55" path="res://scenes/character_body_2d.gd" id="1_ja1hk"]
+[ext_resource type="Texture2D" uid="uid://reswh1gnm66c" path="res://assets/sprites/circle_sprite32 copy.png" id="2_dn4c7"]
+[ext_resource type="AudioStream" uid="uid://b2oba75d3x1ee" path="res://assets/sounds/Tsk.MP3" id="3_ul5l2"]
+
+[sub_resource type="GDScript" id="GDScript_ul5l2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4vejd"]
+radius = 17.0
+
+[node name="Ball" type="Node2D" unique_id=1090286496]
+script = SubResource("GDScript_ul5l2")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=560353364]
+script = ExtResource("1_ja1hk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=787996050]
+shape = SubResource("CircleShape2D_4vejd")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=31458851]
+texture = ExtResource("2_dn4c7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=880999112]
+stream = ExtResource("3_ul5l2")

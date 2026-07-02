@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://4pqund3nukl7"]
 
-[ext_resource type="Texture2D" uid="uid://bxuj7f7e5bxon" path="res://assets/New Piskel.png" id="1_ibkli"]
-[ext_resource type="Texture2D" uid="uid://dnje3ounq5pto" path="res://assets/32x32_spritePatterns_spriteSheet.png" id="2_qbsmt"]
-[ext_resource type="PackedScene" uid="uid://nbe0h6w1owvy" path="res://scenes/character_body_2d.tscn" id="3_cpr0p"]
+[ext_resource type="Texture2D" uid="uid://bxuj7f7e5bxon" path="res://assets/sprites/Plate.png" id="1_ibkli"]
+[ext_resource type="Texture2D" uid="uid://dnje3ounq5pto" path="res://assets/sprites/Wavey.png" id="2_qbsmt"]
+[ext_resource type="PackedScene" uid="uid://nbe0h6w1owvy" path="res://scenes/Ball.tscn" id="3_cpr0p"]
+[ext_resource type="PackedScene" uid="uid://cjhgm3dsqu1t8" path="res://scenes/Diamond.tscn" id="4_78awf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dvvg"]
 texture = ExtResource("1_ibkli")
@@ -34,4 +35,16 @@ layer_0/tile_data = PackedInt32Array(983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 9
 position = Vector2(571, 327)
 
 [node name="CharacterBody2D" parent="." unique_id=1353462381 instance=ExtResource("3_cpr0p")]
-position = Vector2(472, 379)
+position = Vector2(399, 343)
+
+[node name="Diamond" parent="." unique_id=389597781 instance=ExtResource("4_78awf")]
+position = Vector2(136, 374)
+
+[node name="Diamond2" parent="." unique_id=580665576 instance=ExtResource("4_78awf")]
+position = Vector2(138, 171)
+
+[node name="Diamond3" parent="." unique_id=1915135710 instance=ExtResource("4_78awf")]
+position = Vector2(937, 243)
+
+[node name="Diamond4" parent="." unique_id=480345026 instance=ExtResource("4_78awf")]
+position = Vector2(944, 426)

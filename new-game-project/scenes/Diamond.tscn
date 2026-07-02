@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cjhgm3dsqu1t8"]
+
+[ext_resource type="Script" uid="uid://pa10o2rxsqgy" path="res://scripts/diamond.gd" id="2_bd64o"]
+[ext_resource type="Texture2D" uid="uid://dquh2ubldgmv6" path="res://assets/sprites/New Piskel.png" id="2_ra6u1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_up2nb"]
+size = Vector2(44, 40)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ra6u1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf80x"]
+size = Vector2(44, 40)
+
+[node name="Diamond" type="Node2D" unique_id=580665576 groups=["diamonds"]]
+script = ExtResource("2_bd64o")
+
+[node name="Node2D" type="Sprite2D" parent="." unique_id=679713051]
+texture = ExtResource("2_ra6u1")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1752664438]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1437715706]
+shape = SubResource("RectangleShape2D_up2nb")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1864745722]
+physics_material_override = SubResource("PhysicsMaterial_ra6u1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1510766724]
+shape = SubResource("RectangleShape2D_gf80x")
+disabled = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
