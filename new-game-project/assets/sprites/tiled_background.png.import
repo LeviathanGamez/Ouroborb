@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://reswh1gnm66c"
-path="res://.godot/imported/circle_sprite32 copy.png-5199f91a33554f8cb2f5c90c478e6727.ctex"
+uid="uid://dou8smxsadois"
+path="res://.godot/imported/tiled_background.png-baf04c661064c55cd5bd6f8841585033.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/circle_sprite32 copy.png"
-dest_files=["res://.godot/imported/circle_sprite32 copy.png-5199f91a33554f8cb2f5c90c478e6727.ctex"]
+source_file="res://assets/sprites/tiled_background.png"
+dest_files=["res://.godot/imported/tiled_background.png-baf04c661064c55cd5bd6f8841585033.ctex"]
 
 [params]
 

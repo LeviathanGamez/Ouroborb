@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dnje3ounq5pto" path="res://assets/sprites/Wavey.png" id="2_qbsmt"]
 [ext_resource type="PackedScene" uid="uid://nbe0h6w1owvy" path="res://scenes/Ball.tscn" id="3_cpr0p"]
 [ext_resource type="PackedScene" uid="uid://cjhgm3dsqu1t8" path="res://scenes/Diamond.tscn" id="4_78awf"]
+[ext_resource type="PackedScene" uid="uid://bnrn5t3u5jkwv" path="res://scenes/background.tscn" id="5_s0nni"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dvvg"]
 texture = ExtResource("1_ibkli")
@@ -48,3 +49,6 @@ position = Vector2(937, 243)
 
 [node name="Diamond4" parent="." unique_id=480345026 instance=ExtResource("4_78awf")]
 position = Vector2(944, 426)
+
+[node name="Background" parent="." unique_id=157265212 instance=ExtResource("5_s0nni")]
+position = Vector2(-70, -81)
