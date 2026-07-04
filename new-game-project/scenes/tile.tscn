@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cwxktwalgqn2n"]
+
+[ext_resource type="Texture2D" uid="uid://bsoyrde6avwrh" path="res://assets/sprites/Tile.png" id="1_3dk36"]
+[ext_resource type="FontFile" uid="uid://u66y04ig1tku" path="res://assets/fonts/Jersey10-Regular copy.ttf" id="2_ywnoi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywnoi"]
+size = Vector2(100, 36)
+
+[node name="Tile" type="Node2D" unique_id=157253941]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=350431628]
+texture = ExtResource("1_3dk36")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1624811946]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1456993930]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_ywnoi")
+
+[node name="Label" type="Label" parent="." unique_id=1276945300]
+offset_left = -4.0
+offset_top = -19.0
+offset_right = 36.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("2_ywnoi")
+theme_override_font_sizes/font_size = 32
+text = "5"

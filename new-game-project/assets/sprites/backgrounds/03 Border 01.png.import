@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dou8smxsadois"
-path="res://.godot/imported/tiled_background.png-baf04c661064c55cd5bd6f8841585033.ctex"
+uid="uid://gj15m2x1fft8"
+path="res://.godot/imported/03 Border 01.png-c3fd64b401ca541f47d3659875141fc6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tiled_background.png"
-dest_files=["res://.godot/imported/tiled_background.png-baf04c661064c55cd5bd6f8841585033.ctex"]
+source_file="res://assets/sprites/backgrounds/03 Border 01.png"
+dest_files=["res://.godot/imported/03 Border 01.png-c3fd64b401ca541f47d3659875141fc6.ctex"]
 
 [params]
 
