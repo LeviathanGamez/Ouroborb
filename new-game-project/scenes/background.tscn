@@ -12,16 +12,18 @@ shader_parameter/speed_y = 0.05
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=386175218]
 z_index = -11
-offset_right = 1426.0
-offset_bottom = 823.0
+offset_right = 1706.0
+offset_bottom = 920.0
 color = Color(0.20392157, 0.12156863, 0.20392157, 1)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=806951966]
 z_index = -10
 texture_repeat = 2
 material = SubResource("ShaderMaterial_wisxt")
-offset_right = 1574.0
-offset_bottom = 913.0
+offset_left = 69.0
+offset_top = -29.0
+offset_right = 1643.0
+offset_bottom = 884.0
 texture = ExtResource("3_cbsqf")
 stretch_mode = 1
 flip_h = true

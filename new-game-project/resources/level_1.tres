@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="level_stats" format=3 uid="uid://bq3qv5kb8ngrh"]
+
+[ext_resource type="Script" uid="uid://inwl1gchsfrj" path="res://scripts/ball_level.gd" id="1_h0hmb"]
+[ext_resource type="Texture2D" uid="uid://reswh1gnm66c" path="res://assets/sprites/circle_sprite32.png" id="2_pxawp"]
+
+[resource]
+script = ExtResource("1_h0hmb")
+speed = 1.0
+power = 1
+size = 1.0
+value = 5
+texture = ExtResource("2_pxawp")
+color = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://inwl1gchsfrj"
