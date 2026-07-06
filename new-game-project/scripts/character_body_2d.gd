@@ -4,7 +4,6 @@ extends CharacterBody2D
 @onready var animation_player= $AudioStreamPlayer2D
 @onready var sprite = $Sprite2D
 @export var stats: level_stats
-var directions = [Vector2(-1,-1),Vector2(-1,1),Vector2(1,-1),Vector2(1,1)]
 var speed 
 var power
 var value
@@ -48,5 +47,5 @@ func set_up_variables():
 	color = stats.color
 	modulate = color
 	add_to_group("balls")
-	velocity = directions.pick_random()*speed
+	velocity = Vector2(randf_range(-1,1),randf_range(-1,1)).normalized()*speed
 	sprite.texture = stats.texture

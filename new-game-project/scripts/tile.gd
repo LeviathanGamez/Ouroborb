@@ -8,8 +8,15 @@ func _ready() -> void:
 	add_to_group("Colliders")
 
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	label.text = str(value)
 	if value <= 0:
 		queue_free()
+
+
+
+func _on_button_pressed() -> void:
+	value -= GlobalGameManager.player_strength
+	GlobalGameManager.money += GlobalGameManager.player_value

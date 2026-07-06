@@ -7,7 +7,7 @@
 script = ExtResource("1_5pcd2")
 speed = 1.5
 power = 5
-size = 4.0
+size = 2.5
 value = 30
 texture = ExtResource("2_3g5m4")
 color = Color(0, 0.9411765, 1, 1)

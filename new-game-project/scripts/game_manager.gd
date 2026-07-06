@@ -1,7 +1,8 @@
 extends Node
 
 @onready var money_label = $"../Counter/Label"
-@onready var add_ball_price = $"../Buttons/Add Ball/Price"
+@onready var add_ball_price = $"../Buttons/Add Ball Button/Add Ball/Price"
+
 
 var tile_scene = preload("res://scenes/tile.tscn")
 var colors = [Color.html("#ff306c"), Color.html("#ffe74c"),Color.html("#48ff00"),
@@ -19,6 +20,7 @@ func _ready() -> void:
 	spawn_blocks(loops)
 	loops+=1
 	
+		
 func _process(delta):
 	set_money_prices()
 	if get_tree().get_nodes_in_group("Colliders").size()==0:
