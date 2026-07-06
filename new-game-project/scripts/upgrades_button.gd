@@ -1,6 +1,6 @@
 extends Button
 
-var button_editor = preload("res://scripts/Button_editor.gd")
+var button_editor = preload("res://scripts/tweens.gd")
 var tween = create_tween()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

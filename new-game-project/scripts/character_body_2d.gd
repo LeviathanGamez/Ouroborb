@@ -14,7 +14,7 @@ func _ready():
 
 func damage(collided):
 	collided.value -= stats.power
-	GlobalGameManager.money += value
+	GlobalGameManager.add_count(value)
 	
 	
 func _physics_process(delta: float) -> void:

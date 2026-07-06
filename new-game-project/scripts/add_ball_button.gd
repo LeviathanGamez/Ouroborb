@@ -3,12 +3,12 @@ extends Button
 
 var ball = preload("res://scenes/Ball.tscn")
 
-var button_editor = preload("res://scripts/Button_editor.gd")
+var button_editor = preload("res://scripts/tweens.gd")
 var tween = create_tween()
 
 func _on_pressed() -> void:
 	if GlobalGameManager.money >= GlobalGameManager.ball_price:
-		GlobalGameManager.money -= GlobalGameManager.ball_price
+		GlobalGameManager.add_count(-GlobalGameManager.ball_price)
 		GlobalGameManager.ball_price += 100
 
 		var ball_a = ball.instantiate() # Replace with function body.

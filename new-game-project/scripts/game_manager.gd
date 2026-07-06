@@ -1,6 +1,6 @@
 extends Node
 
-@onready var money_label = $"../Counter/Label"
+@onready var money_label = $"../Counter/Control/Label"
 @onready var add_ball_price = $"../Buttons/Add Ball Button/Add Ball/Price"
 
 

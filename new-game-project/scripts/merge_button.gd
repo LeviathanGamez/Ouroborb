@@ -1,6 +1,8 @@
 extends Button
 
-var button_editor = preload("res://scripts/Button_editor.gd")
+
+
+var button_editor = preload("res://scripts/tweens.gd")
 var tween = create_tween()
 
 var lvl_1 = preload("res://resources/level_1.tres")
@@ -14,6 +16,7 @@ var do_we_break = false
 var balls
 
 func _on_pressed() -> void:
+	
 	balls = get_tree().get_nodes_in_group("balls")
 	for level in levels:
 		for i in range(len(balls)):

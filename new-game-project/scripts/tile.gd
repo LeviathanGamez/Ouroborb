@@ -19,4 +19,4 @@ func _process(delta: float) -> void:
 
 func _on_button_pressed() -> void:
 	value -= GlobalGameManager.player_strength
-	GlobalGameManager.money += GlobalGameManager.player_value
+	GlobalGameManager.add_count(GlobalGameManager.player_value)
