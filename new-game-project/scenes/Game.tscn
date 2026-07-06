@@ -1809,7 +1809,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="Counter/Control" unique_id=1344619377]
+[node name="Money" type="Label" parent="Counter/Control" unique_id=1344619377]
 z_index = 3
 layout_mode = 0
 offset_left = 795.0
@@ -1829,7 +1829,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 script = ExtResource("17_vjgi4")
 
-[node name="Label2" type="Label" parent="Counter/Control" unique_id=590759194]
+[node name="Money_back" type="Label" parent="Counter/Control" unique_id=590759194]
 modulate = Color(1, 1, 1, 0.46666667)
 z_index = 1
 layout_mode = 0

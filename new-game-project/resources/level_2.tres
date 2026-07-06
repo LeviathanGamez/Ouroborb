@@ -9,6 +9,7 @@ speed = 1.5
 power = 2
 size = 1.25
 value = 10
+crit = 2.0
 texture = ExtResource("2_sqk0d")
 color = Color(1, 0.27450982, 0.63529414, 1)
 metadata/_custom_type_script = "uid://inwl1gchsfrj"
