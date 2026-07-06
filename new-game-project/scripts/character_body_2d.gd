@@ -52,6 +52,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			audio_player.pitch_scale= randf_range(0.9,1.25)
 			audio_player.play()
+	particle_follow()
 		
 func god_mode_check():
 	if GlobalGameManager.god_mode:
@@ -69,3 +70,7 @@ func set_up_variables():
 	add_to_group("balls")
 	velocity = Vector2(randf_range(-1,1),randf_range(-1,1)).normalized()*speed
 	sprite.texture = stats.texture
+func particle_follow():
+	for child in get_children():
+		if child is CPUParticles2D:
+			child.global_position = global_position

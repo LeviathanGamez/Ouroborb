@@ -2,7 +2,7 @@ extends Button
 @onready var game = $"../.."
 
 var ball = preload("res://scenes/Ball.tscn")
-@onready var camera = $"../../Camera2D"
+@onready var camera = $"../../../Camera2D"
 var button_editor = preload("res://scripts/tweens.gd")
 var tween = create_tween()
 
