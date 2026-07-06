@@ -1,3 +1,5 @@
 [gd_scene format=3 uid="uid://1pdni3ti07d1"]
 
 [node name="particles" type="Node2D" unique_id=1832845269]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=2110060343]
