@@ -4,6 +4,7 @@ extends Button
 
 var button_editor = preload("res://scripts/tweens.gd")
 var tween = create_tween()
+@onready var camera = $"../../Camera2D"
 
 var lvl_1 = preload("res://resources/level_1.tres")
 var lvl_2 = preload("res://resources/level_2.tres")
@@ -40,6 +41,7 @@ func _on_pressed() -> void:
 			break
 	
 	do_we_break = false
+	camera.zoom_in(self)
 
 
 

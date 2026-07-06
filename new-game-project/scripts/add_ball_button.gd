@@ -2,7 +2,7 @@ extends Button
 @onready var game = $"../.."
 
 var ball = preload("res://scenes/Ball.tscn")
-
+@onready var camera = $"../../Camera2D"
 var button_editor = preload("res://scripts/tweens.gd")
 var tween = create_tween()
 
@@ -17,6 +17,7 @@ func _on_pressed() -> void:
 		
 		game.add_child(ball_a)
 		
+		camera.zoom_in(self)
 
 
 

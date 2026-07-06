@@ -7,6 +7,7 @@ var button_editor = preload("res://scripts/tweens.gd")
 @onready var dollar = $"../DollarSign"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#princess treatment
 	GlobalGameManager.label = $"."
 	pos = dollar.global_position
 	

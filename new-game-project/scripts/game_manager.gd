@@ -31,16 +31,65 @@ func set_money_prices():
 	money_label.text = str(GlobalGameManager.money)
 	add_ball_price.text = "$"+ str(GlobalGameManager.ball_price)
 func spawn_blocks(current_loop):
-	for i in range(0,5):
-		for j in range(0,5):
-			var tile_a = tile_scene.instantiate()
-			tile_a.position = Vector2(200+180*i,150+80*j)
-			add_child(tile_a)
-			tile_a.value = tile_a.value * current_loop
-			var sprite = tile_a.get_node("Sprite2D")
-			var selected_color = pickeable.pick_random()
-			sprite.modulate = selected_color
-			pickeable.erase(selected_color)
-			
-			if pickeable.size() == 0:
-				pickeable = colors.duplicate()
+	var random_num = randi_range(0,100)
+	if random_num < 30:
+		for i in range(0,5):
+			for j in range(0,5):
+				var tile_a = tile_scene.instantiate()
+				tile_a.position = Vector2(215+180*i,150+80*j)
+				add_child(tile_a)
+				tile_a.value = tile_a.value * current_loop
+				var sprite = tile_a.get_node("Sprite2D")
+				set_color(sprite)
+				
+	elif random_num < 60:
+		for i in range(0,8):
+			for j in range(0,6):
+				var tile_a = tile_scene.instantiate()
+				tile_a.position = Vector2(222+100*i,150+36*j)
+				add_child(tile_a)
+				tile_a.value = tile_a.value * current_loop
+				var sprite = tile_a.get_node("Sprite2D")
+				set_color(sprite)
+	elif random_num <=77:
+		for i in range(0,9):
+			for j in range(0,13):
+				if (i + j) % 2 == 1:
+					continue
+				var tile_a = tile_scene.instantiate()
+				tile_a.position = Vector2(178+100*i,94+36*j)
+				add_child(tile_a)
+				tile_a.value = tile_a.value * current_loop
+				var sprite = tile_a.get_node("Sprite2D")
+				set_color(sprite)
+	elif random_num <= 94:
+		for i in range(0,9):
+			for j in range(0,13):
+				if (i + j) % 2 == 0:
+					continue
+				var tile_a = tile_scene.instantiate()
+				tile_a.position = Vector2(178+100*i,94+36*j)
+				add_child(tile_a)
+				tile_a.value = tile_a.value * current_loop
+				var sprite = tile_a.get_node("Sprite2D")
+				set_color(sprite)
+	elif random_num <= 99:
+		for i in range(0,9):
+			for j in range(0,13):
+				var tile_a = tile_scene.instantiate()
+				tile_a.position = Vector2(178+100*i,94+36*j)
+				add_child(tile_a)
+				tile_a.value = tile_a.value * current_loop
+				var sprite = tile_a.get_node("Sprite2D")
+				set_color(sprite)
+		
+				
+func set_color(sprite):
+	var selected_color = pickeable.pick_random()
+	sprite.modulate = selected_color
+	pickeable.erase(selected_color)
+				
+	if pickeable.size() == 0:
+		pickeable = colors.duplicate()
+	
+		
