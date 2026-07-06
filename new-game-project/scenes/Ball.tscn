@@ -1,25 +1,29 @@
 [gd_scene format=3 uid="uid://nbe0h6w1owvy"]
 
-[ext_resource type="Script" uid="uid://cb1pwh6wfxj55" path="res://scripts/character_body_2d.gd" id="1_ja1hk"]
-[ext_resource type="Texture2D" uid="uid://reswh1gnm66c" path="res://assets/sprites/circle_sprite32.png" id="2_dn4c7"]
-[ext_resource type="Resource" uid="uid://bq3qv5kb8ngrh" path="res://resources/level_1.tres" id="2_dqebh"]
-[ext_resource type="AudioStream" uid="uid://b2oba75d3x1ee" path="res://assets/sounds/Tsk.MP3" id="3_ul5l2"]
+[ext_resource type="Script" uid="uid://cb1pwh6wfxj55" path="res://scripts/character_body_2d.gd" id="1_eew57"]
+[ext_resource type="Resource" uid="uid://bq3qv5kb8ngrh" path="res://resources/level_1.tres" id="2_jj7gd"]
+[ext_resource type="Texture2D" uid="uid://reswh1gnm66c" path="res://assets/sprites/circle_sprite32.png" id="3_fwo8l"]
+[ext_resource type="AudioStream" uid="uid://b2oba75d3x1ee" path="res://assets/sounds/Tsk.MP3" id="4_v8l5b"]
+[ext_resource type="AudioStream" uid="uid://bnpjl420xq3wf" path="res://assets/sounds/coinSound.MP3" id="5_iijjg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4vejd"]
 radius = 17.0
 
-[node name="Ball" type="Node2D" unique_id=1090286496]
+[node name="ball" type="Node2D" unique_id=1090286496]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=560353364 groups=["balls"]]
 collision_layer = 2
-script = ExtResource("1_ja1hk")
-stats = ExtResource("2_dqebh")
+script = ExtResource("1_eew57")
+stats = ExtResource("2_jj7gd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=787996050]
 shape = SubResource("CircleShape2D_4vejd")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=31458851]
-texture = ExtResource("2_dn4c7")
+texture = ExtResource("3_fwo8l")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=880999112]
-stream = ExtResource("3_ul5l2")
+stream = ExtResource("4_v8l5b")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="CharacterBody2D" unique_id=49466120]
+stream = ExtResource("5_iijjg")
