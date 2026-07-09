@@ -2,7 +2,9 @@ extends Node
 
 @onready var money_label = $"../Counter/Control/Money"
 @onready var add_ball_price = $"../Buttons/Control/Add Ball Button/Add Ball/Price"
-
+@onready var UI =  $"../UI" 
+@onready var tiles = $"../Tiles"
+@onready var skill_tree = $"../UI/SkillTree"
 
 var tile_scene = preload("res://scenes/tile.tscn")
 var colors = [Color.html("#ff306c"), Color.html("#ffe74c"),Color.html("#48ff00"),
@@ -19,9 +21,19 @@ var loops = 1
 func _ready() -> void:
 	spawn_blocks(loops)
 	loops+=1
-	
+	#make skill tree visible
+	skill_tree.visible = true
+	UI.visible = false
+
+func _input(event):
+	if event.is_action_pressed("DEBUG"):
+		print("Requested with DEBUG")
+		GlobalGameManager.print_stats()
+	elif event.is_action_pressed("SPACE"):
+		GlobalGameManager.toggle_pause(UI)
 		
-func _process(delta):
+		 
+func _process(_delta):
 	set_money_prices()
 	if get_tree().get_nodes_in_group("Colliders").size()==0:
 		spawn_blocks(loops)
@@ -37,7 +49,7 @@ func spawn_blocks(current_loop):
 			for j in range(0,5):
 				var tile_a = tile_scene.instantiate()
 				tile_a.position = Vector2(215+180*i,150+80*j)
-				add_child(tile_a)
+				tiles.add_child(tile_a)
 				tile_a.value = tile_a.value * current_loop
 				var sprite = tile_a.get_node("Sprite2D")
 				set_color(sprite)
@@ -47,7 +59,7 @@ func spawn_blocks(current_loop):
 			for j in range(0,6):
 				var tile_a = tile_scene.instantiate()
 				tile_a.position = Vector2(222+100*i,150+36*j)
-				add_child(tile_a)
+				tiles.add_child(tile_a)
 				tile_a.value = tile_a.value * current_loop
 				var sprite = tile_a.get_node("Sprite2D")
 				set_color(sprite)
@@ -58,7 +70,7 @@ func spawn_blocks(current_loop):
 					continue
 				var tile_a = tile_scene.instantiate()
 				tile_a.position = Vector2(178+100*i,94+36*j)
-				add_child(tile_a)
+				tiles.add_child(tile_a)
 				tile_a.value = tile_a.value * current_loop
 				var sprite = tile_a.get_node("Sprite2D")
 				set_color(sprite)
@@ -69,7 +81,7 @@ func spawn_blocks(current_loop):
 					continue
 				var tile_a = tile_scene.instantiate()
 				tile_a.position = Vector2(178+100*i,94+36*j)
-				add_child(tile_a)
+				tiles.add_child(tile_a)
 				tile_a.value = tile_a.value * current_loop
 				var sprite = tile_a.get_node("Sprite2D")
 				set_color(sprite)
@@ -78,7 +90,7 @@ func spawn_blocks(current_loop):
 			for j in range(0,13):
 				var tile_a = tile_scene.instantiate()
 				tile_a.position = Vector2(178+100*i,94+36*j)
-				add_child(tile_a)
+				tiles.add_child(tile_a)
 				tile_a.value = tile_a.value * current_loop
 				var sprite = tile_a.get_node("Sprite2D")
 				set_color(sprite)

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="level_stats" format=3 uid="uid://bq3qv5kb8ngrh"]
 
-[ext_resource type="Script" uid="uid://inwl1gchsfrj" path="res://scripts/ball_level.gd" id="1_3n4gr"]
-[ext_resource type="Texture2D" uid="uid://reswh1gnm66c" path="res://assets/sprites/circle_sprite32.png" id="2_cxqhe"]
+[ext_resource type="Script" uid="uid://inwl1gchsfrj" path="res://resources/ball_level/ball_level.gd" id="1_3n4gr"]
+[ext_resource type="Texture2D" uid="uid://reswh1gnm66c" path="res://assets/sprites/entities/circle_sprite32.png" id="2_cxqhe"]
 
 [resource]
 script = ExtResource("1_3n4gr")

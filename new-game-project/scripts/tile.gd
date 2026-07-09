@@ -6,32 +6,41 @@ extends Node2D
 @onready var sprite = $Sprite2D
 @onready var audio_player = $AudioStreamPlayer2D
 @onready var audio_player2 = $AudioStreamPlayer2D2
-# Called when the node enters the scene tree for the first time.
+
+var crit
+var power
+var crit_power
+var tile_value
+
 func _ready() -> void:
 	add_to_group("Colliders")
+	set_up_variables()
 
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	label.text = str(value)
 	if value <= 0:
 		queue_free()
 
 
-
+func set_up_variables():
+	
+	crit = GlobalGameManager.player_crit * GlobalGameManager.global_click_crit
+	power = int(round(GlobalGameManager.player_strength + GlobalGameManager.global_click_power))
+	crit_power = GlobalGameManager.player_strength * GlobalGameManager.player_crit_mult * GlobalGameManager.global_click_crit_power
+	tile_value = int(round(GlobalGameManager.player_value + GlobalGameManager.global_tile_worth))
+	
 func _on_button_pressed() -> void:
-	if randf() < GlobalGameManager.player_crit:
-		GlobalGameManager.add_count(GlobalGameManager.player_value*GlobalGameManager.player_crit_mult)
-		value -= GlobalGameManager.player_strength * GlobalGameManager.player_crit_mult
+	if randf() < crit:
+		GlobalGameManager.add_count(crit_power)
+		value -= crit_power
 		sprite.material.set_shader_parameter("Tint", Color.html("EFBF04"))
 		audio_player2.pitch_scale= randf_range(0.9,1.25)
 		audio_player2.play()
 		#hitflash
 	else:
 		sprite.material.set_shader_parameter("Tint", Color.WHITE)
-		value -= GlobalGameManager.player_strength
-		GlobalGameManager.add_count(GlobalGameManager.player_value)
+		value -= power
+		GlobalGameManager.add_count(tile_value)
 		audio_player.pitch_scale= randf_range(0.9,1.25)
 		audio_player.play()
 	animation_player.play("hit_flash")

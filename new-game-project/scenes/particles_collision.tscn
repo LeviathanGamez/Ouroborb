@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://wf45m56e0wcp"]
+
+[ext_resource type="Texture2D" uid="uid://reswh1gnm66c" path="res://assets/sprites/entities/circle_sprite32.png" id="1_try7o"]
+
+[sub_resource type="Curve" id="Curve_cef6e"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.27616277, 0.35933626), 0.0, 0.0, 0, 0, Vector2(0.5377907, 0.35611683), 0.17185, 0.17185, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="particles_collision" type="Node2D" unique_id=1459307242]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1997107781]
+emitting = false
+amount = 9
+texture = ExtResource("1_try7o")
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.87
+randomness = 0.16
+lifetime_randomness = 0.03
+emission_shape = 3
+emission_rect_extents = Vector2(10, 2)
+direction = Vector2(0, -10)
+spread = 70.46
+gravity = Vector2(0, 300)
+initial_velocity_min = 80.0
+initial_velocity_max = 80.0
+angle_min = 15.6
+angle_max = 109.0
+scale_amount_curve = SubResource("Curve_cef6e")

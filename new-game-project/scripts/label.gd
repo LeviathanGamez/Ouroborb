@@ -14,6 +14,9 @@ func _ready() -> void:
 
 func activate_tweens():
 	#self
+	if tween:
+		tween.kill()
+		tween = create_tween()
 	tween.tween_property(self,"scale",Vector2(1,1),0.000001)
 	button_editor.reset_tween(self)
 	tween.set_ease(Tween.EASE_OUT)
@@ -23,9 +26,9 @@ func activate_tweens():
 	if tween_dollar:
 		tween_dollar.kill()
 		tween_dollar = create_tween()
-		tween_dollar.set_ease(Tween.EASE_OUT)
-		tween_dollar.tween_property(dollar, "position", pos-Vector2(0,10), 0.1)
-		tween_dollar.tween_property(dollar, "position", pos, 0.1).set_delay(0.05)
+	tween_dollar.set_ease(Tween.EASE_OUT)
+	tween_dollar.tween_property(dollar, "position", pos-Vector2(0,10), 0.1)
+	tween_dollar.tween_property(dollar, "position", pos, 0.1).set_delay(0.05)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pivot_offset = size / 2

@@ -11,34 +11,48 @@ var power
 var value
 var color
 var crit
+var sizes
+var crit_power
+var crit_value
+
 var button_editor = preload("res://scripts/tweens.gd")
 var tween = create_tween()
 
+var particle_scene = preload("res://scenes/particles.tscn")
+var particle
+
 func _ready():
-	
+	add_to_group("balls")
 	set_up_variables()
+	
+	#spawn particles
+	particle = particle_scene.instantiate()
+	add_child(particle)
+	var particle_a = particle.get_node("CPUParticles2D")
+	particle_a.restart()
+	particle_a.emitting = true
 
 func damage(collided):
 	
 	if randf() < crit:
-		GlobalGameManager.add_count(value*GlobalGameManager.ball_crit_mult)
-		collided.value -= stats.power*GlobalGameManager.ball_crit_mult
+		GlobalGameManager.add_count(crit_power)
 		collided.get_node("Sprite2D").material.set_shader_parameter("Tint", Color.html("EFBF04"))
 		audio_player2.pitch_scale= randf_range(0.9,1.25)
 		audio_player2.play()
+		collided.value -= crit_value
 		#hitflash
 	else:
-		collided.value -= stats.power
 		GlobalGameManager.add_count(value)
 		collided.get_node("Sprite2D").material.set_shader_parameter("Tint", Color.WHITE)
 		audio_player.pitch_scale= randf_range(0.9,1.25)
 		audio_player.play()
+		collided.value -= power
 	collided.get_node("HitFlashAnimationPlayer").play("hit_flash")
 		
 	
 	
 	
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 
 	var collision = move_and_collide(velocity)
 	if collision:
@@ -52,25 +66,38 @@ func _physics_process(delta: float) -> void:
 		else:
 			audio_player.pitch_scale= randf_range(0.9,1.25)
 			audio_player.play()
-	particle_follow()
+	
+		
 		
 func god_mode_check():
 	if GlobalGameManager.god_mode:
 		speed = 16
 		power = 5
+		
 func set_up_variables():
-	speed = stats.speed
-	power = stats.power
-	crit = stats.crit
+	
+	speed = stats.speed * GlobalGameManager.global_speed
+	power = int(round(stats.power + GlobalGameManager.global_ball_power))
+	crit = stats.crit * GlobalGameManager.global_ball_crit
+	sizes = stats.size * GlobalGameManager.global_size
+	value = int(round(stats.value + GlobalGameManager.global_tile_worth))
+	crit_power = stats.power*GlobalGameManager.ball_crit_mult*GlobalGameManager.global_ball_crit_power
+	crit_value = int(round(value*GlobalGameManager.ball_crit_mult*GlobalGameManager.global_ball_crit_power))
+	
 	god_mode_check()
-	scale = Vector2(stats.size,stats.size)
-	value = stats.value
+	scale = Vector2(sizes,sizes)
 	color = stats.color
 	modulate = color
-	add_to_group("balls")
 	velocity = Vector2(randf_range(-1,1),randf_range(-1,1)).normalized()*speed
 	sprite.texture = stats.texture
-func particle_follow():
-	for child in get_children():
-		if child is CPUParticles2D:
-			child.global_position = global_position
+	
+func spawn_particles(collision):
+	particle = particle_scene.instantiate()
+	add_child(particle)
+	particle.global_position = collision.get_position()
+	var particle_a = particle.get_node("CPUParticles2D")
+	particle_a.restart()
+	particle_a.emitting = true
+	particle_a.rotation = collision.get_normal().angle() + PI / 2
+	
+							

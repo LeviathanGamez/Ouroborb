@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnje3ounq5pto"
-path="res://.godot/imported/Wavey.png-45e7be04aacdd9c54819ca4b0434ff76.ctex"
+uid="uid://bxuj7f7e5bxon"
+path="res://.godot/imported/Plate.png-bfe90042ca05dbfec00470433370ab49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Wavey.png"
-dest_files=["res://.godot/imported/Wavey.png-45e7be04aacdd9c54819ca4b0434ff76.ctex"]
+source_file="res://assets/sprites/backgrounds/Plate.png"
+dest_files=["res://.godot/imported/Plate.png-bfe90042ca05dbfec00470433370ab49.ctex"]
 
 [params]
 

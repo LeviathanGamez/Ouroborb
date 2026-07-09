@@ -1,5 +1,6 @@
 extends Button
 @onready var game = $"../.."
+@onready var balls = $"../../../Balls"
 
 var ball = preload("res://scenes/Ball.tscn")
 @onready var camera = $"../../../Camera2D"
@@ -15,7 +16,7 @@ func _on_pressed() -> void:
 		ball_a.get_node("CharacterBody2D").position = Vector2(550, 350)
 	
 		
-		game.add_child(ball_a)
+		balls.add_child(ball_a)
 		
 		camera.zoom_in(self)
 

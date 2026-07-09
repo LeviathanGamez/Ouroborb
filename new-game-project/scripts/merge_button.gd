@@ -9,11 +9,11 @@ var tween = create_tween()
 var particle_scene = preload("res://scenes/particles.tscn")
 var particle
 
-var lvl_1 = preload("res://resources/level_1.tres")
-var lvl_2 = preload("res://resources/level_2.tres")
-var lvl_3 = preload("res://resources/level_3.tres")
-var lvl_4 = preload("res://resources/level_4.tres")
-var lvl_5 = preload("res://resources/level_5.tres")
+var lvl_1 = preload("res://resources/ball_level/level_1.tres")
+var lvl_2 = preload("res://resources/ball_level/level_2.tres")
+var lvl_3 = preload("res://resources/ball_level/level_3.tres")
+var lvl_4 = preload("res://resources/ball_level/level_4.tres")
+var lvl_5 = preload("res://resources/ball_level/level_5.tres")
 var levels = [lvl_1,lvl_2,lvl_3,lvl_4,lvl_5]
 
 var do_we_break = false

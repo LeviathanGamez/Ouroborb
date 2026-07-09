@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cwxktwalgqn2n"]
 
-[ext_resource type="Texture2D" uid="uid://bsoyrde6avwrh" path="res://assets/sprites/Tile.png" id="1_3dk36"]
+[ext_resource type="Texture2D" uid="uid://bsoyrde6avwrh" path="res://assets/sprites/entities/Tile.png" id="1_3dk36"]
 [ext_resource type="Script" uid="uid://mx5wm5i86dp7" path="res://scripts/tile.gd" id="1_jy7pm"]
-[ext_resource type="Shader" uid="uid://d201vj6b2romr" path="res://scenes/hit_flash.tres" id="2_q7utx"]
+[ext_resource type="Shader" uid="uid://d201vj6b2romr" path="res://shaders/hit_flash.tres" id="2_q7utx"]
 [ext_resource type="FontFile" uid="uid://u66y04ig1tku" path="res://assets/fonts/Jersey10-Regular copy.ttf" id="2_ywnoi"]
 [ext_resource type="AudioStream" uid="uid://c26kbr78bfgcx" path="res://assets/sounds/click.MP3" id="5_gtpg2"]
 [ext_resource type="AudioStream" uid="uid://bnpjl420xq3wf" path="res://assets/sounds/coinSound.MP3" id="6_a2bny"]

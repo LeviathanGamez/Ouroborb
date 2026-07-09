@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="upgrade_stats" format=3 uid="uid://cvalo27jfjwf7"]
+
+[ext_resource type="Script" uid="uid://dba467il347bl" path="res://resources/ball_upgrade/ball_upgrade.gd" id="1_t8eac"]
+[ext_resource type="Texture2D" uid="uid://bydxk6nd1efh1" path="res://assets/sprites/icons/size.png" id="2_368cm"]
+
+[resource]
+script = ExtResource("1_t8eac")
+stat = 2
+value = 0.2
+text = "Increases ALL balls size by 20%"
+texture = ExtResource("2_368cm")
+metadata/_custom_type_script = "uid://dba467il347bl"

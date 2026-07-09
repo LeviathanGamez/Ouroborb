@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://4pqund3nukl7"]
 
 [ext_resource type="Script" uid="uid://tkoxng5vanfx" path="res://scripts/game_manager.gd" id="1_2rd6h"]
-[ext_resource type="Texture2D" uid="uid://bxuj7f7e5bxon" path="res://assets/sprites/Plate.png" id="1_ibkli"]
-[ext_resource type="Texture2D" uid="uid://dnje3ounq5pto" path="res://assets/sprites/Wavey.png" id="2_qbsmt"]
+[ext_resource type="Texture2D" uid="uid://bxuj7f7e5bxon" path="res://assets/sprites/backgrounds/Plate.png" id="1_ibkli"]
+[ext_resource type="Texture2D" uid="uid://dnje3ounq5pto" path="res://assets/sprites/backgrounds/Wavey.png" id="2_qbsmt"]
 [ext_resource type="PackedScene" uid="uid://nbe0h6w1owvy" path="res://scenes/ball.tscn" id="3_cpr0p"]
 [ext_resource type="PackedScene" uid="uid://cjhgm3dsqu1t8" path="res://scenes/diamond.tscn" id="4_78awf"]
 [ext_resource type="Script" uid="uid://bahj6xho3rkyi" path="res://scripts/camera_2d.gd" id="4_kyk2p"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://bd7q1uoxgthpw" path="res://scripts/merge_button.gd" id="14_r7sob"]
 [ext_resource type="Script" uid="uid://m4vftukk0twr" path="res://scripts/upgrades_button.gd" id="15_y5y3l"]
 [ext_resource type="Script" uid="uid://p5vfvm7xbq4l" path="res://scripts/label.gd" id="17_vjgi4"]
+[ext_resource type="PackedScene" uid="uid://c6womp3aicfjq" path="res://scenes/skill_tree.tscn" id="19_45i86"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dvvg"]
 texture = ExtResource("1_ibkli")
@@ -1658,6 +1659,9 @@ sources/2 = SubResource("TileSetAtlasSource_mcffj")
 sources/3 = SubResource("TileSetAtlasSource_2rd6h")
 sources/4 = SubResource("TileSetAtlasSource_7ua8r")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45i86"]
+bg_color = Color(0, 0, 0, 0.6509804)
+
 [sub_resource type="Environment" id="Environment_2rd6h"]
 background_mode = 3
 glow_enabled = true
@@ -1669,6 +1673,7 @@ glow_bloom = 0.2
 [node name="Game" type="Node2D" unique_id=1228916069]
 
 [node name="GameManager" type="Node" parent="." unique_id=1867276768]
+process_mode = 3
 script = ExtResource("1_2rd6h")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=408091575]
@@ -1681,23 +1686,29 @@ layer_0/tile_data = PackedInt32Array(65539, 1, 0, 1114115, 1, 0, 65540, 1, 0, 11
 position = Vector2(576, 324)
 script = ExtResource("4_kyk2p")
 
-[node name="CharacterBody2D" parent="." unique_id=1353462381 instance=ExtResource("3_cpr0p")]
-position = Vector2(177, 485)
-
-[node name="Diamond" parent="." unique_id=389597781 instance=ExtResource("4_78awf")]
-position = Vector2(136, -108)
-
-[node name="Diamond2" parent="." unique_id=580665576 instance=ExtResource("4_78awf")]
-position = Vector2(51, -102)
-
-[node name="Diamond3" parent="." unique_id=1915135710 instance=ExtResource("4_78awf")]
-position = Vector2(-50, -106)
-
-[node name="Diamond4" parent="." unique_id=480345026 instance=ExtResource("4_78awf")]
-position = Vector2(-5, -106)
-
 [node name="Background" parent="." unique_id=157265212 instance=ExtResource("5_s0nni")]
 position = Vector2(-135, -146)
+
+[node name="Diamonds (Unused)" type="Node" parent="." unique_id=1212530215]
+
+[node name="Diamond" parent="Diamonds (Unused)" unique_id=389597781 instance=ExtResource("4_78awf")]
+position = Vector2(136, -108)
+
+[node name="Diamond2" parent="Diamonds (Unused)" unique_id=580665576 instance=ExtResource("4_78awf")]
+position = Vector2(51, -102)
+
+[node name="Diamond3" parent="Diamonds (Unused)" unique_id=1915135710 instance=ExtResource("4_78awf")]
+position = Vector2(-50, -106)
+
+[node name="Diamond4" parent="Diamonds (Unused)" unique_id=480345026 instance=ExtResource("4_78awf")]
+position = Vector2(-5, -106)
+
+[node name="Balls" type="Node" parent="." unique_id=1168818358]
+
+[node name="CharacterBody2D" parent="Balls" unique_id=1353462381 instance=ExtResource("3_cpr0p")]
+position = Vector2(500, 480)
+
+[node name="Tiles" type="Node" parent="." unique_id=744906130]
 
 [node name="Buttons" type="Node" parent="." unique_id=100162608]
 
@@ -1713,6 +1724,7 @@ anchors_preset = 0
 offset_left = -24.0
 offset_right = 42.0
 offset_bottom = 32.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Add Ball Button" type="Button" parent="Buttons/Control" unique_id=1743907227]
 self_modulate = Color(1, 1, 1, 0)
@@ -1722,7 +1734,9 @@ offset_top = 592.0
 offset_right = 431.0
 offset_bottom = 671.0
 pivot_offset = Vector2(102.5, 39.5)
+focus_mode = 0
 script = ExtResource("13_7ua8r")
+metadata/_edit_use_anchors_ = true
 
 [node name="ButtonTileMap2" type="TileMap" parent="Buttons/Control/Add Ball Button" unique_id=1188402565]
 position = Vector2(-226, -592)
@@ -1741,6 +1755,7 @@ theme_override_colors/font_color = Color(0.8636066, 0.28491607, 0.3585585, 1)
 theme_override_fonts/font = ExtResource("11_3xj3m")
 theme_override_font_sizes/font_size = 53
 text = "ADD BALL"
+metadata/_edit_use_anchors_ = true
 
 [node name="Price" type="Label" parent="Buttons/Control/Add Ball Button/Add Ball" unique_id=1576622067]
 layout_mode = 0
@@ -1753,14 +1768,17 @@ theme_override_fonts/font = ExtResource("11_3xj3m")
 theme_override_font_sizes/font_size = 39
 text = "$100"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Control2" type="Control" parent="Buttons" unique_id=1018719377]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 offset_left = -7.0
 offset_top = -2.0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Upgrades Button" type="Button" parent="Buttons/Control2" unique_id=916570799]
 self_modulate = Color(1, 1, 1, 0)
@@ -1770,7 +1788,9 @@ offset_top = 593.0
 offset_right = 687.0
 offset_bottom = 671.0
 pivot_offset = Vector2(102.5, 39)
+focus_mode = 0
 script = ExtResource("15_y5y3l")
+metadata/_edit_use_anchors_ = true
 
 [node name="Upgrades" type="Label" parent="Buttons/Control2/Upgrades Button" unique_id=321659275]
 z_index = 1
@@ -1783,6 +1803,7 @@ theme_override_colors/font_color = Color(0.4392157, 0.8980392, 0.36862746, 1)
 theme_override_fonts/font = ExtResource("11_3xj3m")
 theme_override_font_sizes/font_size = 52
 text = "UPGRADES"
+metadata/_edit_use_anchors_ = true
 
 [node name="ButtonTileMap2" type="TileMap" parent="Buttons/Control2/Upgrades Button" unique_id=1213646585]
 position = Vector2(-482, -593)
@@ -1797,6 +1818,7 @@ offset_left = -1.0
 offset_top = -1.0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Merge Button" type="Button" parent="Buttons/Control3" unique_id=795661950]
 self_modulate = Color(1, 1, 1, 0)
@@ -1806,7 +1828,9 @@ offset_top = 593.0
 offset_right = 943.0
 offset_bottom = 671.0
 pivot_offset = Vector2(103.5, 39)
+focus_mode = 0
 script = ExtResource("14_r7sob")
+metadata/_edit_use_anchors_ = true
 
 [node name="ButtonTileMap2" type="TileMap" parent="Buttons/Control3/Merge Button" unique_id=1791225028]
 position = Vector2(-736, -593)
@@ -1826,6 +1850,7 @@ theme_override_fonts/font = ExtResource("11_3xj3m")
 theme_override_font_sizes/font_size = 52
 text = "MERGE"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Counter" type="Node" parent="." unique_id=1817167953]
 
@@ -1834,6 +1859,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Money" type="Label" parent="Counter/Control" unique_id=1344619377]
 z_index = 3
@@ -1854,6 +1880,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 autowrap_mode = 2
 script = ExtResource("17_vjgi4")
+metadata/_edit_use_anchors_ = true
 
 [node name="Money_back" type="Label" parent="Counter/Control" unique_id=590759194]
 modulate = Color(1, 1, 1, 0.46666667)
@@ -1868,6 +1895,7 @@ theme_override_fonts/font = ExtResource("12_mcffj")
 theme_override_font_sizes/font_size = 66
 text = "000000000000000"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="DollarSign" type="Label" parent="Counter/Control" unique_id=102706909]
 z_index = 2
@@ -1883,6 +1911,34 @@ theme_override_font_sizes/font_size = 86
 text = "$"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="UI" type="Control" parent="." unique_id=1579698153]
+process_mode = 2
+visible = false
+z_index = 20
+layout_mode = 3
+anchors_preset = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="UI" unique_id=1608921813]
+z_index = 1
+layout_mode = 0
+offset_left = -2.0
+offset_top = -244.0
+offset_right = 1335.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_45i86")
+
+[node name="SkillTree" parent="UI" unique_id=1918904098 instance=ExtResource("19_45i86")]
+z_index = 20
+layout_mode = 1
+anchors_preset = 0
+anchor_right = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 189.0
+offset_bottom = 180.0
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2018287326]
 z_index = -1
@@ -1893,6 +1949,7 @@ offset_bottom = 564.0
 scale = Vector2(1, 0.9977341)
 mouse_filter = 2
 color = Color(0.4117647, 0.41568628, 0.41568628, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=760016774]
 environment = SubResource("Environment_2rd6h")

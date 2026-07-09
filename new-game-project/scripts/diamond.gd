@@ -9,7 +9,7 @@ var TILE_SIZE = Vector2(16,16)
 func _ready():
 	add_to_group("diamonds")
 	
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if Input.is_action_just_pressed("Click"):
 		if event is InputEventMouseButton:
 			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

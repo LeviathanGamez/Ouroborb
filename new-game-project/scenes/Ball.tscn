@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://nbe0h6w1owvy"]
 
 [ext_resource type="Script" uid="uid://cb1pwh6wfxj55" path="res://scripts/character_body_2d.gd" id="1_eew57"]
-[ext_resource type="Resource" uid="uid://bq3qv5kb8ngrh" path="res://resources/level_1.tres" id="2_jj7gd"]
-[ext_resource type="Texture2D" uid="uid://reswh1gnm66c" path="res://assets/sprites/circle_sprite32.png" id="3_fwo8l"]
+[ext_resource type="Resource" uid="uid://bq3qv5kb8ngrh" path="res://resources/ball_level/level_1.tres" id="2_jj7gd"]
+[ext_resource type="Texture2D" uid="uid://reswh1gnm66c" path="res://assets/sprites/entities/circle_sprite32.png" id="3_fwo8l"]
 [ext_resource type="AudioStream" uid="uid://b2oba75d3x1ee" path="res://assets/sounds/Tsk.MP3" id="4_v8l5b"]
 [ext_resource type="AudioStream" uid="uid://bnpjl420xq3wf" path="res://assets/sounds/coinSound.MP3" id="5_iijjg"]
 

@@ -2,7 +2,8 @@ extends Button
 
 var button_editor = preload("res://scripts/tweens.gd")
 var tween = create_tween()
-@onready var camera = $"../../Camera2D"
+@onready var camera = $"../../../Camera2D"
+@onready var UI = $"../../../UI"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -23,3 +24,4 @@ func _on_mouse_exited() -> void:
 
 func _on_pressed() -> void:
 	camera.zoom_in(self) # Replace with function body.
+	GlobalGameManager.toggle_pause(UI)
