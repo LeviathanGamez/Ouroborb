@@ -6,6 +6,9 @@ extends CharacterBody2D
 @onready var sprite = $Sprite2D
 @export var stats: level_stats
 
+@onready var money_text_node = $Money_texts
+var money_text = preload("res://scenes/money.tscn")
+
 var speed 
 var power
 var value
@@ -35,22 +38,34 @@ func _ready():
 func damage(collided):
 	
 	if randf() < crit:
-		GlobalGameManager.add_count(crit_power)
+		GlobalGameManager.add_count(crit_value)
 		collided.get_node("Sprite2D").material.set_shader_parameter("Tint", Color.html("EFBF04"))
 		audio_player2.pitch_scale= randf_range(0.9,1.25)
 		audio_player2.play()
-		collided.value -= crit_value
-		#hitflash
+		#money animation
+		var money_a = money_text.instantiate()
+		get_tree().current_scene.get_node("Money_texts").add_child(money_a)
+		money_a.global_position = collided.global_position
+		money_a.get_node("RichTextLabel").text = "+"+str(collided.crit_value)+"$"
+	
 	else:
 		GlobalGameManager.add_count(value)
 		collided.get_node("Sprite2D").material.set_shader_parameter("Tint", Color.WHITE)
 		audio_player.pitch_scale= randf_range(0.9,1.25)
 		audio_player.play()
 		collided.value -= power
+		#money animation
+		var money_a = money_text.instantiate()
+		get_tree().current_scene.get_node("Money_texts").add_child(money_a)
+		money_a.global_position = collided.global_position
+		money_a.get_node("RichTextLabel").text = "+"+str(value)+"$"
+	
 	collided.get_node("HitFlashAnimationPlayer").play("hit_flash")
 		
-	
-	
+
+
+
+
 	
 func _physics_process(_delta: float) -> void:
 
@@ -78,10 +93,10 @@ func set_up_variables():
 	
 	speed = stats.speed * GlobalGameManager.global_speed
 	power = int(round(stats.power + GlobalGameManager.global_ball_power))
-	crit = stats.crit * GlobalGameManager.global_ball_crit
+	crit = stats.crit + GlobalGameManager.global_ball_crit
 	sizes = stats.size * GlobalGameManager.global_size
 	value = int(round(stats.value + GlobalGameManager.global_tile_worth))
-	crit_power = stats.power*GlobalGameManager.ball_crit_mult*GlobalGameManager.global_ball_crit_power
+	crit_power = power*GlobalGameManager.ball_crit_mult*GlobalGameManager.global_ball_crit_power
 	crit_value = int(round(value*GlobalGameManager.ball_crit_mult*GlobalGameManager.global_ball_crit_power))
 	
 	god_mode_check()

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c7ep7u5s0g55o"]
+
+[ext_resource type="Script" uid="uid://djagxn31xw5jp" path="res://scripts/copy_tile.gd" id="1_daj34"]
+[ext_resource type="Texture2D" uid="uid://bsoyrde6avwrh" path="res://assets/sprites/entities/Tile.png" id="2_bovoj"]
+
+[node name="copy_tile" type="Node2D" unique_id=258129977]
+script = ExtResource("1_daj34")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=566782065]
+texture = ExtResource("2_bovoj")

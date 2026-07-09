@@ -17,6 +17,7 @@ func activate_tweens():
 	if tween:
 		tween.kill()
 		tween = create_tween()
+	
 	tween.tween_property(self,"scale",Vector2(1,1),0.000001)
 	button_editor.reset_tween(self)
 	tween.set_ease(Tween.EASE_OUT)
@@ -32,3 +33,10 @@ func activate_tweens():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pivot_offset = size / 2
+	var text_width = get_theme_default_font().get_string_size(
+	text,
+	HORIZONTAL_ALIGNMENT_CENTER,
+	-1,
+	get_theme_default_font_size()
+).x
+	pivot_offset = Vector2(size.x - (text_width / 2), size.y / 2)
