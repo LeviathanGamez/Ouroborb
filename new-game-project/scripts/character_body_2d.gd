@@ -26,6 +26,7 @@ var particle
 
 func _ready():
 	add_to_group("balls")
+	velocity = Vector2(randf_range(-1,1),randf_range(-1,1))
 	set_up_variables()
 	
 	#spawn particles
@@ -103,7 +104,7 @@ func set_up_variables():
 	scale = Vector2(sizes,sizes)
 	color = stats.color
 	modulate = color
-	velocity = Vector2(randf_range(-1,1),randf_range(-1,1)).normalized()*speed
+	velocity = velocity.normalized()*speed
 	sprite.texture = stats.texture
 	
 func spawn_particles(collision):

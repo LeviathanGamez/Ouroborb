@@ -4,7 +4,7 @@ extends Node
 
 
 var god_mode = false
-var infinite_money = false
+var infinite_money = true
 var screenshake = false
 var paused = false
 
