@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="upgrade_stats" format=3 uid="uid://kp05ismlmdh1"]
 
 [ext_resource type="Script" uid="uid://dba467il347bl" path="res://resources/ball_upgrade/ball_upgrade.gd" id="1_n5osc"]
-[ext_resource type="Texture2D" uid="uid://fwurkcsx3o7a" path="res://assets/sprites/icons/tile_worth2.png" id="2_n5osc"]
+[ext_resource type="Texture2D" uid="uid://b1menyyburnwn" path="res://assets/sprites/icons/tile_worth3.png" id="2_n5osc"]
 
 [resource]
 script = ExtResource("1_n5osc")

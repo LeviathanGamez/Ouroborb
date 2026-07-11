@@ -1,15 +1,18 @@
 extends Node2D
 
-@export var value = 5
+
 @onready var animation_player = $HitFlashAnimationPlayer
 @onready var label = $Label
 @onready var sprite = $Sprite2D
 @onready var audio_player = $AudioStreamPlayer2D
 @onready var audio_player2 = $AudioStreamPlayer2D2
-
+@export var stats: tile_types
 var money_text = preload("res://scenes/money.tscn")
 var copy_tile = preload("res://scenes/copy_tile.tscn")
 
+var tile_type
+var tile_type_mult
+var value = 5
 var crit
 var power
 var crit_power
@@ -17,8 +20,10 @@ var tile_value
 var crit_value
 
 func _ready() -> void:
+	
 	add_to_group("Colliders")
 	set_up_variables()
+	value = stats.value
 
 func _process(_delta: float) -> void:
 	label.text = str(value)
@@ -32,11 +37,11 @@ func set_up_variables():
 	crit_power = power * GlobalGameManager.player_crit_mult * GlobalGameManager.global_click_crit_power
 	tile_value = int(round(GlobalGameManager.player_value + GlobalGameManager.global_tile_worth))
 	crit_value = tile_value * GlobalGameManager.player_crit_mult * GlobalGameManager.global_click_crit_power
-	power = power * GlobalGameManager.global_click_mult
-	crit_power = crit_power * GlobalGameManager.global_click_mult
-	tile_value = int(round(tile_value * GlobalGameManager.global_click_worth * GlobalGameManager.global_money_mult))
-	crit_value = int(round(crit_value * GlobalGameManager.global_click_worth * GlobalGameManager.global_money_mult))
-
+	power = power * GlobalGameManager.global_click_mult * GlobalGameManager.global_tough_click
+	crit_power = crit_power * GlobalGameManager.global_click_mult  * GlobalGameManager.global_tough_click
+	tile_value = int(round(tile_value * stats.tile_type_mult * GlobalGameManager.global_click_worth * GlobalGameManager.global_money_mult))
+	crit_value = int(round(crit_value * stats.tile_type_mult *GlobalGameManager.global_click_worth * GlobalGameManager.global_money_mult))
+	sprite.texture = stats.texture
 	
 func _on_button_pressed() -> void:
 	if randf() < crit:

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="tile_types" format=3 uid="uid://dve0y4giuaw04"]
+
+[ext_resource type="Script" uid="uid://mirhfbn4qwmp" path="res://resources/tile_types/tile_types.gd" id="1_tlm57"]
+[ext_resource type="Texture2D" uid="uid://ef0sbp5f6w7t" path="res://assets/sprites/entities/DiamondTile.png" id="2_e2lat"]
+
+[resource]
+script = ExtResource("1_tlm57")
+type = 2
+value = 50
+tile_type_mult = 5
+texture = ExtResource("2_e2lat")
+metadata/_custom_type_script = "uid://mirhfbn4qwmp"

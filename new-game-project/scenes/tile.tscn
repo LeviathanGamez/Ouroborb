@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bsoyrde6avwrh" path="res://assets/sprites/entities/Tile.png" id="1_3dk36"]
 [ext_resource type="Script" uid="uid://mx5wm5i86dp7" path="res://scripts/tile.gd" id="1_jy7pm"]
+[ext_resource type="Resource" uid="uid://csdtjunkwet80" path="res://resources/tile_types/normal.tres" id="2_a2bny"]
 [ext_resource type="Shader" uid="uid://d201vj6b2romr" path="res://shaders/hit_flash.tres" id="2_q7utx"]
 [ext_resource type="FontFile" uid="uid://u66y04ig1tku" path="res://assets/fonts/Jersey10-Regular copy.ttf" id="2_ywnoi"]
 [ext_resource type="AudioStream" uid="uid://c26kbr78bfgcx" path="res://assets/sounds/click.MP3" id="5_gtpg2"]
@@ -57,6 +58,7 @@ _data = {
 
 [node name="Tile" type="Node2D" unique_id=157253941 groups=["Colliders"]]
 script = ExtResource("1_jy7pm")
+stats = ExtResource("2_a2bny")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=350431628]
 material = SubResource("ShaderMaterial_6p3j2")

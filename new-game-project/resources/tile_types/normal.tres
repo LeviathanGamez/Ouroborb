@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="tile_types" format=3 uid="uid://csdtjunkwet80"]
+
+[ext_resource type="Script" uid="uid://mirhfbn4qwmp" path="res://resources/tile_types/tile_types.gd" id="1_gp7xy"]
+[ext_resource type="Texture2D" uid="uid://bsoyrde6avwrh" path="res://assets/sprites/entities/Tile.png" id="2_sx4jw"]
+
+[resource]
+script = ExtResource("1_gp7xy")
+value = 5
+tile_type_mult = 1
+texture = ExtResource("2_sx4jw")
+metadata/_custom_type_script = "uid://mirhfbn4qwmp"

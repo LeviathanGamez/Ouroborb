@@ -12,7 +12,7 @@ class_name Skill_Node
 
 	
 @export var stats: upgrade_stats
-@export var max_level = 5
+var max_level = 5
 @export var price := 10
 var original_price
 
@@ -97,6 +97,7 @@ func _on_pressed() -> void:
 		for skill in skills:
 			if skill is Skill_Node and level == 1:
 				skill.disabled = false
+				tween_4.parallel().tween_property(skill, "self_modulate:a", 1.0, 0.5)
 				tween_4.parallel().tween_property(skill, "modulate:a", 1.0, 0.5)
 				tween_4.parallel().tween_property(skill.get_node("Line2D"), "modulate:a", 1.0, 0.5)
 		
@@ -115,7 +116,9 @@ func _on_pressed() -> void:
 		particle_a.get_node("CPUParticles2D").emitting = true
 		particle_a.global_position = get_global_mouse_position()
 		get_tree().current_scene.get_node("Particles").add_child(particle_a)
-	
+	if not disabled:
+		self_modulate.a = 1
+		modulate.a = 1
 
 func update_text():
 	if level != max_level:

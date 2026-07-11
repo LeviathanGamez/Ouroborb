@@ -37,9 +37,13 @@ var global_click_power = 0 # + 1 each
 var global_click_crit = 0 # + 5% each
 var global_click_crit_power = 1 # + 20% each
 
-var global_tile_worth = 0 # +1 each
-var global_rare_tiles =1 # +5% chance each
+var global_steel_ball = 1  # + 20% each
+var global_tough_click = 1  # + 20% each
 
+
+var global_tile_worth = 0 # +1 each
+var global_gold_tiles = 0 # +5% chance each
+var global_diamond_tiles = 0 # +5% chance each
 
 
 
@@ -48,6 +52,7 @@ var tween
 func _ready() -> void:
 	if god_mode or infinite_money:
 		money = 10000000000000
+	god_mode_check()
 		
 	
 
@@ -66,7 +71,12 @@ func toggle_pause(UI):
 	#get_tree().paused = paused
 	#for child in UI.get_node("SkillTree").get_children()[0].get_children():
 #		child.update_text()
-
+func god_mode_check():
+	if god_mode:
+		global_speed = 16 # +20% each _
+		global_size = 4 # +20% each _
+		global_ball_power = 30 # + 1 eac
+		
 func print_stats():
 	print("=== GLOBAL STATS ===")
 	print("Speed: x", global_speed,"%") # +20% each
@@ -79,8 +89,13 @@ func print_stats():
 	print("Click Crit: +", global_click_crit, "%") # + 5% each
 	print("Click Crit Power: x", global_click_crit_power,"%") # +20% each
 	print("Tile Worth: +", global_tile_worth) # +1 each
-	print("Rare Tiles: x", global_rare_tiles, "%") # +5% chance each
-	print("Ball Mult: x", global_ball_mult, "%")
-	print("Ball Worth x", global_ball_worth, "%")
-	print("Click Mult: x", global_click_mult, "%")
 	print("Click Worth x", global_click_worth, "%")
+	print("Ball Worth x", global_ball_worth, "%")
+	print("Ball Mult: x", global_ball_mult, "%")
+	print("Click mult x", global_click_mult, "%")
+	print("Gold Tiles: x", global_gold_tiles, "%") # +5% chance each
+	print("Diamond Tiles: x", global_diamond_tiles, "%") # +5% chance each
+	print("Ball Mult: x", global_ball_mult, "%")
+	print("Ball Mult: x", global_ball_mult, "%")
+	print("Steel: x", global_steel_ball, "%") # +20% each
+	print("Tough: x", global_steel_ball, "%") # +20% each

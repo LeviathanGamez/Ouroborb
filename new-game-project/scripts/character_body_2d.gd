@@ -42,6 +42,7 @@ func damage(collided):
 	
 	if randf() < crit:
 		GlobalGameManager.add_count(crit_value)
+		collided.value -= crit_power
 		collided.get_node("Sprite2D").material.set_shader_parameter("Tint", Color.html("EFBF04"))
 		audio_player2.pitch_scale= randf_range(0.9,1.25)
 		audio_player2.play()
@@ -89,10 +90,6 @@ func _physics_process(_delta: float) -> void:
 	
 		
 		
-func god_mode_check():
-	if GlobalGameManager.god_mode:
-		speed = 16
-		power = 5
 		
 func set_up_variables():
 	
@@ -103,17 +100,18 @@ func set_up_variables():
 	value = int(round(stats.value + GlobalGameManager.global_tile_worth))
 	crit_power = power*GlobalGameManager.ball_crit_mult*GlobalGameManager.global_ball_crit_power
 	crit_value = int(round(value*GlobalGameManager.ball_crit_mult*GlobalGameManager.global_ball_crit_power))
-	power = power * GlobalGameManager.global_ball_mult
-	crit_power = crit_power * GlobalGameManager.global_ball_mult
-	value = value * GlobalGameManager.global_ball_worth * GlobalGameManager.global_money_mult
-	crit_value = crit_value * GlobalGameManager.global_ball_worth * GlobalGameManager.global_money_mult
-
-	god_mode_check()
+	power = power * GlobalGameManager.global_ball_mult * GlobalGameManager.global_steel_ball
+	crit_power = crit_power * GlobalGameManager.global_ball_mult * GlobalGameManager.global_steel_ball
+	value = int(round(value * GlobalGameManager.global_ball_worth * GlobalGameManager.global_money_mult))
+	crit_value = int(round(crit_value * GlobalGameManager.global_ball_worth * GlobalGameManager.global_money_mult))
+	value = int(round(value))
+	crit_value = int(round(crit_value))
 	scale = Vector2(sizes,sizes)
 	color = stats.color
 	modulate = color
 	velocity = velocity.normalized()*speed
 	sprite.texture = stats.texture
+	
 	
 func spawn_particles(collision):
 	particle2 = particle_scene2.instantiate()

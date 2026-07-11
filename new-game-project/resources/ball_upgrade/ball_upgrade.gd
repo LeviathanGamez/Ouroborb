@@ -12,11 +12,14 @@ enum StatType {
 	CLICK_POWER,
 	CLICK_CRIT,
 	CLICK_CRIT_MULT,
-	RARE_TILES,
+	GOLD_TILES,
 	BALL_MULT,
 	CLICK_MULT,
 	BALL_WORTH,
-	CLICK_WORTH
+	CLICK_WORTH,
+	STEEL_BALL,
+	TOUGH_CLICK,
+	DIAMOND_TILES,
 }
 
 var stat_map = {
@@ -30,11 +33,14 @@ var stat_map = {
 	StatType.CLICK_POWER: "global_click_power",
 	StatType.CLICK_CRIT: "global_click_crit",
 	StatType.CLICK_CRIT_MULT: "global_click_crit_power",
-	StatType.RARE_TILES: "global_rare_tiles",
+	StatType.GOLD_TILES: "global_gold_tiles",
 	StatType.BALL_MULT: "global_ball_mult",
 	StatType.CLICK_MULT: "global_click_mult",
 	StatType.BALL_WORTH: "global_ball_worth",
-	StatType.CLICK_WORTH: "global_click_worth"
+	StatType.CLICK_WORTH: "global_click_worth",
+	StatType.STEEL_BALL: "global_steel_ball",
+	StatType.TOUGH_CLICK: "global_tough_click",
+	StatType.DIAMOND_TILES: "global_diamond_tiles",
 }
 
 @export var stat : StatType

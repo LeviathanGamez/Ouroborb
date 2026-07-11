@@ -7,6 +7,8 @@ extends Node
 @onready var skill_tree = $"../UI/SkillTree"
 
 var tile_scene = preload("res://scenes/tile.tscn")
+var gold = preload("res://resources/tile_types/gold.tres")
+var diamond = preload("res://resources/tile_types/diamond.tres")
 var colors = [Color.html("#ff306c"), Color.html("#ffe74c"),Color.html("#48ff00"),
 			Color.html("#179c43"), Color.html("#ffa200"),Color.html("#31d4e0"),
 			Color.html("#1629f7"),Color.html("#8e1cc7"),Color.html("#f018f0"),
@@ -24,6 +26,7 @@ func _ready() -> void:
 	#make skill tree visible
 	skill_tree.visible = true
 	UI.visible = false
+	
 
 func _input(event):
 	if event.is_action_pressed("DEBUG"):
@@ -50,20 +53,23 @@ func spawn_blocks(current_loop):
 			for j in range(0,5):
 				var tile_a = tile_scene.instantiate()
 				tile_a.position = Vector2(215+180*i,150+80*j)
+
+				var sprite = tile_a.get_node("Sprite2D")
+				type_check(tile_a,sprite)
 				tiles.add_child(tile_a)
 				tile_a.value = tile_a.value * current_loop
-				var sprite = tile_a.get_node("Sprite2D")
-				set_color(sprite)
 				
 	elif random_num < 60:
 		for i in range(0,8):
 			for j in range(0,6):
 				var tile_a = tile_scene.instantiate()
 				tile_a.position = Vector2(222+100*i,150+36*j)
+				
+				var sprite = tile_a.get_node("Sprite2D")
+				type_check(tile_a,sprite)
 				tiles.add_child(tile_a)
 				tile_a.value = tile_a.value * current_loop
-				var sprite = tile_a.get_node("Sprite2D")
-				set_color(sprite)
+				
 	elif random_num <=77:
 		for i in range(0,9):
 			for j in range(0,13):
@@ -71,10 +77,10 @@ func spawn_blocks(current_loop):
 					continue
 				var tile_a = tile_scene.instantiate()
 				tile_a.position = Vector2(178+100*i,94+36*j)
+				var sprite = tile_a.get_node("Sprite2D")
+				type_check(tile_a,sprite)
 				tiles.add_child(tile_a)
 				tile_a.value = tile_a.value * current_loop
-				var sprite = tile_a.get_node("Sprite2D")
-				set_color(sprite)
 	elif random_num <= 94:
 		for i in range(0,9):
 			for j in range(0,13):
@@ -82,19 +88,19 @@ func spawn_blocks(current_loop):
 					continue
 				var tile_a = tile_scene.instantiate()
 				tile_a.position = Vector2(178+100*i,94+36*j)
+				var sprite = tile_a.get_node("Sprite2D")
+				type_check(tile_a,sprite)
 				tiles.add_child(tile_a)
 				tile_a.value = tile_a.value * current_loop
-				var sprite = tile_a.get_node("Sprite2D")
-				set_color(sprite)
 	elif random_num <= 99:
 		for i in range(0,9):
 			for j in range(0,13):
 				var tile_a = tile_scene.instantiate()
 				tile_a.position = Vector2(178+100*i,94+36*j)
+				var sprite = tile_a.get_node("Sprite2D")
+				type_check(tile_a,sprite)
 				tiles.add_child(tile_a)
 				tile_a.value = tile_a.value * current_loop
-				var sprite = tile_a.get_node("Sprite2D")
-				set_color(sprite)
 		
 				
 func set_color(sprite):
@@ -105,4 +111,12 @@ func set_color(sprite):
 	if pickeable.size() == 0:
 		pickeable = colors.duplicate()
 	
-		
+func type_check(obj,sprite):
+	if  randf() <= GlobalGameManager.global_diamond_tiles:
+		obj.stats = diamond
+	elif randf() <= GlobalGameManager.global_gold_tiles:
+		obj.stats = gold
+	else:
+		set_color(sprite)
+	
+	
