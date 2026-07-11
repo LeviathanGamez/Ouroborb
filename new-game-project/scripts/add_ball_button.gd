@@ -5,12 +5,15 @@ extends Button
 var ball = preload("res://scenes/Ball.tscn")
 @onready var camera = $"../../../Camera2D"
 var button_editor = preload("res://scripts/tweens.gd")
+var particle_click = preload("res://scenes/particles_click.tscn")
+
+
 var tween = create_tween()
 
 func _on_pressed() -> void:
 	if GlobalGameManager.money >= GlobalGameManager.ball_price:
 		GlobalGameManager.add_count(-GlobalGameManager.ball_price)
-		GlobalGameManager.ball_price += 100
+		GlobalGameManager.ball_price += GlobalGameManager.ball_price_increase
 
 		var ball_a = ball.instantiate() # Replace with function body.
 		ball_a.get_node("CharacterBody2D").position = Vector2(550, 350)
@@ -19,7 +22,13 @@ func _on_pressed() -> void:
 		balls.add_child(ball_a)
 		
 		camera.zoom_in(self)
-
+		for i in range(0,GlobalGameManager.amount):
+			var particle_a = particle_click.instantiate()
+			particle_a.rotation  =  (i * GlobalGameManager.angle)
+			particle_a.get_node("CPUParticles2D").emitting = true
+			particle_a.global_position = get_global_mouse_position()
+			get_tree().current_scene.get_node("Particles").add_child(particle_a)
+		
 
 
 

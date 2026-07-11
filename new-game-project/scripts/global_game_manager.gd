@@ -4,12 +4,16 @@ extends Node
 
 
 var god_mode = false
-var infinite_money = true
+var infinite_money = false
 var screenshake = false
 var paused = false
 
 var money = 0
-var ball_price = 100
+var ball_price = 50
+var ball_price_increase = 50
+
+var amount = 8
+var angle = TAU/amount
 
 var player_strength = 1
 var player_value = 5
@@ -48,10 +52,7 @@ func _ready() -> void:
 	
 
 func add_count(value:int):
-	if money >= 0:
-		money += value * global_money_mult
-	else:
-		money += value
+	money += value 
 	money = int(round(money))
 	if label != null:
 		label.activate_tweens()

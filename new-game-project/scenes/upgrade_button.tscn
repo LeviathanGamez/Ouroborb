@@ -1,8 +1,14 @@
 [gd_scene format=3 uid="uid://b4f1y5u1r0teu"]
 
 [ext_resource type="Script" uid="uid://p5cvhhfqky0u" path="res://scripts/skill_button.gd" id="2_0e4al"]
+[ext_resource type="Shader" uid="uid://cag0a2rxoiqxs" path="res://shaders/outline.gdshader" id="2_o77qo"]
 [ext_resource type="FontFile" uid="uid://u66y04ig1tku" path="res://assets/fonts/Jersey10-Regular copy.ttf" id="3_o77qo"]
 [ext_resource type="Texture2D" uid="uid://diwo4t2i2spt5" path="res://assets/sprites/icons/click_power.png" id="4_0e4al"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s22sv"]
+shader = ExtResource("2_o77qo")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/corner_pixel = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o77qo"]
 bg_color = Color(0, 0, 0, 0.6509804)
@@ -34,6 +40,7 @@ stretch_mode = 0
 script = ExtResource("2_0e4al")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1244755294]
+material = SubResource("ShaderMaterial_s22sv")
 position = Vector2(24, 24)
 scale = Vector2(3, 3)
 texture = ExtResource("4_0e4al")

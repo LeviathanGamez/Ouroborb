@@ -12,8 +12,3 @@ func _ready() -> void:
 	tween.tween_property(self, "modulate:a", 0.0, 0.09)
 
 	tween.chain().tween_callback(queue_free)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

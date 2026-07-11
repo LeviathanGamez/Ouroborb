@@ -12,7 +12,3 @@ func _ready() -> void:
 	tween.parallel().tween_property(text_label,"position",Vector2(text_label.global_position.x,text_label.global_position.y-40),0.4)
 	
 	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

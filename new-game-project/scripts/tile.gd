@@ -34,8 +34,8 @@ func set_up_variables():
 	crit_value = tile_value * GlobalGameManager.player_crit_mult * GlobalGameManager.global_click_crit_power
 	power = power * GlobalGameManager.global_click_mult
 	crit_power = crit_power * GlobalGameManager.global_click_mult
-	tile_value = tile_value * GlobalGameManager.global_click_worth
-	crit_value = crit_value * GlobalGameManager.global_click_worth
+	tile_value = int(round(tile_value * GlobalGameManager.global_click_worth * GlobalGameManager.global_money_mult))
+	crit_value = int(round(crit_value * GlobalGameManager.global_click_worth * GlobalGameManager.global_money_mult))
 
 	
 func _on_button_pressed() -> void:

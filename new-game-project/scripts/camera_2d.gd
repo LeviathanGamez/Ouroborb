@@ -19,7 +19,7 @@ func _process(delta):
 	else:
 		zoom = lerp(zoom,Vector2(1,1),0.15)
 	
-func zoom_in(node):
+func zoom_in(_node):
 	#button_editor.reset_tween(self)
 	#tween.set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
 	#tween.tween_property(self, "position", pos+Vector2(node.global_position.x-pos.x,node.global_position.y-pos.y).normalized()*2, 0.1)

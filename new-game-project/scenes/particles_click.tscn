@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cr7d3ha2v0mv0"]
+
+[ext_resource type="Texture2D" uid="uid://reswh1gnm66c" path="res://assets/sprites/entities/circle_sprite32.png" id="1_6e84v"]
+[ext_resource type="Script" uid="uid://d1j70bu2inw88" path="res://scripts/particles_click.gd" id="1_jkp7j"]
+
+[sub_resource type="Curve" id="Curve_6e84v"]
+_limits = [0.0, 1.2, 0.0, 1.0]
+_data = [Vector2(0.022900753, 0.12321663), 0.0, 0.0, 0, 0, Vector2(0.5394402, 0.34486097), 0.0, 0.0, 0, 0, Vector2(0.8320611, 0.22879374), 0.123554915, 0.123554915, 0, 0, Vector2(1, 0.13422012), -0.39823803, 0.0, 0, 0]
+point_count = 4
+
+[node name="particles_click" type="Node2D" unique_id=1604704871]
+z_index = 100
+script = ExtResource("1_jkp7j")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=789319377]
+z_index = 30
+emitting = false
+amount = 1
+texture = ExtResource("1_6e84v")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 60.0
+initial_velocity_max = 60.0
+scale_amount_curve = SubResource("Curve_6e84v")
+color = Color(1, 0.83137256, 0.3529412, 1)

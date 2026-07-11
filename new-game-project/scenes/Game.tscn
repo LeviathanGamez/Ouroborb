@@ -1781,6 +1781,7 @@ offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Upgrades Button" type="Button" parent="Buttons/Control2" unique_id=916570799]
+process_mode = 3
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 482.0
@@ -1931,9 +1932,11 @@ offset_left = -2.0
 offset_top = -244.0
 offset_right = 1335.0
 offset_bottom = 775.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_45i86")
 
 [node name="SkillTree" parent="UI" unique_id=1918904098 instance=ExtResource("19_45i86")]
+visible = false
 layout_mode = 1
 offset_left = 0.0
 offset_top = 0.0
@@ -1953,6 +1956,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=760016774]
 environment = SubResource("Environment_2rd6h")
+
+[node name="Particles" type="Node" parent="." unique_id=864063998]
 
 [connection signal="mouse_entered" from="Buttons/Control/Add Ball Button" to="Buttons/Control/Add Ball Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Control/Add Ball Button" to="Buttons/Control/Add Ball Button" method="_on_mouse_exited"]

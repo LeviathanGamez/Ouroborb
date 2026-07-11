@@ -16,6 +16,8 @@ var lvl_4 = preload("res://resources/ball_level/level_4.tres")
 var lvl_5 = preload("res://resources/ball_level/level_5.tres")
 var levels = [lvl_1,lvl_2,lvl_3,lvl_4,lvl_5]
 
+var particle_click = preload("res://scenes/particles_click.tscn")
+
 var do_we_break = false
 var balls
 
@@ -50,9 +52,20 @@ func _on_pressed() -> void:
 				break
 		if do_we_break:
 			break
+	if do_we_break:
+		for i in range(0,GlobalGameManager.amount):
+			var particle_a = particle_click.instantiate()
+			particle_a.rotation  =  (i * GlobalGameManager.angle)
+			particle_a.get_node("CPUParticles2D").emitting = true
+			particle_a.global_position = get_global_mouse_position()
+			get_tree().current_scene.get_node("Particles").add_child(particle_a)
+		
 	
 	do_we_break = false
 	camera.zoom_in(self)
+	
+	
+
 
 
 

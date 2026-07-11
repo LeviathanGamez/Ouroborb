@@ -9,12 +9,16 @@ class_name Skill_Node
 @onready var text_label = $Tooltip/PanelContainer/RichTextLabel
 @onready var line_2d: Line2D = $Line2D
 
+
+	
 @export var stats: upgrade_stats
 @export var max_level = 5
 @export var price := 10
 var original_price
 
+var particle_click = preload("res://scenes/particles_click.tscn")
 var button_editor = preload("res://scripts/tweens.gd")
+
 var tween = create_tween()
 var tween_2 = create_tween()
 var tween_3 = create_tween()
@@ -93,8 +97,8 @@ func _on_pressed() -> void:
 		for skill in skills:
 			if skill is Skill_Node and level == 1:
 				skill.disabled = false
-				tween_4.parallel().tween_property(skill, "modulate:a", 1.0, 0.9)
-				tween_4.parallel().tween_property(skill.get_node("Line2D"), "modulate:a", 1.0, 0.9)
+				tween_4.parallel().tween_property(skill, "modulate:a", 1.0, 0.5)
+				tween_4.parallel().tween_property(skill.get_node("Line2D"), "modulate:a", 1.0, 0.5)
 		
 		GlobalGameManager.print_stats()
 		var colliders = get_tree().get_nodes_in_group("Colliders")
@@ -103,9 +107,15 @@ func _on_pressed() -> void:
 			ball.set_up_variables()
 		for collider in colliders:
 			collider.set_up_variables()
-			
 	
-		
+	
+	for i in range(0,GlobalGameManager.amount):
+		var particle_a = particle_click.instantiate()
+		particle_a.rotation  =  (i * GlobalGameManager.angle)
+		particle_a.get_node("CPUParticles2D").emitting = true
+		particle_a.global_position = get_global_mouse_position()
+		get_tree().current_scene.get_node("Particles").add_child(particle_a)
+	
 
 func update_text():
 	if level != max_level:
@@ -133,6 +143,7 @@ func check_prices():
 		price_increment = [1.5,2,2.5,3,4,5,7.5,8,10]
 	else:
 		price_increment = [1.5,2,3,5,10]
+		
 func _on_mouse_entered() -> void:
 	reset_tween()
 	if tween_3:

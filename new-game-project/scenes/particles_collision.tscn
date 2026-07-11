@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://wf45m56e0wcp"]
 
+[ext_resource type="Script" uid="uid://cxrsm36wd38mj" path="res://scenes/particles_collision.gd" id="1_cef6e"]
 [ext_resource type="Texture2D" uid="uid://reswh1gnm66c" path="res://assets/sprites/entities/circle_sprite32.png" id="1_try7o"]
 
 [sub_resource type="Curve" id="Curve_cef6e"]
@@ -7,12 +8,14 @@ _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.24664877, 0.31999153), 0.0, 0.
 point_count = 4
 
 [node name="particles_collision" type="Node2D" unique_id=1459307242]
+script = ExtResource("1_cef6e")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1997107781]
 emitting = false
 amount = 9
 texture = ExtResource("1_try7o")
 lifetime = 0.14
+one_shot = true
 explosiveness = 0.87
 randomness = 0.16
 lifetime_randomness = 0.03

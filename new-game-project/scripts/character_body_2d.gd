@@ -6,7 +6,6 @@ extends CharacterBody2D
 @onready var sprite = $Sprite2D
 @export var stats: level_stats
 
-@onready var money_text_node = $Money_texts
 var money_text = preload("res://scenes/money.tscn")
 
 var speed 
@@ -86,7 +85,7 @@ func _physics_process(_delta: float) -> void:
 			audio_player.pitch_scale= randf_range(0.9,1.25)
 			audio_player.play()
 			
-		spawn_particles(collision)
+		#spawn_particles(collision)
 	
 		
 		
@@ -106,8 +105,8 @@ func set_up_variables():
 	crit_value = int(round(value*GlobalGameManager.ball_crit_mult*GlobalGameManager.global_ball_crit_power))
 	power = power * GlobalGameManager.global_ball_mult
 	crit_power = crit_power * GlobalGameManager.global_ball_mult
-	value = value * GlobalGameManager.global_ball_worth
-	crit_value = crit_value * GlobalGameManager.global_ball_worth
+	value = value * GlobalGameManager.global_ball_worth * GlobalGameManager.global_money_mult
+	crit_value = crit_value * GlobalGameManager.global_ball_worth * GlobalGameManager.global_money_mult
 
 	god_mode_check()
 	scale = Vector2(sizes,sizes)

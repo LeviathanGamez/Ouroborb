@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://1pdni3ti07d1"]
 
+[ext_resource type="Script" uid="uid://c8m7iu1w0v2e8" path="res://scenes/particles.gd" id="1_kqrua"]
 [ext_resource type="Texture2D" uid="uid://reswh1gnm66c" path="res://assets/sprites/entities/circle_sprite32.png" id="1_xmlf0"]
 
 [sub_resource type="Curve" id="Curve_kqrua"]
@@ -8,6 +9,7 @@ _data = [Vector2(0.008720934, 0.9053986), 0.0, 0.0, 0, 0, Vector2(0.31976745, 1.
 point_count = 3
 
 [node name="particles" type="Node2D" unique_id=1832845269]
+script = ExtResource("1_kqrua")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=2110060343]
 emitting = false
