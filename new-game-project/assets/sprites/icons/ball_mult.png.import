@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diwo4t2i2spt5"
-path="res://.godot/imported/click.png-3bc09311324584936dd341658aafe498.ctex"
+uid="uid://dqc5wcpnmtac2"
+path="res://.godot/imported/ball_mult.png-bd222dd07af00ff7071379a5660e267d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/icons/click.png"
-dest_files=["res://.godot/imported/click.png-3bc09311324584936dd341658aafe498.ctex"]
+source_file="res://assets/sprites/icons/ball_mult.png"
+dest_files=["res://.godot/imported/ball_mult.png-bd222dd07af00ff7071379a5660e267d.ctex"]
 
 [params]
 

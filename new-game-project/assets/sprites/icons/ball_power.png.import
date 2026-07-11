@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b78mi1kry7fem"
-path="res://.godot/imported/crit.png-e2a31cd92410ad668d653cd24d9e80a3.ctex"
+uid="uid://b4vysac8y08tb"
+path="res://.godot/imported/ball_power.png-7b4d15712c0b2341799a44444e2f9220.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/icons/crit.png"
-dest_files=["res://.godot/imported/crit.png-e2a31cd92410ad668d653cd24d9e80a3.ctex"]
+source_file="res://assets/sprites/icons/ball_power.png"
+dest_files=["res://.godot/imported/ball_power.png-7b4d15712c0b2341799a44444e2f9220.ctex"]
 
 [params]
 

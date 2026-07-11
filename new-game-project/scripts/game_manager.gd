@@ -29,7 +29,7 @@ func _input(event):
 	if event.is_action_pressed("DEBUG"):
 		print("Requested with DEBUG")
 		GlobalGameManager.print_stats()
-	elif event.is_action_pressed("SPACE"):
+	elif event.is_action_pressed("UPGRADE"):
 		GlobalGameManager.toggle_pause(UI)
 		
 		 

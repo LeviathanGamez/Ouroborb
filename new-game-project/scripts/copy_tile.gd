@@ -9,7 +9,7 @@ func _ready() -> void:
 	modulate.a = 0.9
 	button_editor.reset_tween(self)
 	tween.tween_property(self, "scale", Vector2(1.3,1.3), 0.09)
-	tween.tween_property(self, "modulate:a", 0.0, 0.1)
+	tween.tween_property(self, "modulate:a", 0.0, 0.09)
 
 	tween.chain().tween_callback(queue_free)
 

@@ -6,7 +6,6 @@ extends Node2D
 @onready var sprite = $Sprite2D
 @onready var audio_player = $AudioStreamPlayer2D
 @onready var audio_player2 = $AudioStreamPlayer2D2
-@onready var money_text_node = $Money_texts
 
 var money_text = preload("res://scenes/money.tscn")
 var copy_tile = preload("res://scenes/copy_tile.tscn")
@@ -28,13 +27,16 @@ func _process(_delta: float) -> void:
 
 
 func set_up_variables():
-	
 	crit = GlobalGameManager.player_crit + GlobalGameManager.global_click_crit
 	power = int(round(GlobalGameManager.player_strength + GlobalGameManager.global_click_power))
 	crit_power = power * GlobalGameManager.player_crit_mult * GlobalGameManager.global_click_crit_power
 	tile_value = int(round(GlobalGameManager.player_value + GlobalGameManager.global_tile_worth))
 	crit_value = tile_value * GlobalGameManager.player_crit_mult * GlobalGameManager.global_click_crit_power
-	
+	power = power * GlobalGameManager.global_click_mult
+	crit_power = crit_power * GlobalGameManager.global_click_mult
+	tile_value = tile_value * GlobalGameManager.global_click_worth
+	crit_value = crit_value * GlobalGameManager.global_click_worth
+
 	
 func _on_button_pressed() -> void:
 	if randf() < crit:

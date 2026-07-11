@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://b4f1y5u1r0teu"]
 
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://assets/sprites/entities/icon.svg" id="1_isks0"]
 [ext_resource type="Script" uid="uid://p5cvhhfqky0u" path="res://scripts/skill_button.gd" id="2_0e4al"]
 [ext_resource type="FontFile" uid="uid://u66y04ig1tku" path="res://assets/fonts/Jersey10-Regular copy.ttf" id="3_o77qo"]
-[ext_resource type="Texture2D" uid="uid://diwo4t2i2spt5" path="res://assets/sprites/icons/click.png" id="4_0e4al"]
+[ext_resource type="Texture2D" uid="uid://diwo4t2i2spt5" path="res://assets/sprites/icons/click_power.png" id="4_0e4al"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o77qo"]
 bg_color = Color(0, 0, 0, 0.6509804)
@@ -26,31 +25,31 @@ expand_margin_bottom = 4.0
 [node name="SkillButton" type="TextureButton" unique_id=1750277939]
 process_mode = 3
 z_index = 5
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 49.0
+offset_bottom = 47.0
 pivot_offset = Vector2(20, 20)
 toggle_mode = true
-texture_normal = ExtResource("1_isks0")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("2_0e4al")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1244755294]
-position = Vector2(20.5, 20)
-scale = Vector2(2.5, 2.5)
+position = Vector2(24, 24)
+scale = Vector2(3, 3)
 texture = ExtResource("4_0e4al")
 
 [node name="Panel" type="Panel" parent="." unique_id=2145487515]
 layout_mode = 0
-offset_right = 41.0
-offset_bottom = 40.0
+offset_right = 48.0
+offset_bottom = 48.0
 pivot_offset = Vector2(20.5, 20.5)
 mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=847183624]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 49.0
+offset_bottom = 48.0
+theme_override_constants/margin_bottom = -2
 
 [node name="Label" type="Label" parent="MarginContainer" unique_id=1213328866]
 layout_mode = 2
@@ -63,7 +62,8 @@ vertical_alignment = 2
 
 [node name="Line2D" type="Line2D" parent="." unique_id=2101919367]
 top_level = true
-z_index = 3
+z_index = 11
+z_as_relative = false
 width = 5.0
 default_color = Color(0.21050721, 0.21050721, 0.21050721, 1)
 
@@ -71,6 +71,7 @@ default_color = Color(0.21050721, 0.21050721, 0.21050721, 1)
 
 [node name="Tooltip" type="Panel" parent="." unique_id=293761757]
 process_mode = 3
+visible = false
 z_index = 12
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 0
@@ -82,6 +83,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_o77qo")
 
 [node name="PanelContainer" type="PanelContainer" parent="Tooltip" unique_id=563886997]
 process_mode = 3
+visible = false
 z_index = 13
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 0
@@ -90,6 +92,7 @@ offset_bottom = 80.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Tooltip/PanelContainer" unique_id=469439067]
 process_mode = 3
+visible = false
 z_index = 14
 layout_mode = 2
 mouse_filter = 2

@@ -10,6 +10,7 @@ mouse_filter = 2
 script = ExtResource("1_dia0j")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=2132473609]
+z_index = 50
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

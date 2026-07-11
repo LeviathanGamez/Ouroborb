@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="upgrade_stats" format=3 uid="uid://dah63cns7sq8x"]
 
 [ext_resource type="Script" uid="uid://dba467il347bl" path="res://resources/ball_upgrade/ball_upgrade.gd" id="1_tf515"]
-[ext_resource type="Texture2D" uid="uid://b4vysac8y08tb" path="res://assets/sprites/icons/power.png" id="2_12jbg"]
+[ext_resource type="Texture2D" uid="uid://b4vysac8y08tb" path="res://assets/sprites/icons/ball_power.png" id="2_12jbg"]
 
 [resource]
 script = ExtResource("1_tf515")
 value = 1.0
-text = "Increases power of ALL balls by 1 with each level"
+text = "Increases power of [wave amp=10 freq=4][color=orange]ALL[/color][/wave] balls by +1 with each level"
 texture = ExtResource("2_12jbg")
 metadata/_custom_type_script = "uid://dba467il347bl"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="upgrade_stats" format=3 uid="uid://dtp7y6tfxrxs2"]
+
+[ext_resource type="Script" uid="uid://dba467il347bl" path="res://resources/ball_upgrade/ball_upgrade.gd" id="1_fd4j4"]
+[ext_resource type="Texture2D" uid="uid://csd1a83munsjt" path="res://assets/sprites/icons/ball_worth.png" id="2_n8t0n"]
+
+[resource]
+script = ExtResource("1_fd4j4")
+stat = 13
+value = 1.0
+text = "Multiplies [wave amp=10 freq=4][color=orange]ALL[/color][/wave] balls worth by +100%"
+texture = ExtResource("2_n8t0n")
+metadata/_custom_type_script = "uid://dba467il347bl"

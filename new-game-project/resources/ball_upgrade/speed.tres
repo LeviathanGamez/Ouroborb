@@ -7,6 +7,6 @@
 script = ExtResource("1_u341p")
 stat = 1
 value = 0.2
-text = "Increases ALL ball speed by 20%"
+text = "Increases [wave amp=10 freq=4][color=orange]ALL[/color][/wave] ball speed by +20%"
 texture = ExtResource("2_1ppd1")
 metadata/_custom_type_script = "uid://dba467il347bl"

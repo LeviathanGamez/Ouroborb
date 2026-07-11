@@ -24,7 +24,10 @@ var global_ball_power = 0 # + 1 each _
 var global_ball_crit = 0 # + 5% each _
 var global_ball_crit_power = 1 # + 20% each _
 
-
+var global_ball_mult = 1 # +100% each
+var global_click_mult = 1 # +100% each
+var global_ball_worth = 1 # +100% each
+var global_click_worth = 1 # +100% each
 
 var global_click_power = 0 # + 1 each
 var global_click_crit = 0 # + 5% each
@@ -49,13 +52,15 @@ func add_count(value:int):
 		money += value * global_money_mult
 	else:
 		money += value
+	money = int(round(money))
 	if label != null:
 		label.activate_tweens()
 
 func toggle_pause(UI):
 	paused = !paused
-	UI.visible = paused
+	
 	UI.get_node("Panel").visible = paused
+	UI.visible = paused
 	await get_tree().process_frame
 	#get_tree().paused = paused
 	#for child in UI.get_node("SkillTree").get_children()[0].get_children():
@@ -74,4 +79,7 @@ func print_stats():
 	print("Click Crit Power: x", global_click_crit_power,"%") # +20% each
 	print("Tile Worth: +", global_tile_worth) # +1 each
 	print("Rare Tiles: x", global_rare_tiles, "%") # +5% chance each
-	
+	print("Ball Mult: x", global_ball_mult, "%")
+	print("Ball Worth x", global_ball_worth, "%")
+	print("Click Mult: x", global_click_mult, "%")
+	print("Click Worth x", global_click_worth, "%")

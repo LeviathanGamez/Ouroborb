@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cr7d3ha2v0mv0"]
+
+[ext_resource type="Texture2D" uid="uid://reswh1gnm66c" path="res://assets/sprites/entities/circle_sprite32.png" id="1_6e84v"]
+
+[node name="Node2D" type="Node2D" unique_id=1604704871]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=789319377]
+texture = ExtResource("1_6e84v")

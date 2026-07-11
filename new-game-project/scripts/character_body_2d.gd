@@ -24,6 +24,9 @@ var tween = create_tween()
 var particle_scene = preload("res://scenes/particles.tscn")
 var particle
 
+var particle_scene2 = preload("res://scenes/particles_collision.tscn")
+var particle2
+
 func _ready():
 	add_to_group("balls")
 	velocity = Vector2(randf_range(-1,1),randf_range(-1,1))
@@ -82,6 +85,8 @@ func _physics_process(_delta: float) -> void:
 		else:
 			audio_player.pitch_scale= randf_range(0.9,1.25)
 			audio_player.play()
+			
+		spawn_particles(collision)
 	
 		
 		
@@ -99,7 +104,11 @@ func set_up_variables():
 	value = int(round(stats.value + GlobalGameManager.global_tile_worth))
 	crit_power = power*GlobalGameManager.ball_crit_mult*GlobalGameManager.global_ball_crit_power
 	crit_value = int(round(value*GlobalGameManager.ball_crit_mult*GlobalGameManager.global_ball_crit_power))
-	
+	power = power * GlobalGameManager.global_ball_mult
+	crit_power = crit_power * GlobalGameManager.global_ball_mult
+	value = value * GlobalGameManager.global_ball_worth
+	crit_value = crit_value * GlobalGameManager.global_ball_worth
+
 	god_mode_check()
 	scale = Vector2(sizes,sizes)
 	color = stats.color
@@ -108,12 +117,13 @@ func set_up_variables():
 	sprite.texture = stats.texture
 	
 func spawn_particles(collision):
-	particle = particle_scene.instantiate()
-	add_child(particle)
-	particle.global_position = collision.get_position()
-	var particle_a = particle.get_node("CPUParticles2D")
+	particle2 = particle_scene2.instantiate()
+	add_child(particle2)
+	particle2.global_position = collision.get_position()
+	var particle_a = particle2.get_node("CPUParticles2D")
 	particle_a.restart()
 	particle_a.emitting = true
-	particle_a.rotation = collision.get_normal().angle() + PI / 2
+	particle_a.one_shot = true
+	particle_a.rotation = collision.get_normal().angle() 
 	
 							

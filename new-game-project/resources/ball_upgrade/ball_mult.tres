@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="upgrade_stats" format=3 uid="uid://cdt56xoj8q7mw"]
+
+[ext_resource type="Script" uid="uid://dba467il347bl" path="res://resources/ball_upgrade/ball_upgrade.gd" id="1_ao3h2"]
+[ext_resource type="Texture2D" uid="uid://dqc5wcpnmtac2" path="res://assets/sprites/icons/ball_mult.png" id="2_r28be"]
+
+[resource]
+script = ExtResource("1_ao3h2")
+stat = 11
+value = 1.0
+text = "Multiplies [wave amp=10 freq=4][color=orange]ALL[/color][/wave] Ball Power by +100% with each level"
+texture = ExtResource("2_r28be")
+metadata/_custom_type_script = "uid://dba467il347bl"
