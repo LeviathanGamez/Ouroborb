@@ -54,6 +54,7 @@ func _on_button_pressed() -> void:
 		var money_a = money_text.instantiate()
 		get_tree().current_scene.get_node("Money_texts").add_child(money_a)
 		money_a.global_position = global_position
+		crit_value = int(round(crit_value))
 		money_a.get_node("RichTextLabel").text = "+"+str(crit_value)+"$"
 		if value <= 0:
 			var sound = audio_player2.duplicate()
@@ -75,6 +76,7 @@ func _on_button_pressed() -> void:
 		var money_a = money_text.instantiate()
 		get_tree().current_scene.get_node("Money_texts").add_child(money_a)
 		money_a.global_position = global_position
+		tile_value = int(round(tile_value))
 		money_a.get_node("RichTextLabel").text = "+"+str(tile_value)+"$"
 		if value <= 0:
 			var sound = audio_player.duplicate()
