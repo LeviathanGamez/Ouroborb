@@ -17,7 +17,7 @@ var angle = TAU/amount
 
 var player_strength = 1
 var player_value = 5
-var player_crit = 0.02 
+var player_crit = 0.0
 var ball_crit_mult = 2
 var player_crit_mult = 2
 
@@ -65,7 +65,8 @@ func add_count(value:int):
 func toggle_pause(UI):
 	paused = !paused
 	
-	UI.get_node("Panel").visible = paused
+	for child in UI.get_children():
+		child.visible = paused
 	UI.visible = paused
 	await get_tree().process_frame
 	#get_tree().paused = paused
@@ -99,3 +100,5 @@ func print_stats():
 	print("Ball Mult: x", global_ball_mult, "%")
 	print("Steel: x", global_steel_ball, "%") # +20% each
 	print("Tough: x", global_steel_ball, "%") # +20% each
+	
+	

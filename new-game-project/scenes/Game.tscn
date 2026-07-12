@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://tkoxng5vanfx" path="res://scripts/game_manager.gd" id="1_2rd6h"]
 [ext_resource type="Texture2D" uid="uid://bxuj7f7e5bxon" path="res://assets/sprites/backgrounds/Plate.png" id="1_ibkli"]
 [ext_resource type="Texture2D" uid="uid://dnje3ounq5pto" path="res://assets/sprites/backgrounds/Wavey.png" id="2_qbsmt"]
-[ext_resource type="PackedScene" uid="uid://nbe0h6w1owvy" path="res://scenes/ball.tscn" id="3_cpr0p"]
 [ext_resource type="PackedScene" uid="uid://cjhgm3dsqu1t8" path="res://scenes/diamond.tscn" id="4_78awf"]
 [ext_resource type="Script" uid="uid://bahj6xho3rkyi" path="res://scripts/camera_2d.gd" id="4_kyk2p"]
 [ext_resource type="PackedScene" uid="uid://bnrn5t3u5jkwv" path="res://scenes/background.tscn" id="5_s0nni"]
@@ -19,13 +18,14 @@
 [ext_resource type="Script" uid="uid://m4vftukk0twr" path="res://scripts/upgrades_button.gd" id="15_y5y3l"]
 [ext_resource type="Script" uid="uid://p5vfvm7xbq4l" path="res://scripts/label.gd" id="17_vjgi4"]
 [ext_resource type="PackedScene" uid="uid://c6womp3aicfjq" path="res://scenes/skill_tree.tscn" id="19_45i86"]
+[ext_resource type="Script" uid="uid://byy5fyf3wdfaa" path="res://scripts/xbutton.gd" id="19_sv1m6"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dvvg"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45i86"]
 texture = ExtResource("1_ibkli")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cpr0p"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sv1m6"]
 texture = ExtResource("2_qbsmt")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -34,10 +34,10 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_rnjyy"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_4dvvg")
-sources/1 = SubResource("TileSetAtlasSource_cpr0p")
+sources/0 = SubResource("TileSetAtlasSource_45i86")
+sources/1 = SubResource("TileSetAtlasSource_sv1m6")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qy1jj"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8wo8"]
 texture = ExtResource("6_qy1jj")
 0:0/0 = 0
 1:0/0 = 0
@@ -360,7 +360,7 @@ texture = ExtResource("6_qy1jj")
 18:15/0 = 0
 19:15/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3xj3m"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_attvq"]
 texture = ExtResource("7_3xj3m")
 0:0/0 = 0
 1:0/0 = 0
@@ -683,7 +683,7 @@ texture = ExtResource("7_3xj3m")
 18:15/0 = 0
 19:15/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mcffj"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bneo8"]
 texture = ExtResource("8_mcffj")
 0:0/0 = 0
 1:0/0 = 0
@@ -1006,7 +1006,7 @@ texture = ExtResource("8_mcffj")
 18:15/0 = 0
 19:15/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2rd6h"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ocgqw"]
 texture = ExtResource("9_2rd6h")
 0:0/0 = 0
 1:0/0 = 0
@@ -1329,7 +1329,7 @@ texture = ExtResource("9_2rd6h")
 18:15/0 = 0
 19:15/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ua8r"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbgew"]
 texture = ExtResource("10_7ua8r")
 0:0/0 = 0
 1:0/0 = 0
@@ -1653,11 +1653,11 @@ texture = ExtResource("10_7ua8r")
 19:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_sv1m6"]
-sources/0 = SubResource("TileSetAtlasSource_qy1jj")
-sources/1 = SubResource("TileSetAtlasSource_3xj3m")
-sources/2 = SubResource("TileSetAtlasSource_mcffj")
-sources/3 = SubResource("TileSetAtlasSource_2rd6h")
-sources/4 = SubResource("TileSetAtlasSource_7ua8r")
+sources/0 = SubResource("TileSetAtlasSource_a8wo8")
+sources/1 = SubResource("TileSetAtlasSource_attvq")
+sources/2 = SubResource("TileSetAtlasSource_bneo8")
+sources/3 = SubResource("TileSetAtlasSource_ocgqw")
+sources/4 = SubResource("TileSetAtlasSource_jbgew")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45i86"]
 bg_color = Color(0, 0, 0, 0.6509804)
@@ -1704,9 +1704,6 @@ position = Vector2(-50, -106)
 position = Vector2(-5, -106)
 
 [node name="Balls" type="Node" parent="." unique_id=1168818358]
-
-[node name="CharacterBody2D" parent="Balls" unique_id=1353462381 instance=ExtResource("3_cpr0p")]
-position = Vector2(500, 480)
 
 [node name="Tiles" type="Node" parent="." unique_id=744906130]
 
@@ -1943,6 +1940,48 @@ offset_top = 0.0
 offset_right = 183.23999
 offset_bottom = 180.0
 
+[node name="XButton" type="Control" parent="UI" unique_id=1876721426]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="xbutton" type="Button" parent="UI/XButton" unique_id=436596952]
+process_mode = 3
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1070.0
+offset_top = 47.0
+offset_right = 1134.0
+offset_bottom = 111.0
+script = ExtResource("19_sv1m6")
+
+[node name="Price" type="Label" parent="UI/XButton/xbutton" unique_id=472275769]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -16.719
+anchor_top = -0.734
+anchor_right = -16.719
+anchor_bottom = -0.734
+offset_left = 1071.016
+offset_top = 48.976
+offset_right = 1133.016
+offset_bottom = 113.976
+theme_override_colors/font_color = Color(0.8636066, 0.28491607, 0.3585585, 1)
+theme_override_fonts/font = ExtResource("11_3xj3m")
+theme_override_font_sizes/font_size = 39
+text = " ✖ "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonTileMap2" type="TileMap" parent="UI/XButton" unique_id=933129925]
+position = Vector2(-482, -593)
+tile_set = SubResource("TileSet_sv1m6")
+format = 2
+layer_0/tile_data = PackedInt32Array(2621537, 1048580, 4, 2687073, 1048580, 5, 2752609, 1048580, 5, 2818145, 1048580, 7, 2621538, 1114116, 4, 2687074, 1114116, 6, 2752610, 1114116, 6, 2818146, 1114116, 7, 2621539, 1114116, 4, 2687075, 1114116, 6, 2752611, 1114116, 6, 2818147, 1179652, 7, 2621540, 1245188, 4, 2687076, 1245188, 5, 2752612, 1245188, 5, 2818148, 1245188, 7)
+
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2018287326]
 z_index = -1
 offset_left = 119.0
@@ -1968,3 +2007,4 @@ environment = SubResource("Environment_2rd6h")
 [connection signal="mouse_entered" from="Buttons/Control3/Merge Button" to="Buttons/Control3/Merge Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Control3/Merge Button" to="Buttons/Control3/Merge Button" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons/Control3/Merge Button" to="Buttons/Control3/Merge Button" method="_on_pressed"]
+[connection signal="pressed" from="UI/XButton/xbutton" to="UI/XButton/xbutton" method="_on_pressed"]

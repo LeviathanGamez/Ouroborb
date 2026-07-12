@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1pdni3ti07d1"]
 
-[ext_resource type="Script" uid="uid://c8m7iu1w0v2e8" path="res://scenes/particles.gd" id="1_kqrua"]
+[ext_resource type="Script" uid="uid://c8m7iu1w0v2e8" path="res://scripts/particles.gd" id="1_kqrua"]
 [ext_resource type="Texture2D" uid="uid://reswh1gnm66c" path="res://assets/sprites/entities/circle_sprite32.png" id="1_xmlf0"]
 
 [sub_resource type="Curve" id="Curve_kqrua"]
