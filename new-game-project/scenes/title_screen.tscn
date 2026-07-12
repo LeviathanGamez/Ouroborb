@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://drtpb7m6oukg0" path="res://assets/sprites/backgrounds/04 Border 01.png" id="5_mykxm"]
 [ext_resource type="Texture2D" uid="uid://itrfnim8i7c3" path="res://assets/sprites/backgrounds/15 Border 01.png" id="6_tklts"]
 [ext_resource type="Texture2D" uid="uid://bxuj7f7e5bxon" path="res://assets/sprites/backgrounds/Plate.png" id="8_mykxm"]
-[ext_resource type="Script" uid="uid://dtekuloi25m87" path="res://scenes/options_button.gd" id="9_ib7db"]
+[ext_resource type="Script" uid="uid://dtekuloi25m87" path="res://scripts/options_button.gd" id="9_ib7db"]
 [ext_resource type="Texture2D" uid="uid://dnje3ounq5pto" path="res://assets/sprites/backgrounds/Wavey.png" id="9_tklts"]
-[ext_resource type="Script" uid="uid://drrq84xs5pt1t" path="res://scenes/quit_button.gd" id="9_u26n3"]
+[ext_resource type="Script" uid="uid://drrq84xs5pt1t" path="res://scripts/quit_button.gd" id="9_u26n3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sa3yf"]
 bg_color = Color(0.31995818, 0.5960036, 1, 1)

@@ -1,5 +1,5 @@
-
 extends ButtonFX
+
 var diamond_shader = preload("res://scenes/diamond_shader.tscn")
 
 func _on_pressed() -> void:
@@ -18,5 +18,4 @@ func _on_pressed() -> void:
 	await tween.finished
 	
 	await get_tree().create_timer(0.2).timeout
-	get_tree().change_scene_to_file("res://scenes/Game.tscn") # Replace with function body.
-	
+	get_tree().quit()

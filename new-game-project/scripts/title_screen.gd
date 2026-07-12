@@ -1,5 +1,6 @@
 extends Control
 
+
 var colors = [Color.html("#ff306c"), Color.html("#ffe74c"),Color.html("#48ff00"),
 			Color.html("#179c43"), Color.html("#ffa200"),Color.html("#31d4e0"),
 			Color.html("#1629f7"),Color.html("#8e1cc7"),Color.html("#f018f0"),
