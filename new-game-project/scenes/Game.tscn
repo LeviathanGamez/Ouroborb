@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://tkoxng5vanfx" path="res://scripts/game_manager.gd" id="1_2rd6h"]
 [ext_resource type="Texture2D" uid="uid://bxuj7f7e5bxon" path="res://assets/sprites/backgrounds/Plate.png" id="1_ibkli"]
 [ext_resource type="Texture2D" uid="uid://dnje3ounq5pto" path="res://assets/sprites/backgrounds/Wavey.png" id="2_qbsmt"]
+[ext_resource type="PackedScene" uid="uid://nbe0h6w1owvy" path="res://scenes/ball.tscn" id="3_cpr0p"]
 [ext_resource type="PackedScene" uid="uid://cjhgm3dsqu1t8" path="res://scenes/diamond.tscn" id="4_78awf"]
 [ext_resource type="Script" uid="uid://bahj6xho3rkyi" path="res://scripts/camera_2d.gd" id="4_kyk2p"]
 [ext_resource type="PackedScene" uid="uid://bnrn5t3u5jkwv" path="res://scenes/background.tscn" id="5_s0nni"]
@@ -1704,6 +1705,9 @@ position = Vector2(-50, -106)
 position = Vector2(-5, -106)
 
 [node name="Balls" type="Node" parent="." unique_id=1168818358]
+
+[node name="ball" parent="Balls" unique_id=1090286496 instance=ExtResource("3_cpr0p")]
+position = Vector2(550, 450)
 
 [node name="Tiles" type="Node" parent="." unique_id=744906130]
 

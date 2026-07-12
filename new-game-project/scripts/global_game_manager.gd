@@ -17,7 +17,7 @@ var angle = TAU/amount
 
 var player_strength = 1
 var player_value = 5
-var player_crit = 0.0
+var player_crit = 0.05
 var ball_crit_mult = 2
 var player_crit_mult = 2
 

@@ -12,7 +12,7 @@ class_name Skill_Node
 
 	
 @export var stats: upgrade_stats
-var max_level = 5
+@export var max_level = 5
 @export var price := 10
 var original_price
 
@@ -24,11 +24,25 @@ var tween_2 = create_tween()
 var tween_3 = create_tween()
 var tween_4 = create_tween()
 
-var price_increment 
+enum GrowthType{
+	FAST,
+	MEDIUM,
+	SLOW,
+		
+}
+var price_list = {
+	GrowthType.FAST: [1.5,2,5,7,10] ,
+	GrowthType.MEDIUM: [1.5,2,3,5,10],
+	GrowthType.SLOW: [1.5,2,4,6,8]
+}
+var price_increment
+@export var price_type : GrowthType
+
 var current_price_increment = 0
 
 
 func _ready():
+	price_increment = price_list[price_type]
 	check_prices()
 	await get_tree().process_frame
 	tooltip.visible = true
@@ -62,7 +76,7 @@ var level := 0:
 		level = value
 		label.text = str(level) + "/" + str(max_level)
 		
-func _process(delta):
+func _process(_delta):
 	tooltip.global_position = get_global_mouse_position() + Vector2(-tooltip.size.x/2, size.y/2)
 	tooltip.size.y = panel_container.size.y
 	update_text()
@@ -144,8 +158,6 @@ func check_prices():
 	original_price = price
 	if max_level == 10:
 		price_increment = [1.5,2,2.5,3,4,5,7.5,8,10]
-	else:
-		price_increment = [1.5,2,3,5,10]
 		
 func _on_mouse_entered() -> void:
 	reset_tween()
