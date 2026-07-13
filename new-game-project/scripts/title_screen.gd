@@ -1,6 +1,6 @@
 extends Control
 
-
+@onready var balls_node = $Balls
 var colors = [Color.html("#ff306c"), Color.html("#ffe74c"),Color.html("#48ff00"),
 			Color.html("#179c43"), Color.html("#ffa200"),Color.html("#31d4e0"),
 			Color.html("#1629f7"),Color.html("#8e1cc7"),Color.html("#f018f0"),
@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 	var ball_a = title_ball.instantiate()
 	ball_a.global_position = Vector2(randi_range(40,1000),randf_range(60,600))
 	set_color(ball_a.get_node("Sprite2D"))
-	add_child(ball_a)
+	balls_node.add_child(ball_a)
 	balls.append(ball_a)
 	if balls.size() >= 250:
 		balls[0].queue_free()

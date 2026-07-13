@@ -8,7 +8,7 @@ var activated = false
 @onready var sfx_slider = $"../../Settings/SFX"
 var music = AudioServer.get_bus_index("Music")
 var sfx = AudioServer.get_bus_index("SFX")
-
+@onready var credit_button = $"../../Control4/Credit Button"
 @onready var start_button = $"../../Control/Start Button"
 @onready var quit_button = $"../../Control3/Quit Button"
 func _ready():
@@ -30,12 +30,14 @@ func _on_pressed() -> void:
 	for child in settings.get_children():
 		child.visible = true
 	disable_buttons(true)
+	credit_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	start_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	quit_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 func disable_buttons(activated):
 	disabled = activated
+	credit_button.disabled = activated
 	start_button.disabled = activated
 	quit_button.disabled = activated
 

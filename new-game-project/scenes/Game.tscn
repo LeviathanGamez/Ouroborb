@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://byy5fyf3wdfaa" path="res://scripts/xbutton.gd" id="19_sv1m6"]
 [ext_resource type="Script" uid="uid://d10pgp4yt8pk8" path="res://scripts/resume2.gd" id="21_attvq"]
 [ext_resource type="Script" uid="uid://bk2ptn0sbpbik" path="res://scripts/hamburger.gd" id="22_attvq"]
+[ext_resource type="Script" uid="uid://by3gou1pukssx" path="res://scripts/quit_to_menu.gd" id="22_bneo8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45i86"]
 texture = ExtResource("1_ibkli")
@@ -2008,21 +2009,22 @@ environment = SubResource("Environment_2rd6h")
 [node name="Particles" type="Node" parent="." unique_id=864063998]
 
 [node name="Settings" type="Control" parent="." unique_id=1197722622]
-visible = false
 z_index = 200
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 20.0
+offset_top = -100.0
+offset_right = 60.0
+offset_bottom = -60.0
 
 [node name="Panel" type="Panel" parent="Settings" unique_id=1264871814]
 z_index = 10
 z_as_relative = false
 layout_mode = 0
-offset_left = -91.0
-offset_top = -260.0
-offset_right = 1246.0
-offset_bottom = 759.0
+offset_left = -79.0
+offset_top = -90.0
+offset_right = 1258.0
+offset_bottom = 929.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jhsr3")
 
 [node name="Volume" type="HSlider" parent="Settings" unique_id=1801874725]
@@ -2103,9 +2105,9 @@ z_index = 201
 z_as_relative = false
 layout_mode = 0
 offset_left = 457.0
-offset_top = 539.0
+offset_top = 545.0
 offset_right = 669.0
-offset_bottom = 606.0
+offset_bottom = 612.0
 script = ExtResource("21_attvq")
 
 [node name="Label4" type="Label" parent="Settings/Resume" unique_id=1930462932]
@@ -2127,6 +2129,37 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("11_3xj3m")
 theme_override_font_sizes/font_size = 70
 text = "Resume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="Button" parent="Settings" unique_id=897218552]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 405.0
+offset_top = 652.0
+offset_right = 717.0
+offset_bottom = 731.0
+script = ExtResource("22_bneo8")
+
+[node name="Label4" type="Label" parent="Settings/Quit" unique_id=910432165]
+z_index = 14
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.5
+offset_top = -39.5
+offset_right = 178.5
+offset_bottom = 36.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_3xj3m")
+theme_override_font_sizes/font_size = 70
+text = "Quit to Menu"
 horizontal_alignment = 1
 vertical_alignment = 1
 

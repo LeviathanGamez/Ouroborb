@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://s2qjkinucuyr"]
+
+[ext_resource type="FontFile" uid="uid://u66y04ig1tku" path="res://assets/fonts/Jersey10-Regular copy.ttf" id="1_2fbfq"]
+[ext_resource type="Texture2D" uid="uid://drenx5tif8wnf" path="res://assets/credits/Screenshot 2026-07-13 at 12.48.12 PM.png" id="2_8gwij"]
+[ext_resource type="Texture2D" uid="uid://brd6pg71cauty" path="res://assets/credits/Screenshot 2026-07-13 at 12.50.06 PM.png" id="3_mah5v"]
+[ext_resource type="Texture2D" uid="uid://da0yae2uc1kdi" path="res://assets/credits/Screenshot 2026-07-13 at 12.56.57 PM.png" id="4_kyhnv"]
+[ext_resource type="Script" uid="uid://by3gou1pukssx" path="res://scripts/quit_to_menu.gd" id="5_8gwij"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yeqti"]
+bg_color = Color(0.31995818, 0.5960036, 1, 1)
+
+[node name="credits" type="Control" unique_id=477883365]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Panel" type="Panel" parent="." unique_id=881708209]
+z_index = -1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 725.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yeqti")
+
+[node name="Credits" type="RichTextLabel" parent="." unique_id=2012536307]
+z_index = 2
+layout_mode = 0
+offset_left = 1.0
+offset_top = -96.0
+offset_right = 1151.0
+offset_bottom = 304.0
+theme_override_fonts/normal_font = ExtResource("1_2fbfq")
+theme_override_font_sizes/normal_font_size = 140
+text = "Credits:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="." unique_id=1059444593]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Screenshot20260713At12_48_12Pm" type="Sprite2D" parent="Control" unique_id=54597176]
+position = Vector2(201, 302)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_8gwij")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control" unique_id=1674671535]
+z_index = 2
+layout_mode = 0
+offset_left = 30.0
+offset_top = 362.0
+offset_right = 1157.0
+offset_bottom = 754.0
+theme_override_fonts/normal_font = ExtResource("1_2fbfq")
+theme_override_font_sizes/normal_font_size = 40
+text = "Sprite: Border and Panels Menu Part 1
+Author: BDragon1727"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="." unique_id=1725975820]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Screenshot20260713At12_50_06Pm" type="Sprite2D" parent="Control2" unique_id=1381208426]
+position = Vector2(1001.00006, 590)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_mah5v")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control2" unique_id=29365995]
+z_index = 2
+layout_mode = 0
+offset_left = 12.0
+offset_top = 57.0
+offset_right = 1139.0
+offset_bottom = 449.0
+theme_override_fonts/normal_font = ExtResource("1_2fbfq")
+theme_override_font_sizes/normal_font_size = 40
+text = "Sprite: Ability Icons 16x16
+Author: jfranciPX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="." unique_id=1419552771]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control3" unique_id=301706070]
+z_index = 2
+layout_mode = 0
+offset_left = 11.0
+offset_top = 203.0
+offset_right = 1138.0
+offset_bottom = 595.0
+theme_override_fonts/normal_font = ExtResource("1_2fbfq")
+theme_override_font_sizes/normal_font_size = 40
+text = "Music: Chill
+Author: alex-morgan"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Screenshot20260713At12_56_57Pm" type="Sprite2D" parent="Control3" unique_id=539819893]
+position = Vector2(838, 402)
+texture = ExtResource("4_kyhnv")
+
+[node name="Quit" type="Button" parent="." unique_id=1640095485]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 396.0
+offset_top = 632.0
+offset_right = 727.0
+offset_bottom = 692.0
+script = ExtResource("5_8gwij")
+
+[node name="Label4" type="Label" parent="Quit" unique_id=1516263697]
+z_index = 14
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -42.0
+offset_right = 176.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_2fbfq")
+theme_override_font_sizes/font_size = 70
+text = "Quit to Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Particles" type="Node" parent="." unique_id=433227930]
