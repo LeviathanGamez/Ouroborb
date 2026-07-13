@@ -56,7 +56,7 @@ func _on_button_pressed() -> void:
 		sprite.material.set_shader_parameter("Tint", Color.html("EFBF04"))
 		audio_player2.pitch_scale = randf_range(0.9,1.25)
 		audio_player2.play()
-		##money animation
+		#money animation
 		var money_a = money_text.instantiate()
 		get_tree().current_scene.get_node("Money_texts").add_child(money_a)
 		money_a.global_position = global_position

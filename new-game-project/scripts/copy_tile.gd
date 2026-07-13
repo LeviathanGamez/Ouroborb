@@ -3,7 +3,7 @@ extends Node2D
 var tween =  create_tween().set_parallel()
 var button_editor = preload("res://scripts/tweens.gd")
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	scale = Vector2(1.1,1.1)
 	modulate.a = 0.9

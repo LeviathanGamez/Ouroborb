@@ -94,7 +94,7 @@ func _on_pressed() -> void:
 			GlobalGameManager.get(stats.stat_map[stats.stat]) + stats.value)
 			
 		
-		level = min(level+1,max_level) # Replace with function body.
+		level = min(level+1,max_level) 
 		
 		if tween_2:
 			tween_2.kill()

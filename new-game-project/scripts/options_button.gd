@@ -43,12 +43,12 @@ func disable_buttons(activated):
 
 
 func _on_volume_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(0,linear_to_db(value/100)) # Replace with function body.
+	AudioServer.set_bus_volume_db(0,linear_to_db(value/100)) 
 
 
 func _on_music_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(music, linear_to_db(value / 100)) # Replace with function body.
+	AudioServer.set_bus_volume_db(music, linear_to_db(value / 100))
 
 
 func _on_sfx_value_changed(value: float) -> void:
-	AudioServer.set_bus_volume_db(sfx, linear_to_db(value / 100)) # Replace with function body.
+	AudioServer.set_bus_volume_db(sfx, linear_to_db(value / 100))

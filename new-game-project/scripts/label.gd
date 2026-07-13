@@ -5,7 +5,7 @@ var tween_dollar = create_tween()
 var pos 
 var button_editor = preload("res://scripts/tweens.gd")
 @onready var dollar = $"../DollarSign"
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	#princess treatment
 	GlobalGameManager.label = $"."
@@ -30,7 +30,7 @@ func activate_tweens():
 	tween_dollar.set_ease(Tween.EASE_OUT)
 	tween_dollar.tween_property(dollar, "position", pos-Vector2(0,10), 0.1)
 	tween_dollar.tween_property(dollar, "position", pos, 0.1).set_delay(0.05)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	pivot_offset = size / 2
 	var text_width = get_theme_default_font().get_string_size(

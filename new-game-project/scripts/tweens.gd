@@ -5,7 +5,7 @@ static func reset_tween(node)->void:
 	if node.tween:
 		node.tween.kill()
 	node.tween = node.create_tween()
-# Called when the node enters the scene tree for the first time.
+
 static func expand(node):
 	
 	reset_tween(node)

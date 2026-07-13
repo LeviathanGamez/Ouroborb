@@ -9,12 +9,10 @@ var colors = [Color.html("#ff306c"), Color.html("#ffe74c"),Color.html("#48ff00")
 var pickeable = colors.duplicate()
 var title_ball = preload("res://scenes/title_ball.tscn")
 var balls = []
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+
 func _process(_delta: float) -> void:
 	await get_tree().create_timer(0.67).timeout
 	var ball_a = title_ball.instantiate()
@@ -33,7 +31,3 @@ func set_color(sprite):
 				
 	if pickeable.size() == 0:
 		pickeable = colors.duplicate()
-
-
-func _on_options_button_button_up() -> void:
-	pass # Replace with function body.

@@ -36,7 +36,7 @@ func _input(event):
 
 func _on_area_2d_body_entered(body: Node2D):
 	if body.is_in_group("diamonds") and body.get_parent() != self:
-		can_be_placed = false  # Replace with function body.
+		can_be_placed = false  
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:

@@ -3,7 +3,7 @@ class_name ButtonFX
 var button_editor = preload("res://scripts/tweens.gd")
 var tween = create_tween()
 
-# Called when the node enters the scene tree for the first time.
+
 var particle_click = preload("res://scenes/particles_click.tscn")
 
 func _ready() -> void:
@@ -19,7 +19,7 @@ func _on_mouse_entered() -> void:
 
 
 func _on_mouse_exited() -> void:
-	button_editor.shrink(self)# Replace with function body.
+	button_editor.shrink(self)
 
 
 func _on_pressed() -> void:

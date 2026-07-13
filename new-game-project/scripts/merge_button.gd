@@ -74,4 +74,4 @@ func _on_mouse_entered() -> void:
 	
 
 func _on_mouse_exited() -> void:
-	button_editor.shrink(self)# Replace with function body.
+	button_editor.shrink(self)

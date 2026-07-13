@@ -3,7 +3,7 @@ extends Control
 var tween = create_tween()
 var button_editor = preload("res://scripts/tweens.gd")
 @onready var text_label = $RichTextLabel
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	
 	button_editor.reset_tween(self)
