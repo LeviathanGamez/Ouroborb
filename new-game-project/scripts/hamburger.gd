@@ -1,4 +1,6 @@
-extends ButtonFX
+extends Button
+
+
 
 @onready var settings = $"../../Settings"
 var activated = false
@@ -9,10 +11,10 @@ var activated = false
 var music = AudioServer.get_bus_index("Music")
 var sfx = AudioServer.get_bus_index("SFX")
 
-@onready var start_button = $"../../Control/Start Button"
-@onready var quit_button = $"../../Control3/Quit Button"
+@onready var add_ball = $"../../Buttons/Control/Add Ball Button"
+@onready var upgrades = $"../../Buttons/Control2/Upgrades Button"
+@onready var merge = $"../../Buttons/Control3/Merge Button"
 func _ready():
-	super._ready()
 
 	settings.visible = false
 	for child in settings.get_children():
@@ -25,19 +27,20 @@ func _ready():
 	disable_buttons(activated)
 	
 func _on_pressed() -> void:
-	super._on_pressed()
 	settings.visible = true
 	for child in settings.get_children():
 		child.visible = true
 	disable_buttons(true)
-	start_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_ball.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	quit_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	upgrades.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	merge.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 func disable_buttons(activated):
 	disabled = activated
-	start_button.disabled = activated
-	quit_button.disabled = activated
+	add_ball.disabled = activated
+	upgrades.disabled = activated
+	merge.disabled = activated
 
 
 func _on_volume_value_changed(value: float) -> void:

@@ -3,6 +3,7 @@ extends ButtonFX
 var diamond_shader = preload("res://scenes/diamond_shader.tscn")
 
 func _on_pressed() -> void:
+	super._on_pressed()
 	var shader_a = diamond_shader.instantiate()
 	get_tree().current_scene.add_child(shader_a)
 	shader_a.get_node("ColorRect").material.set_shader_parameter("progress", 0.0)

@@ -8,7 +8,7 @@ var infinite_money = false
 var screenshake = false
 var paused = false
 
-var money = 1000
+var money = 0
 var ball_price = 50
 var ball_price_increase = 50
 

@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://u66y04ig1tku" path="res://assets/fonts/Jersey10-Regular copy.ttf" id="1_fgkus"]
 [ext_resource type="Texture2D" uid="uid://dufafaxun2be5" path="res://assets/sprites/backgrounds/01 Border 01.png" id="2_e54dn"]
 [ext_resource type="Texture2D" uid="uid://bmdw06p3ot0kg" path="res://assets/sprites/backgrounds/02 Border 01.png" id="3_3yumr"]
+[ext_resource type="Script" uid="uid://dxflwsbalctuy" path="res://scripts/resume.gd" id="3_frs5l"]
 [ext_resource type="Script" uid="uid://byckpay0hppji" path="res://scripts/start_button.gd" id="3_u26n3"]
 [ext_resource type="Texture2D" uid="uid://gj15m2x1fft8" path="res://assets/sprites/backgrounds/03 Border 01.png" id="4_cs5ya"]
 [ext_resource type="Texture2D" uid="uid://drtpb7m6oukg0" path="res://assets/sprites/backgrounds/04 Border 01.png" id="5_mykxm"]
@@ -15,6 +16,9 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sa3yf"]
 bg_color = Color(0.31995818, 0.5960036, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ib7db"]
+bg_color = Color(0, 0, 0, 0.85490197)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u26n3"]
 texture = ExtResource("2_e54dn")
@@ -1683,6 +1687,128 @@ offset_right = 1152.0
 offset_bottom = 725.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_sa3yf")
 
+[node name="Settings" type="Control" parent="." unique_id=1352228228]
+visible = false
+z_index = 200
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Settings" unique_id=878973792]
+z_index = 10
+z_as_relative = false
+layout_mode = 0
+offset_left = -91.0
+offset_top = -260.0
+offset_right = 1246.0
+offset_bottom = 759.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ib7db")
+
+[node name="Volume" type="HSlider" parent="Settings" unique_id=998895243]
+z_index = 15
+z_as_relative = false
+layout_mode = 0
+offset_left = 397.0
+offset_top = 267.0
+offset_right = 714.0
+offset_bottom = 307.0
+
+[node name="Label" type="Label" parent="Settings" unique_id=1524702924]
+z_index = 14
+z_as_relative = false
+layout_mode = 0
+offset_left = 461.0
+offset_top = 191.0
+offset_right = 656.0
+offset_bottom = 267.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_fgkus")
+theme_override_font_sizes/font_size = 70
+text = "Volume:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="HSlider" parent="Settings" unique_id=590777854]
+z_index = 15
+z_as_relative = false
+layout_mode = 0
+offset_left = 397.0
+offset_top = 366.0
+offset_right = 714.0
+offset_bottom = 406.0
+
+[node name="Label2" type="Label" parent="Settings" unique_id=937319907]
+z_index = 14
+z_as_relative = false
+layout_mode = 0
+offset_left = 461.0
+offset_top = 301.0
+offset_right = 656.0
+offset_bottom = 377.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_fgkus")
+theme_override_font_sizes/font_size = 70
+text = "Music:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX" type="HSlider" parent="Settings" unique_id=1537268654]
+z_index = 15
+z_as_relative = false
+layout_mode = 0
+offset_left = 402.0
+offset_top = 488.0
+offset_right = 719.0
+offset_bottom = 528.0
+
+[node name="Label3" type="Label" parent="Settings" unique_id=1255900102]
+z_index = 14
+z_as_relative = false
+layout_mode = 0
+offset_left = 379.0
+offset_top = 413.0
+offset_right = 735.0
+offset_bottom = 489.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_fgkus")
+theme_override_font_sizes/font_size = 70
+text = "Sound Effects:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resume" type="Button" parent="Settings" unique_id=264639955]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 201
+z_as_relative = false
+layout_mode = 0
+offset_left = 457.0
+offset_top = 539.0
+offset_right = 669.0
+offset_bottom = 606.0
+script = ExtResource("3_frs5l")
+
+[node name="Label4" type="Label" parent="Settings/Resume" unique_id=120051907]
+z_index = 14
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = -38.0
+offset_right = 178.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_fgkus")
+theme_override_font_sizes/font_size = 70
+text = "Resume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Control" type="Control" parent="." unique_id=533099800]
 z_index = 2
 anchors_preset = 0
@@ -1731,7 +1857,7 @@ offset_bottom = 160.0
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 484.0
-offset_top = 338.0
+offset_top = 337.0
 offset_right = 651.0
 offset_bottom = 383.0
 script = ExtResource("9_ib7db")
@@ -1821,8 +1947,11 @@ layer_0/tile_data = PackedInt32Array(1507328, 1, 0, 1507329, 1, 0, 1507330, 1, 0
 
 [node name="Particles" type="Node" parent="." unique_id=64091951]
 
+[connection signal="value_changed" from="Settings/Volume" to="Control2/Options Button" method="_on_volume_value_changed"]
+[connection signal="value_changed" from="Settings/Music" to="Control2/Options Button" method="_on_music_value_changed"]
+[connection signal="value_changed" from="Settings/SFX" to="Control2/Options Button" method="_on_sfx_value_changed"]
+[connection signal="pressed" from="Settings/Resume" to="Settings/Resume" method="_on_pressed"]
 [connection signal="mouse_entered" from="Control/Start Button" to="Control/Start Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Control/Start Button" to="Control/Start Button" method="_on_mouse_exited"]
 [connection signal="pressed" from="Control/Start Button" to="Control/Start Button" method="_on_pressed"]
-[connection signal="pressed" from="Control2/Options Button" to="Control2/Options Button" method="_on_pressed"]
 [connection signal="pressed" from="Control3/Quit Button" to="Control3/Quit Button" method="_on_pressed"]

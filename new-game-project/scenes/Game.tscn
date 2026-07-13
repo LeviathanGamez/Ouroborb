@@ -20,6 +20,8 @@
 [ext_resource type="Script" uid="uid://p5vfvm7xbq4l" path="res://scripts/label.gd" id="17_vjgi4"]
 [ext_resource type="PackedScene" uid="uid://c6womp3aicfjq" path="res://scenes/skill_tree.tscn" id="19_45i86"]
 [ext_resource type="Script" uid="uid://byy5fyf3wdfaa" path="res://scripts/xbutton.gd" id="19_sv1m6"]
+[ext_resource type="Script" uid="uid://d10pgp4yt8pk8" path="res://scripts/resume2.gd" id="21_attvq"]
+[ext_resource type="Script" uid="uid://bk2ptn0sbpbik" path="res://scripts/hamburger.gd" id="22_attvq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45i86"]
 texture = ExtResource("1_ibkli")
@@ -38,7 +40,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_45i86")
 sources/1 = SubResource("TileSetAtlasSource_sv1m6")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a8wo8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_attvq"]
 texture = ExtResource("6_qy1jj")
 0:0/0 = 0
 1:0/0 = 0
@@ -361,7 +363,7 @@ texture = ExtResource("6_qy1jj")
 18:15/0 = 0
 19:15/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_attvq"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bneo8"]
 texture = ExtResource("7_3xj3m")
 0:0/0 = 0
 1:0/0 = 0
@@ -684,7 +686,7 @@ texture = ExtResource("7_3xj3m")
 18:15/0 = 0
 19:15/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bneo8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ocgqw"]
 texture = ExtResource("8_mcffj")
 0:0/0 = 0
 1:0/0 = 0
@@ -1007,7 +1009,7 @@ texture = ExtResource("8_mcffj")
 18:15/0 = 0
 19:15/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ocgqw"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbgew"]
 texture = ExtResource("9_2rd6h")
 0:0/0 = 0
 1:0/0 = 0
@@ -1330,7 +1332,7 @@ texture = ExtResource("9_2rd6h")
 18:15/0 = 0
 19:15/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbgew"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a85ww"]
 texture = ExtResource("10_7ua8r")
 0:0/0 = 0
 1:0/0 = 0
@@ -1654,11 +1656,11 @@ texture = ExtResource("10_7ua8r")
 19:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_sv1m6"]
-sources/0 = SubResource("TileSetAtlasSource_a8wo8")
-sources/1 = SubResource("TileSetAtlasSource_attvq")
-sources/2 = SubResource("TileSetAtlasSource_bneo8")
-sources/3 = SubResource("TileSetAtlasSource_ocgqw")
-sources/4 = SubResource("TileSetAtlasSource_jbgew")
+sources/0 = SubResource("TileSetAtlasSource_attvq")
+sources/1 = SubResource("TileSetAtlasSource_bneo8")
+sources/2 = SubResource("TileSetAtlasSource_ocgqw")
+sources/3 = SubResource("TileSetAtlasSource_jbgew")
+sources/4 = SubResource("TileSetAtlasSource_a85ww")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45i86"]
 bg_color = Color(0, 0, 0, 0.6509804)
@@ -1670,6 +1672,9 @@ glow_levels/1 = 1.0
 glow_levels/2 = 0.6
 glow_intensity = 0.6
 glow_bloom = 0.2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jhsr3"]
+bg_color = Color(0, 0, 0, 0.85490197)
 
 [node name="Game" type="Node2D" unique_id=1228916069]
 
@@ -1717,7 +1722,7 @@ position = Vector2(550, 450)
 position = Vector2(5, 0)
 tile_set = SubResource("TileSet_sv1m6")
 format = 2
-layer_0/tile_data = PackedInt32Array(-131053, 1048578, 8, -131052, 1114114, 8, 65555, 1048578, 11, -65517, 1114114, 9, 19, 1114114, 10, -131051, 1114114, 8, -131050, 1114114, 8, -131049, 1114114, 8, -131048, 1114114, 8, -131047, 1114114, 8, -131046, 1114114, 8, -131045, 1114114, 8, -131044, 1114114, 8, -131043, 1114114, 8, -131042, 1114114, 8, -131041, 1114114, 8, -131040, 1114114, 8, -131039, 1114114, 8, -131038, 1114114, 8, -131037, 1114114, 8, -131036, 1114114, 8, -131035, 1114114, 8, -131034, 1114114, 8, -131033, 1114114, 8, -131032, 1114114, 8, -131031, 1114114, 8, -131030, 1114114, 8, -131029, 1114114, 8, -131028, 1114114, 8, -131027, 1114114, 8, -131026, 1114114, 8, -131025, 1114114, 8, -131024, 1114114, 8, -131023, 1114114, 8, -131022, 1114114, 8, -131021, 1245186, 8, 51, 1245186, 9, -65485, 1245186, 9, 65587, 1245186, 11, 65586, 1179650, 11, 65585, 1179650, 11, 65584, 1179650, 11, 65583, 1179650, 11, 65582, 1179650, 11, 65581, 1179650, 11, 65580, 1179650, 11, 65579, 1179650, 11, 65578, 1179650, 11, 65577, 1179650, 11, 65576, 1179650, 11, 65575, 1179650, 11, 65574, 1179650, 11, 65573, 1179650, 11, 65572, 1179650, 11, 65571, 1179650, 11, 65570, 1179650, 11, 65569, 1179650, 11, 65568, 1179650, 11, 65567, 1179650, 11, 65566, 1179650, 11, 65565, 1179650, 11, 65564, 1179650, 11, 65563, 1179650, 11, 65562, 1179650, 11, 65561, 1179650, 11, 65560, 1179650, 11, 65559, 1179650, 11, 65558, 1179650, 11, 65557, 1179650, 11, 65556, 1179650, 11, -65487, 1114114, 9, 49, 1114114, 10, -65486, 1179650, 9, 50, 1179650, 10, -65489, 1114114, 9, 47, 1114114, 10, -65488, 1179650, 9, 48, 1179650, 10, -65491, 1114114, 9, 45, 1114114, 10, -65490, 1179650, 9, 46, 1179650, 10, -65493, 1114114, 9, 43, 1114114, 10, -65492, 1179650, 9, 44, 1179650, 10, -65495, 1114114, 9, 41, 1114114, 10, -65494, 1179650, 9, 42, 1179650, 10, -65497, 1114114, 9, 39, 1114114, 10, -65496, 1179650, 9, 40, 1179650, 10, -65499, 1114114, 9, 37, 1114114, 10, -65498, 1179650, 9, 38, 1179650, 10, -65501, 1114114, 9, 35, 1114114, 10, -65500, 1179650, 9, 36, 1179650, 10, -65503, 1114114, 9, 33, 1114114, 10, -65502, 1179650, 9, 34, 1179650, 10, -65505, 1114114, 9, 31, 1114114, 10, -65504, 1179650, 9, 32, 1179650, 10, -65507, 1114114, 9, 29, 1114114, 10, -65506, 1179650, 9, 30, 1179650, 10, -65509, 1114114, 9, 27, 1114114, 10, -65508, 1179650, 9, 28, 1179650, 10, -65511, 1114114, 9, 25, 1114114, 10, -65510, 1179650, 9, 26, 1179650, 10, -65513, 1114114, 9, 23, 1114114, 10, -65512, 1179650, 9, 24, 1179650, 10, -65515, 1114114, 9, 21, 1114114, 10, -65514, 1179650, 9, 22, 1179650, 10, -65516, 1179650, 9, 20, 1179650, 10)
+layer_0/tile_data = PackedInt32Array(-131053, 1048577, 8, -131052, 1114113, 8, 65555, 1048577, 11, -65517, 1048577, 9, 19, 1048577, 10, -131051, 1179649, 8, -131050, 1114113, 8, -131049, 1179649, 8, -131048, 1114113, 8, -131047, 1179649, 8, -131046, 1114113, 8, -131045, 1179649, 8, -131044, 1114113, 8, -131043, 1179649, 8, -131042, 1114113, 8, -131041, 1179649, 8, -131040, 1114113, 8, -131039, 1179649, 8, -131038, 1114113, 8, -131037, 1179649, 8, -131036, 1114113, 8, -131035, 1179649, 8, -131034, 1114113, 8, -131033, 1179649, 8, -131032, 1114113, 8, -131031, 1179649, 8, -131030, 1114113, 8, -131029, 1179649, 8, -131028, 1114113, 8, -131027, 1179649, 8, -131026, 1114113, 8, -131025, 1179649, 8, -131024, 1114113, 8, -131023, 1179649, 8, -131022, 1179649, 8, -131021, 1245185, 8, 51, 1245185, 10, -65485, 1245185, 9, 65587, 1245185, 11, 65586, 1179649, 11, 65585, 1179649, 11, 65584, 1114113, 11, 65583, 1179649, 11, 65582, 1114113, 11, 65581, 1179649, 11, 65580, 1114113, 11, 65579, 1179649, 11, 65578, 1114113, 11, 65577, 1179649, 11, 65576, 1114113, 11, 65575, 1179649, 11, 65574, 1114113, 11, 65573, 1179649, 11, 65572, 1114113, 11, 65571, 1179649, 11, 65570, 1114113, 11, 65569, 1179649, 11, 65568, 1114113, 11, 65567, 1179649, 11, 65566, 1114113, 11, 65565, 1179649, 11, 65564, 1114113, 11, 65563, 1179649, 11, 65562, 1114113, 11, 65561, 1179649, 11, 65560, 1114113, 11, 65559, 1179649, 11, 65558, 1114113, 11, 65557, 1179649, 11, 65556, 1114113, 11, -65487, 1179649, 9, 49, 1179649, 10, -65486, 1179649, 9, 50, 1179649, 10, -65489, 1179649, 9, 47, 1179649, 10, -65488, 1114113, 9, 48, 1114113, 10, -65491, 1179649, 9, 45, 1179649, 10, -65490, 1114113, 9, 46, 1114113, 10, -65493, 1179649, 9, 43, 1179649, 10, -65492, 1114113, 9, 44, 1114113, 10, -65495, 1179649, 9, 41, 1179649, 10, -65494, 1114113, 9, 42, 1114113, 10, -65497, 1179649, 9, 39, 1179649, 10, -65496, 1114113, 9, 40, 1114113, 10, -65499, 1179649, 9, 37, 1179649, 10, -65498, 1114113, 9, 38, 1114113, 10, -65501, 1179649, 9, 35, 1179649, 10, -65500, 1114113, 9, 36, 1114113, 10, -65503, 1179649, 9, 33, 1179649, 10, -65502, 1114113, 9, 34, 1114113, 10, -65505, 1179649, 9, 31, 1179649, 10, -65504, 1114113, 9, 32, 1114113, 10, -65507, 1179649, 9, 29, 1179649, 10, -65506, 1114113, 9, 30, 1114113, 10, -65509, 1179649, 9, 27, 1179649, 10, -65508, 1114113, 9, 28, 1114113, 10, -65511, 1179649, 9, 25, 1179649, 10, -65510, 1114113, 9, 26, 1114113, 10, -65513, 1179649, 9, 23, 1179649, 10, -65512, 1114113, 9, 24, 1114113, 10, -65515, 1179649, 9, 21, 1179649, 10, -65514, 1114113, 9, 22, 1114113, 10, -65516, 1114113, 9, 20, 1114113, 10)
 
 [node name="Control" type="Control" parent="Buttons" unique_id=588693939]
 layout_mode = 3
@@ -2002,6 +2007,172 @@ environment = SubResource("Environment_2rd6h")
 
 [node name="Particles" type="Node" parent="." unique_id=864063998]
 
+[node name="Settings" type="Control" parent="." unique_id=1197722622]
+visible = false
+z_index = 200
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Settings" unique_id=1264871814]
+z_index = 10
+z_as_relative = false
+layout_mode = 0
+offset_left = -91.0
+offset_top = -260.0
+offset_right = 1246.0
+offset_bottom = 759.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jhsr3")
+
+[node name="Volume" type="HSlider" parent="Settings" unique_id=1801874725]
+z_index = 15
+z_as_relative = false
+layout_mode = 0
+offset_left = 397.0
+offset_top = 267.0
+offset_right = 714.0
+offset_bottom = 307.0
+
+[node name="Label" type="Label" parent="Settings" unique_id=1713689699]
+z_index = 14
+z_as_relative = false
+layout_mode = 0
+offset_left = 461.0
+offset_top = 191.0
+offset_right = 656.0
+offset_bottom = 267.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_3xj3m")
+theme_override_font_sizes/font_size = 70
+text = "Volume:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="HSlider" parent="Settings" unique_id=1768293496]
+z_index = 15
+z_as_relative = false
+layout_mode = 0
+offset_left = 397.0
+offset_top = 366.0
+offset_right = 714.0
+offset_bottom = 406.0
+
+[node name="Label2" type="Label" parent="Settings" unique_id=1250410246]
+z_index = 14
+z_as_relative = false
+layout_mode = 0
+offset_left = 461.0
+offset_top = 301.0
+offset_right = 656.0
+offset_bottom = 377.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_3xj3m")
+theme_override_font_sizes/font_size = 70
+text = "Music:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX" type="HSlider" parent="Settings" unique_id=800734921]
+z_index = 15
+z_as_relative = false
+layout_mode = 0
+offset_left = 402.0
+offset_top = 488.0
+offset_right = 719.0
+offset_bottom = 528.0
+
+[node name="Label3" type="Label" parent="Settings" unique_id=495770676]
+z_index = 14
+z_as_relative = false
+layout_mode = 0
+offset_left = 379.0
+offset_top = 413.0
+offset_right = 735.0
+offset_bottom = 489.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_3xj3m")
+theme_override_font_sizes/font_size = 70
+text = "Sound Effects:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resume" type="Button" parent="Settings" unique_id=618275990]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 201
+z_as_relative = false
+layout_mode = 0
+offset_left = 457.0
+offset_top = 539.0
+offset_right = 669.0
+offset_bottom = 606.0
+script = ExtResource("21_attvq")
+
+[node name="Label4" type="Label" parent="Settings/Resume" unique_id=1930462932]
+z_index = 14
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = -38.0
+offset_right = 178.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("11_3xj3m")
+theme_override_font_sizes/font_size = 70
+text = "Resume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hamburger" type="Control" parent="." unique_id=1651751785]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -75.0
+offset_right = 40.0
+offset_bottom = -35.0
+
+[node name="hamburger" type="Button" parent="Hamburger" unique_id=1317936333]
+process_mode = 3
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1070.0
+offset_top = 47.0
+offset_right = 1134.0
+offset_bottom = 111.0
+script = ExtResource("22_attvq")
+
+[node name="Price" type="Label" parent="Hamburger/hamburger" unique_id=518641396]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -16.68775
+anchor_top = -1.14025
+anchor_right = -16.68775
+anchor_bottom = -0.46837497
+offset_left = 1071.016
+offset_top = 48.976
+offset_right = 1133.016
+offset_bottom = 113.976
+theme_override_colors/font_color = Color(0.16078432, 0.83137256, 0.7882353, 1)
+theme_override_fonts/font = ExtResource("11_3xj3m")
+theme_override_font_sizes/font_size = 100
+text = "≡"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonTileMap2" type="TileMap" parent="Hamburger" unique_id=97587291]
+position = Vector2(-482, -593)
+tile_set = SubResource("TileSet_sv1m6")
+format = 2
+layer_0/tile_data = PackedInt32Array(2621537, 524290, 4, 2687073, 524290, 5, 2752609, 524290, 6, 2818145, 524290, 7, 2621538, 589826, 4, 2687074, 589826, 5, 2752610, 589826, 6, 2818146, 589826, 7, 2621539, 655362, 4, 2687075, 655362, 5, 2752611, 655362, 6, 2818147, 655362, 7, 2621540, 720898, 4, 2687076, 720898, 5, 2752612, 720898, 6, 2818148, 720898, 7)
+
 [connection signal="mouse_entered" from="Buttons/Control/Add Ball Button" to="Buttons/Control/Add Ball Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Control/Add Ball Button" to="Buttons/Control/Add Ball Button" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons/Control/Add Ball Button" to="Buttons/Control/Add Ball Button" method="_on_pressed"]
@@ -2012,3 +2183,8 @@ environment = SubResource("Environment_2rd6h")
 [connection signal="mouse_exited" from="Buttons/Control3/Merge Button" to="Buttons/Control3/Merge Button" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons/Control3/Merge Button" to="Buttons/Control3/Merge Button" method="_on_pressed"]
 [connection signal="pressed" from="UI/XButton/xbutton" to="UI/XButton/xbutton" method="_on_pressed"]
+[connection signal="value_changed" from="Settings/Volume" to="Hamburger/hamburger" method="_on_volume_value_changed"]
+[connection signal="value_changed" from="Settings/Music" to="Hamburger/hamburger" method="_on_music_value_changed"]
+[connection signal="value_changed" from="Settings/SFX" to="Hamburger/hamburger" method="_on_sfx_value_changed"]
+[connection signal="pressed" from="Settings/Resume" to="Settings/Resume" method="_on_pressed"]
+[connection signal="pressed" from="Hamburger/hamburger" to="Hamburger/hamburger" method="_on_pressed"]
