@@ -18,6 +18,7 @@ config/icon="res://assets/sprites/entities/icon.svg"
 [autoload]
 
 GlobalGameManager="*uid://cio0fb4lvwrvn"
+Music="*uid://8jranl2t1wgf"
 
 [display]
 

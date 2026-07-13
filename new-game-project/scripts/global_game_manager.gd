@@ -4,11 +4,11 @@ extends Node
 
 
 var god_mode = false
-var infinite_money = true
+var infinite_money = false
 var screenshake = false
 var paused = false
 
-var money = 0
+var money = 1000
 var ball_price = 50
 var ball_price_increase = 50
 

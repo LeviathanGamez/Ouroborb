@@ -26,7 +26,7 @@ func _ready() -> void:
 	value = stats.value
 
 func _process(_delta: float) -> void:
-	label.text = str(value)
+	label.text = str(int(value))
 	if value <= 0:
 		kill()
 
