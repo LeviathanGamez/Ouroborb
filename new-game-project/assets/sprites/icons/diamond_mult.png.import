@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1menyyburnwn"
-path="res://.godot/imported/gold.png-358063eae575448744f9449402e10b83.ctex"
+uid="uid://dytgfu532caum"
+path="res://.godot/imported/diamond_mult.png-e7c6aeb96690a8846d77f43e57dd6a18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/icons/gold.png"
-dest_files=["res://.godot/imported/gold.png-358063eae575448744f9449402e10b83.ctex"]
+source_file="res://assets/sprites/icons/diamond_mult.png"
+dest_files=["res://.godot/imported/diamond_mult.png-e7c6aeb96690a8846d77f43e57dd6a18.ctex"]
 
 [params]
 

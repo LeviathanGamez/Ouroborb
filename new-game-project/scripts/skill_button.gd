@@ -12,7 +12,7 @@ class_name Skill_Node
 
 	
 @export var stats: upgrade_stats
-@export var max_level = 5
+var max_level = 5
 @export var price := 10
 var original_price
 

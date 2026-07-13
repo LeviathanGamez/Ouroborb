@@ -39,9 +39,18 @@ func _ready():
 	particle_a.emitting = true
 
 func damage(collided):
+	var temp_crit_value = crit_value * collided.stats.tile_type_mult
+	var temp_value = value * collided.stats.tile_type_mult
+	
+	if collided.stats.type == 1:
+		temp_value = int(round(temp_value * GlobalGameManager.global_gold_mult))
+		temp_crit_value = int(round(temp_crit_value * GlobalGameManager.global_gold_mult))
+	elif collided.stats.type == 2:
+		temp_value = int(round(temp_value * GlobalGameManager.global_diamond_mult))
+		temp_crit_value = int(round(temp_crit_value * GlobalGameManager.global_diamond_mult))
 	
 	if randf() < crit:
-		GlobalGameManager.add_count(crit_value)
+		GlobalGameManager.add_count(temp_crit_value)
 		collided.value -= crit_power
 		collided.get_node("Sprite2D").material.set_shader_parameter("Tint", Color.html("EFBF04"))
 		audio_player2.pitch_scale= randf_range(0.9,1.25)
@@ -50,10 +59,10 @@ func damage(collided):
 		var money_a = money_text.instantiate()
 		get_tree().current_scene.get_node("Money_texts").add_child(money_a)
 		money_a.global_position = collided.global_position
-		money_a.get_node("RichTextLabel").text = "+"+str(collided.crit_value)+"$"
+		money_a.get_node("RichTextLabel").text = "+"+str(int(round(temp_crit_value)))+"$"
 	
 	else:
-		GlobalGameManager.add_count(value)
+		GlobalGameManager.add_count(temp_value)
 		collided.get_node("Sprite2D").material.set_shader_parameter("Tint", Color.WHITE)
 		audio_player.pitch_scale= randf_range(0.9,1.25)
 		audio_player.play()
@@ -62,7 +71,7 @@ func damage(collided):
 		var money_a = money_text.instantiate()
 		get_tree().current_scene.get_node("Money_texts").add_child(money_a)
 		money_a.global_position = collided.global_position
-		money_a.get_node("RichTextLabel").text = "+"+str(value)+"$"
+		money_a.get_node("RichTextLabel").text = "+"+str(int(round(temp_value)))+"$"
 	
 	collided.get_node("HitFlashAnimationPlayer").play("hit_flash")
 		
@@ -97,15 +106,14 @@ func set_up_variables():
 	power = int(round(stats.power + GlobalGameManager.global_ball_power))
 	crit = stats.crit + GlobalGameManager.global_ball_crit
 	sizes = stats.size * GlobalGameManager.global_size
-	value = int(round(stats.value + GlobalGameManager.global_tile_worth))
+	value = stats.value + GlobalGameManager.global_tile_worth
 	crit_power = power*GlobalGameManager.ball_crit_mult*GlobalGameManager.global_ball_crit_power
-	crit_value = int(round(value*GlobalGameManager.ball_crit_mult*GlobalGameManager.global_ball_crit_power))
+	crit_value = value*GlobalGameManager.ball_crit_mult*GlobalGameManager.global_ball_crit_power
 	power = power * GlobalGameManager.global_ball_mult * GlobalGameManager.global_steel_ball
 	crit_power = crit_power * GlobalGameManager.global_ball_mult * GlobalGameManager.global_steel_ball
-	value = int(round(value * GlobalGameManager.global_ball_worth * GlobalGameManager.global_money_mult))
-	crit_value = int(round(crit_value * GlobalGameManager.global_ball_worth * GlobalGameManager.global_money_mult))
-	value = int(round(value))
-	crit_value = int(round(crit_value))
+	value = int(round(value * GlobalGameManager.global_ball_worth * GlobalGameManager.global_money_mult * GlobalGameManager.global_pristine_ball))
+	crit_value = int(round(crit_value * GlobalGameManager.global_ball_worth * GlobalGameManager.global_money_mult * GlobalGameManager.global_pristine_ball))
+
 	scale = Vector2(sizes,sizes)
 	color = stats.color
 	modulate = color

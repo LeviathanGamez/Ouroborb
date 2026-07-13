@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1menyyburnwn"
-path="res://.godot/imported/gold.png-358063eae575448744f9449402e10b83.ctex"
+uid="uid://bq72h7sxmsvro"
+path="res://.godot/imported/pristine.png-807c0fade25eb895f285cb36a820ec6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/icons/gold.png"
-dest_files=["res://.godot/imported/gold.png-358063eae575448744f9449402e10b83.ctex"]
+source_file="res://assets/sprites/icons/pristine.png"
+dest_files=["res://.godot/imported/pristine.png-807c0fade25eb895f285cb36a820ec6c.ctex"]
 
 [params]
 

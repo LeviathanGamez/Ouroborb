@@ -37,10 +37,16 @@ func set_up_variables():
 	crit_power = power * GlobalGameManager.player_crit_mult * GlobalGameManager.global_click_crit_power
 	tile_value = int(round(GlobalGameManager.player_value + GlobalGameManager.global_tile_worth))
 	crit_value = tile_value * GlobalGameManager.player_crit_mult * GlobalGameManager.global_click_crit_power
-	power = power * GlobalGameManager.global_click_mult * GlobalGameManager.global_tough_click
-	crit_power = crit_power * GlobalGameManager.global_click_mult  * GlobalGameManager.global_tough_click
+	power = power * GlobalGameManager.global_click_mult 
+	crit_power = crit_power * GlobalGameManager.global_click_mult  
 	tile_value = int(round(tile_value * stats.tile_type_mult * GlobalGameManager.global_click_worth * GlobalGameManager.global_money_mult))
 	crit_value = int(round(crit_value * stats.tile_type_mult *GlobalGameManager.global_click_worth * GlobalGameManager.global_money_mult))
+	if stats.type == 1:
+		tile_value = int(round(tile_value * GlobalGameManager.global_gold_mult))
+		crit_value = int(round(crit_value * GlobalGameManager.global_gold_mult))
+	elif stats.type == 2:
+		tile_value = int(round(tile_value * GlobalGameManager.global_diamond_mult))
+		crit_value = int(round(crit_value * GlobalGameManager.global_diamond_mult))
 	sprite.texture = stats.texture
 	
 func _on_button_pressed() -> void:

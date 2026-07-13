@@ -12,7 +12,7 @@ func _on_pressed() -> void:
 		func(value): shader_a.get_node("ColorRect").material.set_shader_parameter("progress", value),
 		0.0,
 		1.0,
-		1.0
+		1.5
 	)
 
 	await tween.finished

@@ -4,7 +4,7 @@ extends Node
 
 
 var god_mode = false
-var infinite_money = false
+var infinite_money = true
 var screenshake = false
 var paused = false
 
@@ -38,13 +38,14 @@ var global_click_crit = 0 # + 5% each
 var global_click_crit_power = 1 # + 20% each
 
 var global_steel_ball = 1  # + 20% each
-var global_tough_click = 1  # + 20% each
+var global_pristine_ball = 1  # + 20% each
 
 
 var global_tile_worth = 0 # +1 each
 var global_gold_tiles = 0 # +5% chance each
 var global_diamond_tiles = 0 # +5% chance each
-
+var global_gold_mult = 1 # +5% chance each
+var global_diamond_mult = 1 # +5% chance each
 
 
 var label

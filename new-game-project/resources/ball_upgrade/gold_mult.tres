@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="upgrade_stats" format=3 uid="uid://d1hkgju5hrkn4"]
+
+[ext_resource type="Script" uid="uid://dba467il347bl" path="res://resources/ball_upgrade/ball_upgrade.gd" id="1_81nxk"]
+[ext_resource type="Texture2D" uid="uid://bh28b0tii5784" path="res://assets/sprites/icons/gold_mult.png" id="2_50t7o"]
+
+[resource]
+script = ExtResource("1_81nxk")
+stat = 18
+value = 0.2
+text = "Increases gold tiles value by 20% with each level"
+texture = ExtResource("2_50t7o")
+metadata/_custom_type_script = "uid://dba467il347bl"
