@@ -2,9 +2,13 @@ extends Node
 
 #global vairables
 
+var max_label_count = 2000
+var label_pool = []
+var label_pool_index = 0
 
-var god_mode = false
-var infinite_money = false
+
+var god_mode = true
+var infinite_money = true
 var screenshake = false
 var paused = false
 
@@ -50,10 +54,13 @@ var global_diamond_mult = 1 # +5% chance each
 
 var label
 var tween 
+
 func _ready() -> void:
 	if god_mode or infinite_money:
 		money = 10000000000000
 	god_mode_check()
+	
+
 		
 	
 

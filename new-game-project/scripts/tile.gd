@@ -66,11 +66,10 @@ func _on_button_pressed() -> void:
 		sprite.material.set_shader_parameter("Tint", Color.html("EFBF04"))
 		play_sound(audio_player2)
 		#money animation
-		var money_a = money_text.instantiate()
-		get_tree().current_scene.get_node("Money_texts").add_child(money_a)
-		money_a.global_position = global_position
+	
 		crit_value = int(round(crit_value))
-		money_a.get_node("RichTextLabel").text = "+"+str(int(round(crit_value)))+"$"
+		spawn_text_pooled(crit_value)
+		
 		if value <= 0:
 			
 			if sound2.playing:
@@ -90,11 +89,9 @@ func _on_button_pressed() -> void:
 		GlobalGameManager.add_count(tile_value)
 		play_sound(audio_player)
 		#money animation
-		var money_a = money_text.instantiate()
-		get_tree().current_scene.get_node("Money_texts").add_child(money_a)
-		money_a.global_position = global_position
+		
 		tile_value = int(round(tile_value))
-		money_a.get_node("RichTextLabel").text = "+"+str(int(round(tile_value)))+"$"
+		spawn_text_pooled(tile_value)
 		if value <= 0:
 			if sound.playing:
 				sound.stop()
@@ -107,6 +104,14 @@ func _on_button_pressed() -> void:
 			kill()
 			
 	animation_player.play("hit_flash")
+func spawn_text_pooled(value):
+	var money_text = GlobalGameManager.label_pool[GlobalGameManager.label_pool_index]
+	money_text.visible = true
+	GlobalGameManager.label_pool_index = wrap(GlobalGameManager.label_pool_index + 1,0,GlobalGameManager.max_label_count)
+	money_text.global_position = global_position
+	money_text.get_node("RichTextLabel").text = "+"+str(int(round(value)))+"$"
+	money_text.play_animation()
+	
 func play_sound(audio):
 	if audio.playing and audio.get_playback_position() <= 0.05:
 		return

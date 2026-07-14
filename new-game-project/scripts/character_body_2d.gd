@@ -17,7 +17,7 @@ var sizes
 var crit_power
 var crit_value
 
-
+#object pooling
 
 var particle_scene = preload("res://scenes/particles.tscn")
 var particle
@@ -41,6 +41,7 @@ func _ready():
 	if audio_player2 and audio_player2.stream:
 		audio_player2.stream = audio_player2.stream.duplicate()
 
+
 func damage(collided):
 	var temp_crit_value = crit_value * collided.stats.tile_type_mult
 	var temp_value = value * collided.stats.tile_type_mult
@@ -58,10 +59,7 @@ func damage(collided):
 		collided.get_node("Sprite2D").material.set_shader_parameter("Tint", Color.html("EFBF04"))
 		play_sound(audio_player2)
 		#money animation
-		var money_a = money_text.instantiate()
-		get_tree().current_scene.get_node("Money_texts").add_child(money_a)
-		money_a.global_position = collided.global_position
-		money_a.get_node("RichTextLabel").text = "+"+str(int(round(temp_crit_value)))+"$"
+		spawn_text_pooled(collided,temp_crit_value)
 	
 	else:
 		GlobalGameManager.add_count(temp_value)
@@ -69,11 +67,7 @@ func damage(collided):
 		play_sound(audio_player)
 		collided.value -= power
 		#money animation
-		var money_a = money_text.instantiate()
-		get_tree().current_scene.get_node("Money_texts").add_child(money_a)
-		money_a.global_position = collided.global_position
-		money_a.get_node("RichTextLabel").text = "+"+str(int(round(temp_value)))+"$"
-	
+		spawn_text_pooled(collided,temp_value)
 	collided.get_node("HitFlashAnimationPlayer").play("hit_flash")
 		
 
@@ -120,6 +114,13 @@ func set_up_variables():
 	velocity = velocity.normalized()*speed
 	sprite.texture = stats.texture
 	
+func spawn_text_pooled(collided,value):
+	var money_text = GlobalGameManager.label_pool[GlobalGameManager.label_pool_index]
+	money_text.visible = true
+	GlobalGameManager.label_pool_index = wrap(GlobalGameManager.label_pool_index + 1,0,GlobalGameManager.max_label_count)
+	money_text.global_position = collided.global_position
+	money_text.get_node("RichTextLabel").text = "+"+str(int(round(value)))+"$"
+	money_text.play_animation()
 	
 func spawn_particles(collision):
 	particle2 = particle_scene2.instantiate()

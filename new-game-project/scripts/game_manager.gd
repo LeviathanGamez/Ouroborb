@@ -5,6 +5,7 @@ extends Node
 @onready var UI =  $"../UI" 
 @onready var tiles = $"../Tiles"
 @onready var skill_tree = $"../UI/SkillTree"
+var money_text = preload("res://scenes/money.tscn")
 
 var tile_scene = preload("res://scenes/tile.tscn")
 var gold = preload("res://resources/tile_types/gold.tres")
@@ -27,6 +28,11 @@ func _ready() -> void:
 	#make skill tree visible
 	skill_tree.visible = true
 	UI.visible = false
+	for i in range(GlobalGameManager.max_label_count):
+		var money_a = money_text.instantiate()
+		get_tree().current_scene.get_node("Money_texts").add_child(money_a)
+		money_a.visible = false
+		GlobalGameManager.label_pool.append(money_a)
 	
 
 func _input(event):
