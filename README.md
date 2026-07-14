@@ -12,4 +12,4 @@ Features:
 - Smooth animations and polished UI
 
 Controls:
--Click to interact
+- Click to interact
