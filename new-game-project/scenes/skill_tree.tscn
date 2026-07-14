@@ -389,7 +389,7 @@ offset_right = 48.0
 offset_bottom = -32.0
 disabled = true
 stats = ExtResource("4_6awrb")
-price = 300
+price = 150
 
 [node name="UpgradeButton5" parent="UpgradeButton/UpgradeButton4/UpgradeButton5" unique_id=458847539 instance=ExtResource("1_ty3n3")]
 layout_mode = 0
@@ -508,7 +508,7 @@ offset_right = 48.0
 offset_bottom = 128.0
 disabled = true
 stats = ExtResource("3_51bdh")
-price = 300
+price = 200
 
 [node name="UpgradeButton6" parent="UpgradeButton/UpgradeButton4/UpgradeButton7" unique_id=63175812 instance=ExtResource("1_ty3n3")]
 layout_mode = 0

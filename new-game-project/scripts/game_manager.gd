@@ -17,6 +17,7 @@ var colors = [Color.html("#ff306c"), Color.html("#ffe74c"),Color.html("#48ff00")
 			
 var pickeable = colors.duplicate()
 var loops = 1
+var run_nodes = true
 # Called when the node enters the scene tree for the first time.
 # They're 100 x 36px
 
@@ -38,7 +39,8 @@ func _input(event):
 		 
 func _process(_delta):
 	set_money_prices()
-	if get_tree().get_nodes_in_group("Colliders").size()==0:
+	if get_tree().get_nodes_in_group("Colliders").size()==0 and run_nodes:
+		run_nodes = false
 		spawn_blocks(loops)
 		loops+=1
 	
@@ -101,7 +103,7 @@ func spawn_blocks(current_loop):
 				type_check(tile_a,sprite)
 				tiles.add_child(tile_a)
 				tile_a.value = tile_a.value * current_loop
-		
+	run_nodes = true
 				
 func set_color(sprite):
 	var selected_color = pickeable.pick_random()

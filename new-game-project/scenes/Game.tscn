@@ -1925,7 +1925,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="UI" type="Control" parent="." unique_id=1579698153]
 process_mode = 2
-visible = false
 z_index = 20
 layout_mode = 3
 anchors_preset = 0
@@ -1933,19 +1932,17 @@ mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="UI" unique_id=1608921813]
-visible = false
 z_index = 10
 z_as_relative = false
 layout_mode = 0
-offset_left = -2.0
-offset_top = -244.0
+offset_left = -162.0
+offset_top = -254.0
 offset_right = 1335.0
 offset_bottom = 775.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_45i86")
 
 [node name="SkillTree" parent="UI" unique_id=1918904098 instance=ExtResource("19_45i86")]
-visible = false
 layout_mode = 1
 offset_left = 0.0
 offset_top = 0.0
@@ -1953,24 +1950,22 @@ offset_right = 183.23999
 offset_bottom = 180.0
 
 [node name="XButton" type="Control" parent="UI" unique_id=1876721426]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="xbutton" type="Button" parent="UI/XButton" unique_id=436596952]
 process_mode = 3
-visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 1070.0
 offset_top = 47.0
 offset_right = 1134.0
 offset_bottom = 111.0
+text = "X"
 script = ExtResource("19_sv1m6")
 
 [node name="Price" type="Label" parent="UI/XButton/xbutton" unique_id=472275769]
-visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = -1

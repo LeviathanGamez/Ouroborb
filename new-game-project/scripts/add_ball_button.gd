@@ -2,7 +2,7 @@ extends Button
 @onready var game = $"../.."
 @onready var balls = $"../../../Balls"
 
-var ball = preload("res://scenes/Ball.tscn")
+var ball = preload("res://scenes/ball.tscn")
 @onready var camera = $"../../../Camera2D"
 var button_editor = preload("res://scripts/tweens.gd")
 var particle_click = preload("res://scenes/particles_click.tscn")
