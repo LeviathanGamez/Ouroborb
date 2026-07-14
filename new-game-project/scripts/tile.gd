@@ -6,6 +6,9 @@ extends Node2D
 @onready var sprite = $Sprite2D
 @onready var audio_player = $AudioStreamPlayer2D
 @onready var audio_player2 = $AudioStreamPlayer2D2
+var sound
+var sound2
+
 @export var stats: tile_types
 var money_text = preload("res://scenes/money.tscn")
 var copy_tile = preload("res://scenes/copy_tile.tscn")
@@ -19,11 +22,18 @@ var crit_power
 var tile_value
 var crit_value
 
+
 func _ready() -> void:
 	
 	add_to_group("Colliders")
 	set_up_variables()
 	value = stats.value
+	if audio_player and audio_player.stream:
+		audio_player.stream = audio_player.stream.duplicate()
+	if audio_player2 and audio_player2.stream:
+		audio_player2.stream = audio_player2.stream.duplicate()
+	sound = audio_player.duplicate()
+	sound2 = audio_player2.duplicate()
 
 func _process(_delta: float) -> void:
 	label.text = str(int(value))
@@ -54,8 +64,7 @@ func _on_button_pressed() -> void:
 		GlobalGameManager.add_count(crit_value)
 		value -= crit_power
 		sprite.material.set_shader_parameter("Tint", Color.html("EFBF04"))
-		audio_player2.pitch_scale = randf_range(0.9,1.25)
-		audio_player2.play()
+		play_sound(audio_player2)
 		#money animation
 		var money_a = money_text.instantiate()
 		get_tree().current_scene.get_node("Money_texts").add_child(money_a)
@@ -63,12 +72,15 @@ func _on_button_pressed() -> void:
 		crit_value = int(round(crit_value))
 		money_a.get_node("RichTextLabel").text = "+"+str(int(round(crit_value)))+"$"
 		if value <= 0:
-			var sound = audio_player2.duplicate()
-			get_tree().current_scene.add_child(sound)
+			
+			if sound2.playing:
+				sound2.stop()
+			
+			get_tree().current_scene.add_child(sound2)
 
-			sound.global_position = global_position
-			sound.play()
-			sound.finished.connect(sound.queue_free)
+			sound2.global_position = global_position
+			sound2.play()
+			sound2.finished.connect(sound2.queue_free)
 
 			kill()
 		
@@ -76,8 +88,7 @@ func _on_button_pressed() -> void:
 		sprite.material.set_shader_parameter("Tint", Color.WHITE)
 		value -= power
 		GlobalGameManager.add_count(tile_value)
-		audio_player.pitch_scale= randf_range(0.9,1.25)
-		audio_player.play()
+		play_sound(audio_player)
 		#money animation
 		var money_a = money_text.instantiate()
 		get_tree().current_scene.get_node("Money_texts").add_child(money_a)
@@ -85,7 +96,8 @@ func _on_button_pressed() -> void:
 		tile_value = int(round(tile_value))
 		money_a.get_node("RichTextLabel").text = "+"+str(int(round(tile_value)))+"$"
 		if value <= 0:
-			var sound = audio_player.duplicate()
+			if sound.playing:
+				sound.stop()
 			get_tree().current_scene.add_child(sound)
 
 			sound.global_position = global_position
@@ -95,7 +107,15 @@ func _on_button_pressed() -> void:
 			kill()
 			
 	animation_player.play("hit_flash")
+func play_sound(audio):
+	if audio.playing and audio.get_playback_position() <= 0.05:
+		return
 
+	if audio.playing:
+		audio.stop()
+
+	audio.pitch_scale = randf_range(0.9, 1.25)
+	audio.play()
 func kill():
 	var explosion = copy_tile.instantiate()
 	explosion.modulate = sprite.modulate

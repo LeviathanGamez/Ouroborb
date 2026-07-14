@@ -19,10 +19,10 @@ var original_price
 var particle_click = preload("res://scenes/particles_click.tscn")
 var button_editor = preload("res://scripts/tweens.gd")
 
-var tween = create_tween()
-var tween_2 = create_tween()
-var tween_3 = create_tween()
-var tween_4 = create_tween()
+var tween 
+var tween_2 
+var tween_3
+var tween_4 
 
 enum GrowthType{
 	FAST,
@@ -115,7 +115,7 @@ func _on_pressed() -> void:
 				tween_4.parallel().tween_property(skill, "modulate:a", 1.0, 0.5)
 				tween_4.parallel().tween_property(skill.get_node("Line2D"), "modulate:a", 1.0, 0.5)
 		
-		GlobalGameManager.print_stats()
+		#GlobalGameManager.print_stats()
 		var colliders = get_tree().get_nodes_in_group("Colliders")
 		var balls = get_tree().get_nodes_in_group("balls")
 		for ball in balls:

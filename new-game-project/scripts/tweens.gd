@@ -1,6 +1,6 @@
 extends Node
 
-var tween = create_tween()
+var tween 
 static func reset_tween(node)->void:
 	if node.tween:
 		node.tween.kill()

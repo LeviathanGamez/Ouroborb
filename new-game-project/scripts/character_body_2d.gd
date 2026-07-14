@@ -17,8 +17,7 @@ var sizes
 var crit_power
 var crit_value
 
-var button_editor = preload("res://scripts/tweens.gd")
-var tween = create_tween()
+
 
 var particle_scene = preload("res://scenes/particles.tscn")
 var particle
@@ -37,6 +36,10 @@ func _ready():
 	var particle_a = particle.get_node("CPUParticles2D")
 	particle_a.restart()
 	particle_a.emitting = true
+	if audio_player and audio_player.stream:
+		audio_player.stream = audio_player.stream.duplicate()
+	if audio_player2 and audio_player2.stream:
+		audio_player2.stream = audio_player2.stream.duplicate()
 
 func damage(collided):
 	var temp_crit_value = crit_value * collided.stats.tile_type_mult
@@ -53,8 +56,7 @@ func damage(collided):
 		GlobalGameManager.add_count(temp_crit_value)
 		collided.value -= crit_power
 		collided.get_node("Sprite2D").material.set_shader_parameter("Tint", Color.html("EFBF04"))
-		audio_player2.pitch_scale= randf_range(0.9,1.25)
-		audio_player2.play()
+		play_sound(audio_player2)
 		#money animation
 		var money_a = money_text.instantiate()
 		get_tree().current_scene.get_node("Money_texts").add_child(money_a)
@@ -64,8 +66,7 @@ func damage(collided):
 	else:
 		GlobalGameManager.add_count(temp_value)
 		collided.get_node("Sprite2D").material.set_shader_parameter("Tint", Color.WHITE)
-		audio_player.pitch_scale= randf_range(0.9,1.25)
-		audio_player.play()
+		play_sound(audio_player)
 		collided.value -= power
 		#money animation
 		var money_a = money_text.instantiate()
@@ -92,8 +93,7 @@ func _physics_process(_delta: float) -> void:
 		if collided_parent.is_in_group("Colliders"):
 			damage(collided_parent)
 		else:
-			audio_player.pitch_scale= randf_range(0.9,1.25)
-			audio_player.play()
+			play_sound(audio_player)
 			
 		#spawn_particles(collision)
 	
@@ -131,4 +131,13 @@ func spawn_particles(collision):
 	particle_a.one_shot = true
 	particle_a.rotation = collision.get_normal().angle() 
 	
-							
+func play_sound(audio):
+	if audio.playing and audio.get_playback_position() <= 0.05:
+		return
+
+	if audio.playing:
+		audio.stop()
+
+	audio.pitch_scale = randf_range(0.9, 1.25)
+	audio.play()	
+								

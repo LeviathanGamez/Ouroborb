@@ -1,10 +1,11 @@
 extends Node2D
 
-var tween =  create_tween().set_parallel()
+var tween 
 var button_editor = preload("res://scripts/tweens.gd")
 
 
 func _ready() -> void:
+	tween =  create_tween().set_parallel()
 	scale = Vector2(1.1,1.1)
 	modulate.a = 0.9
 	button_editor.reset_tween(self)

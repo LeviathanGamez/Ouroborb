@@ -1,6 +1,6 @@
 extends Camera2D
 
-var tween = create_tween()
+var tween 
 
 var button_editor = preload("res://scripts/tweens.gd")
 var pos

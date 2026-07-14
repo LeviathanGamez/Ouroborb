@@ -1,7 +1,7 @@
 extends Button
 
 var button_editor = preload("res://scripts/tweens.gd")
-var tween = create_tween()
+var tween 
 @onready var camera = $"../../../Camera2D"
 @onready var UI = $"../../../UI"
 

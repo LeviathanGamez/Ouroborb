@@ -1,7 +1,7 @@
 extends Label
 
-var tween = create_tween()
-var tween_dollar = create_tween()
+var tween 
+var tween_dollar 
 var pos 
 var button_editor = preload("res://scripts/tweens.gd")
 @onready var dollar = $"../DollarSign"
@@ -16,7 +16,7 @@ func activate_tweens():
 	#self
 	if tween:
 		tween.kill()
-		tween = create_tween()
+	tween = create_tween()
 	
 	tween.tween_property(self,"scale",Vector2(1,1),0.000001)
 	button_editor.reset_tween(self)
@@ -26,12 +26,12 @@ func activate_tweens():
 	#dollar
 	if tween_dollar:
 		tween_dollar.kill()
-		tween_dollar = create_tween()
+	tween_dollar = create_tween()
 	tween_dollar.set_ease(Tween.EASE_OUT)
 	tween_dollar.tween_property(dollar, "position", pos-Vector2(0,10), 0.1)
 	tween_dollar.tween_property(dollar, "position", pos, 0.1).set_delay(0.05)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pivot_offset = size / 2
 	var text_width = get_theme_default_font().get_string_size(
 	text,

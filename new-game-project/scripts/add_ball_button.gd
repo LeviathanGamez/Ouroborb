@@ -8,7 +8,7 @@ var button_editor = preload("res://scripts/tweens.gd")
 var particle_click = preload("res://scenes/particles_click.tscn")
 
 
-var tween = create_tween()
+var tween 
 
 func _on_pressed() -> void:
 	if GlobalGameManager.money >= GlobalGameManager.ball_price:

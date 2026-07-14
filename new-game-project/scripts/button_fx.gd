@@ -1,7 +1,7 @@
 extends Button
 class_name ButtonFX
 var button_editor = preload("res://scripts/tweens.gd")
-var tween = create_tween()
+var tween 
 
 
 var particle_click = preload("res://scenes/particles_click.tscn")

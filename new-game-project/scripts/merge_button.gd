@@ -3,7 +3,7 @@ extends Button
 
 
 var button_editor = preload("res://scripts/tweens.gd")
-var tween = create_tween()
+var tween 
 @onready var camera = $"../../../Camera2D"
 
 var particle_scene = preload("res://scenes/particles.tscn")
