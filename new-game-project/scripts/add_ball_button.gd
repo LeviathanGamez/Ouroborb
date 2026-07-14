@@ -13,8 +13,7 @@ var tween
 func _on_pressed() -> void:
 	if GlobalGameManager.money >= GlobalGameManager.ball_price:
 		GlobalGameManager.add_count(-GlobalGameManager.ball_price)
-		GlobalGameManager.ball_price += GlobalGameManager.ball_price_increase
-
+		GlobalGameManager.price_increase()
 		var ball_a = ball.instantiate() 
 		ball_a.get_node("CharacterBody2D").position = Vector2(550, 350)
 	

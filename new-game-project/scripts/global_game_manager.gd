@@ -7,17 +7,19 @@ var label_pool = []
 var label_pool_index = 0
 
 
-var god_mode = true
-var infinite_money = true
+var god_mode = false
+var infinite_money = false
 var screenshake = false
 var paused = false
 
 var money = 0
 var ball_price = 50
 var ball_price_increase = 50
+var ball_price_increase_original = 50
 
 var amount = 8
 var angle = TAU/amount
+var ball_count = 0
 
 var player_strength = 1
 var player_value = 5
@@ -109,4 +111,10 @@ func print_stats():
 	print("Steel: x", global_steel_ball, "%") # +20% each
 	print("Tough: x", global_steel_ball, "%") # +20% each
 	
+func price_increase() -> void:
+	ball_price += ball_price_increase
+	
+	ball_count += 1
+	if ball_count % 10 == 0:
+		ball_price_increase += ball_price_increase_original
 	
