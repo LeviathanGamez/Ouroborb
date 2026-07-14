@@ -1,6 +1,8 @@
 # Ouroborb
 - Created for Macondo Hack Club
+
 Full Game: https://levithangamez.itch.io/ouroborb
+
 Description:
 A 2D incremental video game about upgrading and merging bouncing balls to break tiles as fast as possible, then earning more money and increasing exponentially. Combine balls to explore unique upgrades and more powerful abilities to build an unstoppable ball army. Progress through three unique areas, unlocking new rewards, more balls, and increasingly chaotic gameplay.
 
