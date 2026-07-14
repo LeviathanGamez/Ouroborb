@@ -31,5 +31,12 @@ Features:
 - Responsive visual and audio feedback
 - Smooth animations and polished UI
 
+Credits:
+-Sprite Borders: Border and Panels Menu Part 1
+Author: BDragon1727
+-Sprite Icons: Ability Icons 16x16
+Author: jfranciPX
+-Music: Chill
+Author: alex-morgan
 
 
