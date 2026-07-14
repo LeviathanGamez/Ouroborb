@@ -1958,6 +1958,7 @@ offset_bottom = 40.0
 
 [node name="xbutton" type="Button" parent="UI/XButton" unique_id=436596952]
 process_mode = 3
+visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 1070.0
@@ -1967,26 +1968,28 @@ offset_bottom = 111.0
 script = ExtResource("19_sv1m6")
 
 [node name="Price" type="Label" parent="UI/XButton/xbutton" unique_id=472275769]
+visible = false
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -16.719
-anchor_top = -0.734
-anchor_right = -16.719
-anchor_bottom = -0.734
+anchor_left = -16.7815
+anchor_top = -0.780875
+anchor_right = -16.7815
+anchor_bottom = -0.76524997
 offset_left = 1071.016
 offset_top = 48.976
 offset_right = 1133.016
 offset_bottom = 113.976
 theme_override_colors/font_color = Color(0.8636066, 0.28491607, 0.3585585, 1)
 theme_override_fonts/font = ExtResource("11_3xj3m")
-theme_override_font_sizes/font_size = 39
-text = " ✖ "
+theme_override_font_sizes/font_size = 60
+text = " X"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="ButtonTileMap2" type="TileMap" parent="UI/XButton" unique_id=933129925]
+visible = false
 position = Vector2(-482, -593)
 tile_set = SubResource("TileSet_sv1m6")
 format = 2
@@ -2009,6 +2012,7 @@ environment = SubResource("Environment_2rd6h")
 [node name="Particles" type="Node" parent="." unique_id=864063998]
 
 [node name="Settings" type="Control" parent="." unique_id=1197722622]
+visible = false
 z_index = 200
 layout_mode = 3
 anchors_preset = 0
@@ -2184,18 +2188,58 @@ script = ExtResource("22_attvq")
 z_index = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -16.68775
-anchor_top = -1.14025
-anchor_right = -16.68775
-anchor_bottom = -0.46837497
+anchor_left = -16.734625
+anchor_top = -1.155875
+anchor_right = -16.609625
+anchor_bottom = -0.48399997
 offset_left = 1071.016
-offset_top = 48.976
+offset_top = 52.975998
 offset_right = 1133.016
-offset_bottom = 113.976
+offset_bottom = 117.976
 theme_override_colors/font_color = Color(0.16078432, 0.83137256, 0.7882353, 1)
 theme_override_fonts/font = ExtResource("11_3xj3m")
-theme_override_font_sizes/font_size = 100
-text = "≡"
+theme_override_font_sizes/font_size = 80
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Price2" type="Label" parent="Hamburger/hamburger" unique_id=1176836070]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -16.672125
+anchor_top = -1.1715
+anchor_right = -16.672125
+anchor_bottom = -0.49962497
+offset_left = 1071.016
+offset_top = 68.976
+offset_right = 1133.016
+offset_bottom = 133.976
+theme_override_colors/font_color = Color(0.16078432, 0.83137256, 0.7882353, 1)
+theme_override_fonts/font = ExtResource("11_3xj3m")
+theme_override_font_sizes/font_size = 80
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Price3" type="Label" parent="Hamburger/hamburger" unique_id=1631892930]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -16.672125
+anchor_top = -1.218375
+anchor_right = -16.672125
+anchor_bottom = -0.87462497
+offset_left = 1071.016
+offset_top = 52.975998
+offset_right = 1133.016
+offset_bottom = 117.976
+theme_override_colors/font_color = Color(0.16078432, 0.83137256, 0.7882353, 1)
+theme_override_fonts/font = ExtResource("11_3xj3m")
+theme_override_font_sizes/font_size = 80
+text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true

@@ -26,6 +26,7 @@ Music="*uid://8jranl2t1wgf"
 
 [display]
 
+window/size/viewport_height=724
 window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
