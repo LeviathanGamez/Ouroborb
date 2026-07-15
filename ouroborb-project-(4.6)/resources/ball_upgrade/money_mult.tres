@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="upgrade_stats" format=3 uid="uid://fopkoir3v2rc"]
+
+[ext_resource type="Script" uid="uid://dba467il347bl" path="res://resources/ball_upgrade/ball_upgrade.gd" id="1_y478h"]
+[ext_resource type="Texture2D" uid="uid://0s88hr34rd76" path="res://assets/sprites/icons/money_mult.png" id="2_gii5d"]
+
+[resource]
+script = ExtResource("1_y478h")
+stat = 4
+value = 0.2
+text = "[wave amp=10 freq=4][color=orange]ALL[/color][/wave]  Money rewards give +20% more"
+texture = ExtResource("2_gii5d")
+metadata/_custom_type_script = "uid://dba467il347bl"

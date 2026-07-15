@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://8jranl2t1wgf"]
+
+[ext_resource type="AudioStream" uid="uid://dqmoyl1gv4q41" path="res://assets/sounds/alex-morgan-chill-545522.mp3" id="1_05ggv"]
+
+[node name="music" type="AudioStreamPlayer2D" unique_id=822689769]
+stream = ExtResource("1_05ggv")
+autoplay = true
+bus = &"Music"

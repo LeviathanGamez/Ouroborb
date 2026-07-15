@@ -8,7 +8,7 @@ class_name Skill_Node
 @onready var panel_container = $Tooltip/PanelContainer
 @onready var text_label = $Tooltip/PanelContainer/RichTextLabel
 @onready var line_2d: Line2D = $Line2D
-
+@onready var max_rect = $ColorRect
 
 	
 @export var stats: upgrade_stats
@@ -141,9 +141,13 @@ func update_text():
 			str(stats.StatType.keys()[stats.stat].to_lower()).replace("_", " ").to_upper() +
 			"[/center]\n\n" +
 			"[center]" + stats.text + "[/center]\n\n" +
-			"[center][color=#EFBF04]Cost: $" + str(price) + "[/color][/center]"
+			"[center][color=#EFBF04]Cost: $" + numberphy(price) + "[/color][/center]"
 		)
 	else:
+		max_rect.visible = true
+		var style := tooltip.get_theme_stylebox("panel").duplicate() as StyleBoxFlat
+		style.border_color = Color.html("#EFBF04")
+		tooltip.add_theme_stylebox_override("panel", style)
 		text_label.text = (
 			"[center]" +
 			str(stats.StatType.keys()[stats.stat].to_lower()).replace("_", " ").to_upper() +
@@ -168,6 +172,12 @@ func _on_mouse_entered() -> void:
 	tween.tween_property(sprite, "scale", Vector2(3*1.1,3*1.1) , 0.3)
 	tween.parallel().tween_property(panel, "scale", Vector2(1.15,1.15), 0.3)
 	tween_3.tween_property(tooltip,"modulate:a",1.0,0.3)
+
+func numberphy(num: int) -> String:
+	var s := str(num)
+	for i in range(s.length() - 3, 0, -3):
+		s = s.insert(i, ",")
+	return s
 	
 func _on_mouse_exited() -> void:
 	reset_tween()

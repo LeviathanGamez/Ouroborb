@@ -7,8 +7,8 @@ var ball = preload("res://scenes/ball.tscn")
 var button_editor = preload("res://scripts/tweens.gd")
 var particle_click = preload("res://scenes/particles_click.tscn")
 
-
 var tween 
+
 
 func _on_pressed() -> void:
 	if GlobalGameManager.money >= GlobalGameManager.ball_price:
@@ -28,7 +28,6 @@ func _on_pressed() -> void:
 			particle_a.global_position = get_global_mouse_position()
 			get_tree().current_scene.get_node("Particles").add_child(particle_a)
 		
-
 
 
 func _on_mouse_entered() -> void:

@@ -52,7 +52,9 @@ func _process(_delta):
 	
 func set_money_prices():
 	money_label.text = str(GlobalGameManager.money)
-	add_ball_price.text = "$"+ str(GlobalGameManager.ball_price)
+	add_ball_price.text = "$"+ GlobalGameManager.numberphy(int(GlobalGameManager.ball_price))
+
+
 	
 func spawn_blocks(current_loop):
 	var random_num = randi_range(0,100)

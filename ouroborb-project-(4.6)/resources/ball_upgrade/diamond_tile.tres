@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="upgrade_stats" format=3 uid="uid://ovakag6jsij5"]
+
+[ext_resource type="Script" uid="uid://dba467il347bl" path="res://resources/ball_upgrade/ball_upgrade.gd" id="1_xmtqe"]
+[ext_resource type="Texture2D" uid="uid://dh1lub2kioik5" path="res://assets/sprites/icons/diamond.png" id="2_n618j"]
+
+[resource]
+script = ExtResource("1_xmtqe")
+stat = 17
+value = 0.01
+text = "Increases diamond tile spawning by +1%"
+texture = ExtResource("2_n618j")
+metadata/_custom_type_script = "uid://dba467il347bl"

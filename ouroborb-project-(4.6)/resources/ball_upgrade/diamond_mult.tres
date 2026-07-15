@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="upgrade_stats" format=3 uid="uid://df7dw8dgdg6qs"]
+
+[ext_resource type="Script" uid="uid://dba467il347bl" path="res://resources/ball_upgrade/ball_upgrade.gd" id="1_jlifn"]
+[ext_resource type="Texture2D" uid="uid://dytgfu532caum" path="res://assets/sprites/icons/diamond_mult.png" id="2_84ydu"]
+
+[resource]
+script = ExtResource("1_jlifn")
+stat = 19
+value = 0.2
+text = "Increases diamond tiles value by 20% with each level"
+texture = ExtResource("2_84ydu")
+metadata/_custom_type_script = "uid://dba467il347bl"

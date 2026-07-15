@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="upgrade_stats" format=3 uid="uid://q84v0nw0rkxr"]
+
+[ext_resource type="Script" uid="uid://dba467il347bl" path="res://resources/ball_upgrade/ball_upgrade.gd" id="1_wotie"]
+[ext_resource type="Texture2D" uid="uid://b1dmpgarwj00c" path="res://assets/sprites/icons/ball_crit_mult.png" id="2_wotie"]
+
+[resource]
+script = ExtResource("1_wotie")
+stat = 6
+value = 0.2
+text = "Increases critical multiplier of [wave amp=10 freq=4][color=orange]ALL[/color][/wave]  balls critical hits by +20%"
+texture = ExtResource("2_wotie")
+metadata/_custom_type_script = "uid://dba467il347bl"

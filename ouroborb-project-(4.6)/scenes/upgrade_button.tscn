@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://b4f1y5u1r0teu"]
+
+[ext_resource type="Script" uid="uid://p5cvhhfqky0u" path="res://scripts/skill_button.gd" id="2_0e4al"]
+[ext_resource type="Shader" uid="uid://cag0a2rxoiqxs" path="res://shaders/outline.gdshader" id="2_o77qo"]
+[ext_resource type="FontFile" uid="uid://u66y04ig1tku" path="res://assets/fonts/Jersey10-Regular copy.ttf" id="3_o77qo"]
+[ext_resource type="Texture2D" uid="uid://diwo4t2i2spt5" path="res://assets/sprites/icons/click_power.png" id="4_0e4al"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s22sv"]
+shader = ExtResource("2_o77qo")
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/corner_pixel = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o77qo"]
+bg_color = Color(0, 0, 0, 0.6509804)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.012751048, 0.0666898, 0.12144425, 1)
+border_blend = true
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 20
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[node name="SkillButton" type="TextureButton" unique_id=1750277939]
+process_mode = 3
+z_index = 5
+offset_right = 49.0
+offset_bottom = 47.0
+pivot_offset = Vector2(20, 20)
+toggle_mode = true
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("2_0e4al")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1244755294]
+material = SubResource("ShaderMaterial_s22sv")
+position = Vector2(24, 24)
+scale = Vector2(3, 3)
+texture = ExtResource("4_0e4al")
+
+[node name="Panel" type="Panel" parent="." unique_id=2145487515]
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+pivot_offset = Vector2(20.5, 20.5)
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=847183624]
+layout_mode = 0
+offset_right = 49.0
+offset_bottom = 48.0
+theme_override_constants/margin_bottom = -2
+
+[node name="Label" type="Label" parent="MarginContainer" unique_id=1213328866]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_o77qo")
+theme_override_font_sizes/font_size = 16
+text = "0/5"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Line2D" type="Line2D" parent="." unique_id=2101919367]
+top_level = true
+z_index = 11
+z_as_relative = false
+width = 5.0
+default_color = Color(0.21050721, 0.21050721, 0.21050721, 1)
+
+[node name="UpgradeButton" type="Node2D" parent="." unique_id=820099230]
+
+[node name="Tooltip" type="Panel" parent="." unique_id=293761757]
+process_mode = 3
+visible = false
+z_index = 12
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 0
+offset_top = -7.0
+offset_right = 140.0
+offset_bottom = 77.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_o77qo")
+
+[node name="PanelContainer" type="PanelContainer" parent="Tooltip" unique_id=563886997]
+process_mode = 3
+visible = false
+z_index = 13
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 0
+offset_right = 140.0
+offset_bottom = 80.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Tooltip/PanelContainer" unique_id=469439067]
+process_mode = 3
+visible = false
+z_index = 14
+layout_mode = 2
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_o77qo")
+theme_override_font_sizes/normal_font_size = 16
+bbcode_enabled = true
+text = "[center] Crit Chance [/center] 
+[center]+2% each tier [/center] 
+[center][color=\"#EFBF04\"]Cost: 10 [/color] [/center] "
+fit_content = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://cwxktwalgqn2n"]
+
+[ext_resource type="Texture2D" uid="uid://bsoyrde6avwrh" path="res://assets/sprites/entities/Tile.png" id="1_3dk36"]
+[ext_resource type="Script" uid="uid://mx5wm5i86dp7" path="res://scripts/tile.gd" id="1_jy7pm"]
+[ext_resource type="Resource" uid="uid://csdtjunkwet80" path="res://resources/tile_types/normal.tres" id="2_a2bny"]
+[ext_resource type="Shader" uid="uid://d201vj6b2romr" path="res://shaders/hit_flash.tres" id="2_q7utx"]
+[ext_resource type="FontFile" uid="uid://u66y04ig1tku" path="res://assets/fonts/Jersey10-Regular copy.ttf" id="2_ywnoi"]
+[ext_resource type="AudioStream" uid="uid://c26kbr78bfgcx" path="res://assets/sounds/click.MP3" id="5_gtpg2"]
+[ext_resource type="AudioStream" uid="uid://bnpjl420xq3wf" path="res://assets/sounds/coinSound.MP3" id="6_a2bny"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6p3j2"]
+resource_local_to_scene = true
+shader = ExtResource("2_q7utx")
+shader_parameter/enable = false
+shader_parameter/Tint = Color(1, 1, 1, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ywnoi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jy7pm"]
+size = Vector2(100, 36)
+
+[sub_resource type="Animation" id="Animation_gtpg2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/enable")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_a2bny"]
+resource_name = "hit_flash"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:material:shader_parameter/enable")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.09991947),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_284l3"]
+_data = {
+&"RESET": SubResource("Animation_gtpg2"),
+&"hit_flash": SubResource("Animation_a2bny")
+}
+
+[node name="Tile" type="Node2D" unique_id=157253941 groups=["Colliders"]]
+script = ExtResource("1_jy7pm")
+stats = ExtResource("2_a2bny")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=350431628]
+material = SubResource("ShaderMaterial_6p3j2")
+texture = ExtResource("1_3dk36")
+
+[node name="Label" type="Label" parent="." unique_id=1276945300]
+offset_left = -50.0
+offset_top = -20.0
+offset_right = 50.0
+offset_bottom = 16.0
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("2_ywnoi")
+theme_override_font_sizes/font_size = 32
+text = "5"
+horizontal_alignment = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1712634179]
+physics_material_override = SubResource("PhysicsMaterial_ywnoi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=997628684]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_jy7pm")
+
+[node name="Button" type="Button" parent="." unique_id=1904823880]
+modulate = Color(1, 1, 1, 0)
+z_index = 4
+offset_left = -51.0
+offset_top = -21.0
+offset_right = 51.0
+offset_bottom = 17.0
+
+[node name="HitFlashAnimationPlayer" type="AnimationPlayer" parent="." unique_id=1450629312]
+libraries/ = SubResource("AnimationLibrary_284l3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1365965022]
+stream = ExtResource("5_gtpg2")
+volume_db = 4.0
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=502820121]
+stream = ExtResource("6_a2bny")
+bus = &"SFX"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

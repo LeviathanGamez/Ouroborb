@@ -1,0 +1,42 @@
+extends Label
+
+var tween 
+var tween_dollar 
+var pos 
+var button_editor = preload("res://scripts/tweens.gd")
+@onready var dollar = $"../DollarSign"
+
+func _ready() -> void:
+	#princess treatment
+	GlobalGameManager.label = $"."
+	pos = dollar.global_position
+	
+
+func activate_tweens():
+	#self
+	if tween:
+		tween.kill()
+	tween = create_tween()
+	
+	tween.tween_property(self,"scale",Vector2(1,1),0.000001)
+	button_editor.reset_tween(self)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(self,"scale",Vector2(1.05,1.05),0.05)
+	tween.tween_property(self,"scale",Vector2(1,1),0.1).set_delay(0.05)
+	#dollar
+	if tween_dollar:
+		tween_dollar.kill()
+	tween_dollar = create_tween()
+	tween_dollar.set_ease(Tween.EASE_OUT)
+	tween_dollar.tween_property(dollar, "position", pos-Vector2(0,10), 0.1)
+	tween_dollar.tween_property(dollar, "position", pos, 0.1).set_delay(0.05)
+
+func _process(_delta: float) -> void:
+	pivot_offset = size / 2
+	var text_width = get_theme_default_font().get_string_size(
+	text,
+	HORIZONTAL_ALIGNMENT_CENTER,
+	-1,
+	get_theme_default_font_size()
+).x
+	pivot_offset = Vector2(size.x - (text_width / 2), size.y / 2)

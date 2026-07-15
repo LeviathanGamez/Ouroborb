@@ -117,4 +117,9 @@ func price_increase() -> void:
 	ball_count += 1
 	if ball_count % 10 == 0:
 		ball_price_increase += ball_price_increase_original
-	
+
+func numberphy(num: int) -> String:
+	var s := str(num)
+	for i in range(s.length() - 3, 0, -3):
+		s = s.insert(i, ",")
+	return s

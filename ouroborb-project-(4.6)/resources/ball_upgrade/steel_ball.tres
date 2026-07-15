@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="upgrade_stats" format=3 uid="uid://dfx1mt4daf63u"]
+
+[ext_resource type="Script" uid="uid://dba467il347bl" path="res://resources/ball_upgrade/ball_upgrade.gd" id="1_c4h3s"]
+[ext_resource type="Texture2D" uid="uid://dyjr2vhtv5djm" path="res://assets/sprites/icons/stell_ball.png" id="2_rn3pv"]
+
+[resource]
+script = ExtResource("1_c4h3s")
+stat = 15
+value = 0.2
+text = "[wave amp=10 freq=4][color=orange]ALL[/color][/wave] balls deal +20% more damage"
+texture = ExtResource("2_rn3pv")
+metadata/_custom_type_script = "uid://dba467il347bl"

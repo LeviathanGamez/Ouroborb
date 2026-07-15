@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ci2vetdktwuvr"]
+
+[ext_resource type="Shader" uid="uid://b3dr5lbgblehc" path="res://shaders/diamond.gdshader" id="1_cxwit"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1mdan"]
+shader = ExtResource("1_cxwit")
+shader_parameter/progress = 0.0
+shader_parameter/fill = true
+shader_parameter/size = 40.0
+
+[node name="diamond_shader" type="CanvasLayer" unique_id=377407970]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=263317058]
+material = SubResource("ShaderMaterial_1mdan")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 117.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)

@@ -1,0 +1,650 @@
+[gd_scene format=3 uid="uid://c6womp3aicfjq"]
+
+[ext_resource type="PackedScene" uid="uid://b4f1y5u1r0teu" path="res://scenes/upgrade_button.tscn" id="1_ty3n3"]
+[ext_resource type="Resource" uid="uid://dah63cns7sq8x" path="res://resources/ball_upgrade/ball_power.tres" id="2_tnam6"]
+[ext_resource type="Resource" uid="uid://wcc1a4c05rgq" path="res://resources/ball_upgrade/click_power.tres" id="3_51bdh"]
+[ext_resource type="Resource" uid="uid://1y8mkoahkcp2" path="res://resources/ball_upgrade/speed.tres" id="3_dvtuv"]
+[ext_resource type="Resource" uid="uid://nj553hwvglq4" path="res://resources/ball_upgrade/click_crit.tres" id="4_6awrb"]
+[ext_resource type="Resource" uid="uid://cvalo27jfjwf7" path="res://resources/ball_upgrade/size.tres" id="4_bfm8x"]
+[ext_resource type="Resource" uid="uid://cxb4co50b8cqj" path="res://resources/ball_upgrade/click_crit_mult.tres" id="5_h52vt"]
+[ext_resource type="Resource" uid="uid://dfx1mt4daf63u" path="res://resources/ball_upgrade/steel_ball.tres" id="8_2gejb"]
+[ext_resource type="Resource" uid="uid://bh25qscelv3ic" path="res://resources/ball_upgrade/ball_crit.tres" id="8_rh3y1"]
+[ext_resource type="Resource" uid="uid://q84v0nw0rkxr" path="res://resources/ball_upgrade/ball_crit_mult.tres" id="9_n0rm1"]
+[ext_resource type="Resource" uid="uid://b7tcl5grj2syj" path="res://resources/ball_upgrade/gold_tiles.tres" id="10_o5b3c"]
+[ext_resource type="Resource" uid="uid://kp05ismlmdh1" path="res://resources/ball_upgrade/tile_worth.tres" id="10_p21vy"]
+[ext_resource type="Resource" uid="uid://dtp7y6tfxrxs2" path="res://resources/ball_upgrade/ball_worth.tres" id="10_qredw"]
+[ext_resource type="Resource" uid="uid://fopkoir3v2rc" path="res://resources/ball_upgrade/money_mult.tres" id="11_qredw"]
+[ext_resource type="Resource" uid="uid://cvel72npjcpwx" path="res://resources/ball_upgrade/click_mult.tres" id="11_rh3y1"]
+[ext_resource type="Resource" uid="uid://ovakag6jsij5" path="res://resources/ball_upgrade/diamond_tile.tres" id="12_mxcng"]
+[ext_resource type="Resource" uid="uid://b6bh6cs6k71xd" path="res://resources/ball_upgrade/click_worth.tres" id="12_n0rm1"]
+[ext_resource type="Resource" uid="uid://cdt56xoj8q7mw" path="res://resources/ball_upgrade/ball_mult.tres" id="15_jrpp7"]
+[ext_resource type="Resource" uid="uid://dbpsa1esue064" path="res://resources/ball_upgrade/pristine_ball.tres" id="16_66wtt"]
+[ext_resource type="Resource" uid="uid://d1hkgju5hrkn4" path="res://resources/ball_upgrade/gold_mult.tres" id="16_mxcng"]
+[ext_resource type="Resource" uid="uid://df7dw8dgdg6qs" path="res://resources/ball_upgrade/diamond_mult.tres" id="18_66wtt"]
+
+[node name="SkillTree" type="Control" unique_id=1918904098]
+process_mode = 3
+z_index = 1
+layout_mode = 3
+anchor_right = 0.0050000004
+offset_left = -89.0
+offset_top = -200.0
+offset_right = 94.24
+offset_bottom = -20.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=907284025]
+z_index = -1
+layout_mode = 0
+offset_left = 542.0
+offset_top = 300.0
+offset_right = 596.0
+offset_bottom = 355.0
+mouse_filter = 2
+color = Color(1, 0.64705884, 0, 0.72156864)
+
+[node name="UpgradeButton" parent="." unique_id=820099230 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 304.0
+offset_right = 593.0
+offset_bottom = 352.0
+stats = ExtResource("3_51bdh")
+price = 20
+
+[node name="UpgradeButton2" parent="UpgradeButton" unique_id=258193079 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 78.0
+offset_top = -2.0
+offset_right = 128.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("2_tnam6")
+price = 40
+
+[node name="UpgradeButton2" parent="UpgradeButton/UpgradeButton2" unique_id=1750277939 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 130.0
+disabled = true
+stats = ExtResource("11_qredw")
+price = 2000
+
+[node name="UpgradeButton2" parent="UpgradeButton/UpgradeButton2/UpgradeButton2" unique_id=341964629 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 130.0
+disabled = true
+stats = ExtResource("2_tnam6")
+price = 3000
+price_type = 1
+
+[node name="UpgradeButton2" parent="UpgradeButton/UpgradeButton2/UpgradeButton2/UpgradeButton2" unique_id=1143910296 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 130.0
+disabled = true
+stats = ExtResource("16_66wtt")
+price = 10000000
+price_type = 1
+
+[node name="UpgradeButton3" parent="UpgradeButton/UpgradeButton2" unique_id=421192538 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -78.0
+offset_right = 51.0
+offset_bottom = -30.0
+pivot_offset = Vector2(24.5, 24)
+disabled = true
+stats = ExtResource("8_rh3y1")
+price = 300
+
+[node name="UpgradeButton3" parent="UpgradeButton/UpgradeButton2/UpgradeButton3" unique_id=1023041894 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = -80.0
+offset_bottom = -32.0
+pivot_offset = Vector2(24.5, 24)
+disabled = true
+stats = ExtResource("9_n0rm1")
+price = 1000
+price_type = 1
+
+[node name="UpgradeButton3" parent="UpgradeButton/UpgradeButton2/UpgradeButton3/UpgradeButton3" unique_id=616986527 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = -80.0
+offset_bottom = -32.0
+pivot_offset = Vector2(24.5, 24)
+disabled = true
+stats = ExtResource("8_2gejb")
+price = 300000
+price_type = 1
+
+[node name="UpgradeButton4" parent="UpgradeButton/UpgradeButton2/UpgradeButton3" unique_id=1037694916 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 128.0
+disabled = true
+stats = ExtResource("2_tnam6")
+price = 1000
+price_type = 1
+
+[node name="UpgradeButton4" parent="UpgradeButton/UpgradeButton2/UpgradeButton3/UpgradeButton4" unique_id=1705740186 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = -80.0
+offset_bottom = -32.0
+disabled = true
+stats = ExtResource("8_rh3y1")
+price = 2000
+price_type = 1
+
+[node name="UpgradeButton2" parent="UpgradeButton/UpgradeButton2/UpgradeButton3/UpgradeButton4/UpgradeButton4" unique_id=1797264798 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 130.0
+disabled = true
+stats = ExtResource("11_qredw")
+price = 2000000
+price_type = 1
+
+[node name="UpgradeButton2" parent="UpgradeButton/UpgradeButton2/UpgradeButton3/UpgradeButton4/UpgradeButton4/UpgradeButton2" unique_id=1280807947 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 130.0
+disabled = true
+stats = ExtResource("8_2gejb")
+price = 10000000
+price_type = 1
+
+[node name="UpgradeButton4" parent="UpgradeButton/UpgradeButton2/UpgradeButton3/UpgradeButton4/UpgradeButton4" unique_id=2145514189 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = -80.0
+offset_bottom = -32.0
+disabled = true
+stats = ExtResource("12_mxcng")
+price = 1000000
+price_type = 1
+
+[node name="UpgradeButton2" parent="UpgradeButton/UpgradeButton2/UpgradeButton3/UpgradeButton4/UpgradeButton4/UpgradeButton4" unique_id=1678137818 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 130.0
+disabled = true
+stats = ExtResource("10_o5b3c")
+price = 1000000
+price_type = 1
+
+[node name="UpgradeButton2" parent="UpgradeButton/UpgradeButton2/UpgradeButton3/UpgradeButton4/UpgradeButton4/UpgradeButton4/UpgradeButton2" unique_id=30620986 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 130.0
+disabled = true
+stats = ExtResource("10_qredw")
+price = 300000000
+price_type = 1
+
+[node name="UpgradeButton2" parent="UpgradeButton/UpgradeButton2/UpgradeButton3/UpgradeButton4" unique_id=784661668 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 130.0
+disabled = true
+stats = ExtResource("9_n0rm1")
+price = 5000
+price_type = 1
+
+[node name="UpgradeButton2" parent="UpgradeButton/UpgradeButton2/UpgradeButton3/UpgradeButton4/UpgradeButton2" unique_id=938854774 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 130.0
+disabled = true
+stats = ExtResource("18_66wtt")
+price = 20000000
+price_type = 1
+
+[node name="UpgradeButton4" parent="UpgradeButton/UpgradeButton2" unique_id=18474570 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 82.0
+offset_right = 51.0
+offset_bottom = 130.0
+disabled = true
+stats = ExtResource("3_dvtuv")
+price = 300
+
+[node name="UpgradeButton7" parent="UpgradeButton/UpgradeButton2/UpgradeButton4" unique_id=41433856 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 48.0
+offset_bottom = 128.0
+disabled = true
+stats = ExtResource("10_p21vy")
+price = 3000
+price_type = 1
+
+[node name="UpgradeButton7" parent="UpgradeButton/UpgradeButton2/UpgradeButton4/UpgradeButton7" unique_id=21279844 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 48.0
+offset_bottom = 128.0
+disabled = true
+stats = ExtResource("10_o5b3c")
+price = 100000
+price_type = 1
+
+[node name="UpgradeButton8" parent="UpgradeButton/UpgradeButton2/UpgradeButton4/UpgradeButton7/UpgradeButton7" unique_id=916556453 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 128.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("8_2gejb")
+price = 600000
+price_type = 1
+
+[node name="UpgradeButton8" parent="UpgradeButton/UpgradeButton2/UpgradeButton4" unique_id=140311359 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 128.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("8_rh3y1")
+price = 1500
+price_type = 1
+
+[node name="UpgradeButton7" parent="UpgradeButton/UpgradeButton2/UpgradeButton4/UpgradeButton8" unique_id=2006830049 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 48.0
+offset_bottom = 128.0
+disabled = true
+stats = ExtResource("3_dvtuv")
+price = 100000
+price_type = 1
+
+[node name="UpgradeButton2" parent="UpgradeButton/UpgradeButton2/UpgradeButton4/UpgradeButton8/UpgradeButton7" unique_id=25635156 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 130.0
+disabled = true
+stats = ExtResource("11_qredw")
+price = 2000000
+price_type = 1
+
+[node name="UpgradeButton2" parent="UpgradeButton/UpgradeButton2/UpgradeButton4/UpgradeButton8/UpgradeButton7/UpgradeButton2" unique_id=258188023 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 50.0
+offset_bottom = 127.0
+disabled = true
+stats = ExtResource("4_bfm8x")
+price = 100000000
+price_type = 1
+
+[node name="UpgradeButton2" parent="UpgradeButton/UpgradeButton2/UpgradeButton4/UpgradeButton8/UpgradeButton7/UpgradeButton2/UpgradeButton2" unique_id=1731924664 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 130.0
+disabled = true
+stats = ExtResource("10_qredw")
+price = 500000000
+price_type = 1
+
+[node name="UpgradeButton3" parent="UpgradeButton/UpgradeButton2/UpgradeButton4/UpgradeButton8/UpgradeButton7/UpgradeButton2" unique_id=1875156986 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 130.0
+disabled = true
+stats = ExtResource("8_2gejb")
+price = 5000000
+price_type = 1
+
+[node name="UpgradeButton2" parent="UpgradeButton/UpgradeButton2/UpgradeButton4/UpgradeButton8" unique_id=1927377384 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 130.0
+disabled = true
+stats = ExtResource("12_mxcng")
+price = 50000
+price_type = 1
+
+[node name="UpgradeButton2" parent="UpgradeButton/UpgradeButton2/UpgradeButton4/UpgradeButton8/UpgradeButton2" unique_id=2107025252 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 130.0
+disabled = true
+stats = ExtResource("16_mxcng")
+price = 10000000
+price_type = 1
+
+[node name="UpgradeButton3" parent="UpgradeButton" unique_id=1246651928 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = -80.0
+offset_right = 48.0
+offset_bottom = -32.0
+pivot_offset = Vector2(24, 24)
+disabled = true
+stats = ExtResource("3_dvtuv")
+price = 30
+
+[node name="UpgradeButton3" parent="UpgradeButton/UpgradeButton3" unique_id=969814063 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = -80.0
+offset_bottom = -32.0
+pivot_offset = Vector2(24.5, 24)
+disabled = true
+stats = ExtResource("10_o5b3c")
+price = 5000
+price_type = 1
+
+[node name="UpgradeButton3" parent="UpgradeButton/UpgradeButton3/UpgradeButton3" unique_id=1786988652 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = -80.0
+offset_bottom = -32.0
+pivot_offset = Vector2(24.5, 24)
+disabled = true
+stats = ExtResource("15_jrpp7")
+price = 10000000000
+price_type = 1
+
+[node name="UpgradeButton4" parent="UpgradeButton" unique_id=1001070309 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -32.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("11_qredw")
+price = 200
+
+[node name="UpgradeButton4" parent="UpgradeButton/UpgradeButton4" unique_id=452006405 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -32.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("5_h52vt")
+price = 1000
+
+[node name="UpgradeButton5" parent="UpgradeButton/UpgradeButton4/UpgradeButton4" unique_id=490514301 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -32.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("4_6awrb")
+price = 50000
+price_type = 1
+
+[node name="UpgradeButton5" parent="UpgradeButton/UpgradeButton4/UpgradeButton4/UpgradeButton5" unique_id=792152124 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -32.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("16_66wtt")
+price = 7000000
+price_type = 1
+
+[node name="UpgradeButton5" parent="UpgradeButton/UpgradeButton4" unique_id=2087285981 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = -80.0
+offset_right = 48.0
+offset_bottom = -32.0
+disabled = true
+stats = ExtResource("4_6awrb")
+price = 150
+
+[node name="UpgradeButton5" parent="UpgradeButton/UpgradeButton4/UpgradeButton5" unique_id=458847539 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -32.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("3_dvtuv")
+price = 5000
+price_type = 1
+
+[node name="UpgradeButton4" parent="UpgradeButton/UpgradeButton4/UpgradeButton5/UpgradeButton5" unique_id=2108367170 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = -80.0
+offset_right = 48.0
+offset_bottom = -32.0
+disabled = true
+stats = ExtResource("5_h52vt")
+price = 8000
+price_type = 1
+
+[node name="UpgradeButton3" parent="UpgradeButton/UpgradeButton4/UpgradeButton5/UpgradeButton5/UpgradeButton4" unique_id=1739982006 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = -80.0
+offset_bottom = -32.0
+pivot_offset = Vector2(24.5, 24)
+disabled = true
+stats = ExtResource("12_mxcng")
+price = 100000
+price_type = 1
+
+[node name="UpgradeButton5" parent="UpgradeButton/UpgradeButton4/UpgradeButton5/UpgradeButton5/UpgradeButton4" unique_id=644512071 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -32.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("11_qredw")
+price = 300000
+price_type = 1
+
+[node name="UpgradeButton5" parent="UpgradeButton/UpgradeButton4/UpgradeButton5/UpgradeButton5/UpgradeButton4/UpgradeButton5" unique_id=587411464 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -32.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("16_mxcng")
+price = 40000000
+price_type = 1
+
+[node name="UpgradeButton6" parent="UpgradeButton/UpgradeButton4/UpgradeButton5/UpgradeButton5/UpgradeButton4/UpgradeButton5" unique_id=587479641 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = -80.0
+offset_right = 48.0
+offset_bottom = -32.0
+disabled = true
+stats = ExtResource("4_bfm8x")
+price = 200000000
+price_type = 1
+
+[node name="UpgradeButton5" parent="UpgradeButton/UpgradeButton4/UpgradeButton5/UpgradeButton5/UpgradeButton4/UpgradeButton5/UpgradeButton6" unique_id=1313160936 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -32.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("10_qredw")
+price = 500000000
+price_type = 1
+
+[node name="UpgradeButton6" parent="UpgradeButton/UpgradeButton4/UpgradeButton5/UpgradeButton5" unique_id=1804944024 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -32.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("12_n0rm1")
+price = 50000
+price_type = 1
+
+[node name="UpgradeButton5" parent="UpgradeButton/UpgradeButton4/UpgradeButton5/UpgradeButton5/UpgradeButton6" unique_id=1193938932 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -32.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("10_p21vy")
+price = 30000
+price_type = 1
+
+[node name="UpgradeButton6" parent="UpgradeButton/UpgradeButton4/UpgradeButton5" unique_id=1742294755 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = -80.0
+offset_right = 48.0
+offset_bottom = -32.0
+disabled = true
+stats = ExtResource("10_p21vy")
+price = 10000
+price_type = 1
+
+[node name="UpgradeButton3" parent="UpgradeButton/UpgradeButton4/UpgradeButton5/UpgradeButton6" unique_id=230584804 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = -80.0
+offset_bottom = -32.0
+pivot_offset = Vector2(24.5, 24)
+disabled = true
+stats = ExtResource("16_66wtt")
+price = 10000000
+price_type = 1
+
+[node name="UpgradeButton7" parent="UpgradeButton/UpgradeButton4" unique_id=1485840593 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 48.0
+offset_bottom = 128.0
+disabled = true
+stats = ExtResource("3_51bdh")
+price = 200
+
+[node name="UpgradeButton6" parent="UpgradeButton/UpgradeButton4/UpgradeButton7" unique_id=63175812 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -32.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("10_o5b3c")
+price = 5000
+price_type = 1
+
+[node name="UpgradeButton6" parent="UpgradeButton/UpgradeButton4/UpgradeButton7/UpgradeButton6" unique_id=1898091917 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -32.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("11_rh3y1")
+price = 100000
+price_type = 1
+
+[node name="UpgradeButton5" parent="UpgradeButton/UpgradeButton4/UpgradeButton7/UpgradeButton6/UpgradeButton6" unique_id=2047951827 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -32.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("3_dvtuv")
+price = 100000
+price_type = 1
+
+[node name="UpgradeButton7" parent="UpgradeButton/UpgradeButton4/UpgradeButton7" unique_id=953210013 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 48.0
+offset_bottom = 128.0
+disabled = true
+stats = ExtResource("4_6awrb")
+price = 2000
+price_type = 1
+
+[node name="UpgradeButton7" parent="UpgradeButton/UpgradeButton4/UpgradeButton7/UpgradeButton7" unique_id=241794783 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -32.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("9_n0rm1")
+price = 10000
+price_type = 1
+
+[node name="UpgradeButton7" parent="UpgradeButton/UpgradeButton4/UpgradeButton7/UpgradeButton7/UpgradeButton7" unique_id=1348720838 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 48.0
+offset_bottom = 128.0
+disabled = true
+stats = ExtResource("11_qredw")
+price = 700000
+price_type = 1
+
+[node name="UpgradeButton5" parent="UpgradeButton/UpgradeButton4/UpgradeButton7/UpgradeButton7/UpgradeButton7" unique_id=692172658 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -32.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("16_66wtt")
+price = 800000
+price_type = 1
+
+[node name="UpgradeButton5" parent="UpgradeButton/UpgradeButton4/UpgradeButton7/UpgradeButton7/UpgradeButton7/UpgradeButton5" unique_id=1776702426 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -32.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("18_66wtt")
+price = 20000000
+price_type = 1
+
+[node name="UpgradeButton6" parent="UpgradeButton/UpgradeButton4/UpgradeButton7/UpgradeButton7/UpgradeButton7/UpgradeButton5" unique_id=283096393 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 48.0
+offset_bottom = 128.0
+disabled = true
+stats = ExtResource("12_mxcng")
+price = 1000000
+price_type = 1
+
+[node name="UpgradeButton5" parent="UpgradeButton/UpgradeButton4/UpgradeButton7/UpgradeButton7/UpgradeButton7/UpgradeButton5/UpgradeButton6" unique_id=1672925326 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_left = -80.0
+offset_right = -32.0
+offset_bottom = 48.0
+disabled = true
+stats = ExtResource("10_qredw")
+price = 300000001
+price_type = 1
+
+[node name="UpgradeButton8" parent="UpgradeButton/UpgradeButton4/UpgradeButton7/UpgradeButton7" unique_id=1710796109 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 48.0
+offset_bottom = 128.0
+disabled = true
+stats = ExtResource("3_dvtuv")
+price = 500000
+price_type = 1
+
+[node name="UpgradeButton6" parent="UpgradeButton" unique_id=535348548 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 48.0
+offset_bottom = 128.0
+disabled = true
+stats = ExtResource("10_p21vy")
+price = 50
+
+[node name="UpgradeButton7" parent="UpgradeButton/UpgradeButton6" unique_id=1562583343 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 48.0
+offset_bottom = 128.0
+disabled = true
+stats = ExtResource("8_rh3y1")
+price = 10000
+price_type = 1
+
+[node name="UpgradeButton6" parent="UpgradeButton/UpgradeButton6/UpgradeButton7" unique_id=982628745 instance=ExtResource("1_ty3n3")]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 48.0
+offset_bottom = 128.0
+disabled = true
+stats = ExtResource("11_qredw")
+price = 30000
+price_type = 1

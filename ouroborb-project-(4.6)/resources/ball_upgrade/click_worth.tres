@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="upgrade_stats" format=3 uid="uid://b6bh6cs6k71xd"]
+
+[ext_resource type="Script" uid="uid://dba467il347bl" path="res://resources/ball_upgrade/ball_upgrade.gd" id="1_h7d2x"]
+[ext_resource type="Texture2D" uid="uid://1iv65pfne15f" path="res://assets/sprites/icons/click_worth.png" id="2_vi2wh"]
+
+[resource]
+script = ExtResource("1_h7d2x")
+stat = 14
+value = 1.0
+text = "Multiplies click worth by +100% with each level"
+texture = ExtResource("2_vi2wh")
+metadata/_custom_type_script = "uid://dba467il347bl"

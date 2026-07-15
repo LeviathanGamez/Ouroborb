@@ -119,8 +119,10 @@ func spawn_text_pooled(collided,value):
 	money_text.visible = true
 	GlobalGameManager.label_pool_index = wrap(GlobalGameManager.label_pool_index + 1,0,GlobalGameManager.max_label_count)
 	money_text.global_position = collided.global_position
-	money_text.get_node("RichTextLabel").text = "+"+str(int(round(value)))+"$"
+	money_text.get_node("RichTextLabel").text = "+"+ GlobalGameManager.numberphy(int(round(value)))+"$"
 	money_text.play_animation()
+	
+
 	
 func spawn_particles(collision):
 	particle2 = particle_scene2.instantiate()

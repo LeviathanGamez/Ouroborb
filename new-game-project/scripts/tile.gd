@@ -109,9 +109,10 @@ func spawn_text_pooled(value):
 	money_text.visible = true
 	GlobalGameManager.label_pool_index = wrap(GlobalGameManager.label_pool_index + 1,0,GlobalGameManager.max_label_count)
 	money_text.global_position = global_position
-	money_text.get_node("RichTextLabel").text = "+"+str(int(round(value)))+"$"
+	money_text.get_node("RichTextLabel").text = "+"+ GlobalGameManager.numberphy(int(round(value)))+"$"
 	money_text.play_animation()
-	
+
+
 func play_sound(audio):
 	if audio.playing and audio.get_playback_position() <= 0.05:
 		return
