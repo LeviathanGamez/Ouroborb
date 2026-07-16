@@ -82,10 +82,9 @@ modulate = Color(1, 1, 1, 0)
 z_index = 12
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 0
-offset_left = -63.500214
-offset_top = -60.770462
-offset_right = 76.49979
-offset_bottom = 515.22955
+offset_top = 35.475098
+offset_right = 140.0
+offset_bottom = 35.475098
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_o77qo")
 
@@ -95,19 +94,18 @@ z_index = 13
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 0
 offset_right = 140.0
-offset_bottom = 576.0
+offset_bottom = 13.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Tooltip/PanelContainer" unique_id=469439067]
 process_mode = 3
 z_index = 14
 layout_mode = 2
 mouse_filter = 2
+theme_override_constants/paragraph_separation = -5
 theme_override_fonts/normal_font = ExtResource("3_o77qo")
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
-text = "[center] Crit Chance [/center] 
-[center]+2% each tier [/center] 
-[center][color=\"#EFBF04\"]Cost: 10 [/color] [/center] "
+text = " "
 fit_content = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1614478755]

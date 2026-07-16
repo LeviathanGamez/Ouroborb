@@ -24,7 +24,7 @@ enum StatType {
 	DIAMOND_MULT
 }
 
-var stat_map = {
+const stat_map = {
 	StatType.BALL_POWER: "global_ball_power",
 	StatType.SPEED: "global_speed",
 	StatType.SIZE: "global_size",

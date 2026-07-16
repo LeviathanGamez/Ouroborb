@@ -1,4 +1,4 @@
-#@tool
+@tool
 extends TextureButton
 class_name Skill_Node
 
@@ -24,6 +24,7 @@ var tween
 var tween_2 
 var tween_3
 var tween_4 
+
 
 enum GrowthType{
 	FAST,
@@ -65,12 +66,10 @@ func _ready():
 	if disabled:
 		modulate.a = 0
 		line_2d.modulate.a = 0
-		
+	update_text()
+	tooltip.size.y = panel_container.size.y
 	
 
-	
-	
-	
 
 
 	
@@ -80,13 +79,17 @@ var level := 0:
 		label.text = str(level) + "/" + str(max_level)
 		
 func _process(_delta):
-	tooltip.global_position = get_global_mouse_position() + Vector2(-tooltip.size.x/2, size.y/2)
-	tooltip.size.y = panel_container.size.y
-	update_text()
-	
+		
+	if not Engine.is_editor_hint():
+		tooltip.global_position = get_global_mouse_position() + Vector2(-tooltip.size.x/2, size.y/2)
+		tooltip.size.y = panel_container.size.y
 	if Engine.is_editor_hint():
 		modulate.a = 1
-		sprite.texture = stats.texture
+		
+		if stats != null:
+			sprite.texture = stats.texture
+		text_label.text = " "
+		#tooltip.size.y = 0
 	
 
 	
@@ -150,8 +153,8 @@ func update_text():
 	if str(stats.StatType.keys()[stats.stat].to_lower()).replace("_", " ").to_upper() in ["BALL POWER","CLICK POWER",]:
 		global_stat= ceil(GlobalGameManager.get(stats.stat_map[stats.stat]))
 		added_value = ceil(stats.value)
-		total_value = GlobalGameManager.numberphy(ceil(global_stat+added_value))
-		global_stat = GlobalGameManager.numberphy(global_stat) 
+		total_value = GlobalGameManager.numberphy(ceil(global_stat+added_value+1))
+		global_stat = GlobalGameManager.numberphy(global_stat+1) 
 		
 	else:
 		global_stat = ceil(GlobalGameManager.get(stats.stat_map[stats.stat]) * 100)
@@ -180,8 +183,8 @@ func update_text():
 			"[center]" + stats.text + "[/center]\n\n" +
 			"[center][color=#EFBF04] MAX LEVEL[/color][/center]"
 		)
-	text_label.reset_size()
-	panel_container.reset_size()
+	#text_label.reset_size()
+	#panel_container.reset_size()
 
 func check_prices():
 	original_price = price
