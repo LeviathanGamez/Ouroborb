@@ -58,13 +58,13 @@ func _ready():
 		line_2d.add_point(skill.global_position + size/2)
 	if stats != null:
 		sprite.texture = stats.texture
-	update_text()
 	label.text = str(level) + "/" + str(max_level)
 	pivot_offset = size/2
 	
 	if disabled:
 		modulate.a = 0
 		line_2d.modulate.a = 0
+
 	
 	
 	
@@ -80,6 +80,7 @@ func _process(_delta):
 	tooltip.global_position = get_global_mouse_position() + Vector2(-tooltip.size.x/2, size.y/2)
 	tooltip.size.y = panel_container.size.y
 	update_text()
+	
 
 	
 	
@@ -133,6 +134,7 @@ func _on_pressed() -> void:
 	if not disabled:
 		self_modulate.a = 1
 		modulate.a = 1
+	update_text()
 
 func update_text():
 	if level != max_level:
