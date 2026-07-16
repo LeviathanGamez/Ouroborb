@@ -1,3 +1,4 @@
+#@tool
 extends TextureButton
 class_name Skill_Node
 
@@ -64,6 +65,8 @@ func _ready():
 	if disabled:
 		modulate.a = 0
 		line_2d.modulate.a = 0
+		
+	
 
 	
 	
@@ -80,6 +83,10 @@ func _process(_delta):
 	tooltip.global_position = get_global_mouse_position() + Vector2(-tooltip.size.x/2, size.y/2)
 	tooltip.size.y = panel_container.size.y
 	update_text()
+	
+	if Engine.is_editor_hint():
+		modulate.a = 1
+		sprite.texture = stats.texture
 	
 
 	
@@ -137,19 +144,35 @@ func _on_pressed() -> void:
 	update_text()
 
 func update_text():
+	var global_stat 
+	var added_value
+	var total_value
+	if str(stats.StatType.keys()[stats.stat].to_lower()).replace("_", " ").to_upper() in ["BALL POWER","CLICK POWER",]:
+		global_stat= ceil(GlobalGameManager.get(stats.stat_map[stats.stat]))
+		added_value = ceil(stats.value)
+		total_value = GlobalGameManager.numberphy(ceil(global_stat+added_value))
+		global_stat = GlobalGameManager.numberphy(global_stat) 
+		
+	else:
+		global_stat = ceil(GlobalGameManager.get(stats.stat_map[stats.stat]) * 100)
+		added_value = ceil(stats.value * 100)
+		total_value = GlobalGameManager.numberphy(ceil(global_stat+added_value)) + "%"
+		global_stat = GlobalGameManager.numberphy(global_stat) + "%"
 	if level != max_level:
 		text_label.text = (
 			"[center]" +
 			str(stats.StatType.keys()[stats.stat].to_lower()).replace("_", " ").to_upper() +
 			"[/center]\n\n" +
 			"[center]" + stats.text + "[/center]\n\n" +
-			"[center][color=#EFBF04]Cost: $" + numberphy(price) + "[/color][/center]"
+			"[center]" + global_stat + " -> " + total_value + "[/center]\n\n" +
+			"[center][color=#EFBF04]Cost: $" + GlobalGameManager.numberphy(price) + "[/color][/center]"
 		)
 	else:
 		max_rect.visible = true
 		var style := tooltip.get_theme_stylebox("panel").duplicate() as StyleBoxFlat
 		style.border_color = Color.html("#EFBF04")
 		tooltip.add_theme_stylebox_override("panel", style)
+	
 		text_label.text = (
 			"[center]" +
 			str(stats.StatType.keys()[stats.stat].to_lower()).replace("_", " ").to_upper() +
@@ -175,11 +198,7 @@ func _on_mouse_entered() -> void:
 	tween.parallel().tween_property(panel, "scale", Vector2(1.15,1.15), 0.3)
 	tween_3.tween_property(tooltip,"modulate:a",1.0,0.3)
 
-func numberphy(num: int) -> String:
-	var s := str(num)
-	for i in range(s.length() - 3, 0, -3):
-		s = s.insert(i, ",")
-	return s
+
 	
 func _on_mouse_exited() -> void:
 	reset_tween()

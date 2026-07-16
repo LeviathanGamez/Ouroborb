@@ -33,7 +33,7 @@ process_mode = 3
 z_index = 5
 offset_right = 49.0
 offset_bottom = 47.0
-pivot_offset = Vector2(20, 20)
+pivot_offset = Vector2(24.5, 23.5)
 toggle_mode = true
 ignore_texture_size = true
 stretch_mode = 0
@@ -78,13 +78,14 @@ default_color = Color(0.21050721, 0.21050721, 0.21050721, 1)
 
 [node name="Tooltip" type="Panel" parent="." unique_id=293761757]
 process_mode = 3
-visible = false
+modulate = Color(1, 1, 1, 0)
 z_index = 12
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 0
-offset_top = -7.0
-offset_right = 140.0
-offset_bottom = 77.0
+offset_left = -63.500214
+offset_top = -60.770462
+offset_right = 76.49979
+offset_bottom = 515.22955
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_o77qo")
 
@@ -94,7 +95,7 @@ z_index = 13
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 0
 offset_right = 140.0
-offset_bottom = 80.0
+offset_bottom = 576.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Tooltip/PanelContainer" unique_id=469439067]
 process_mode = 3
