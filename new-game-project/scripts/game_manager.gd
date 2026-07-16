@@ -5,6 +5,8 @@ extends Node
 @onready var UI =  $"../UI" 
 @onready var tiles = $"../Tiles"
 @onready var skill_tree = $"../UI/SkillTree"
+@onready var hamburger = $"../Hamburger/hamburger"
+@onready var resume = $"../Settings/Resume"
 var money_text = preload("res://scenes/money.tscn")
 
 var tile_scene = preload("res://scenes/tile.tscn")
@@ -21,7 +23,7 @@ var loops = 1
 var run_nodes = true
 # Called when the node enters the scene tree for the first time.
 # They're 100 x 36px
-
+var paused = false
 func _ready() -> void:
 	spawn_blocks(loops)
 	loops+=1
@@ -41,6 +43,12 @@ func _input(event):
 		GlobalGameManager.print_stats()
 	elif event.is_action_pressed("UPGRADE"):
 		GlobalGameManager.toggle_pause(UI)
+	elif event.is_action_pressed("PAUSE"):
+		if paused:
+			hamburger._on_pressed()
+		else:
+			resume._on_pressed()
+		paused = not paused
 		
 		 
 func _process(_delta):
