@@ -74,8 +74,9 @@ func spawn_blocks(current_loop):
 
 				var sprite = tile_a.get_node("Sprite2D")
 				type_check(tile_a,sprite)
-				tiles.call_deferred("add_child", tile_a)
+				tiles.add_child(tile_a)
 				tile_a.value = tile_a.value * current_loop
+	
 				
 	elif random_num < 60:
 		for i in range(0,8):
@@ -85,8 +86,9 @@ func spawn_blocks(current_loop):
 				
 				var sprite = tile_a.get_node("Sprite2D")
 				type_check(tile_a,sprite)
-				tiles.call_deferred("add_child", tile_a)
+				tiles.add_child(tile_a)
 				tile_a.value = tile_a.value * current_loop
+		
 				
 	elif random_num <=77:
 		for i in range(0,9):
@@ -97,7 +99,7 @@ func spawn_blocks(current_loop):
 				tile_a.position = Vector2(178+100*i,94+36*j)
 				var sprite = tile_a.get_node("Sprite2D")
 				type_check(tile_a,sprite)
-				tiles.call_deferred("add_child", tile_a)
+				tiles.add_child(tile_a)
 				tile_a.value = tile_a.value * current_loop
 	elif random_num <= 94:
 		for i in range(0,9):
@@ -108,7 +110,7 @@ func spawn_blocks(current_loop):
 				tile_a.position = Vector2(178+100*i,94+36*j)
 				var sprite = tile_a.get_node("Sprite2D")
 				type_check(tile_a,sprite)
-				tiles.call_deferred("add_child", tile_a)
+				tiles.add_child(tile_a)
 				tile_a.value = tile_a.value * current_loop
 	elif random_num <= 99:
 		for i in range(0,9):
@@ -117,8 +119,10 @@ func spawn_blocks(current_loop):
 				tile_a.position = Vector2(178+100*i,94+36*j)
 				var sprite = tile_a.get_node("Sprite2D")
 				type_check(tile_a,sprite)
-				tiles.call_deferred("add_child", tile_a)
+				tiles.add_child(tile_a)
 				tile_a.value = tile_a.value * current_loop
+				
+	
 	run_nodes = true
 				
 func set_color(sprite):

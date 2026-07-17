@@ -34,11 +34,13 @@ func _ready() -> void:
 		audio_player2.stream = audio_player2.stream.duplicate()
 	sound = audio_player.duplicate()
 	sound2 = audio_player2.duplicate()
+	
 
 func _process(_delta: float) -> void:
 	label.text = str(int(value))
 	if floor(value) <= 0:
 		kill()
+	
 
 
 func set_up_variables():
@@ -104,6 +106,7 @@ func _on_button_pressed() -> void:
 			kill()
 			
 	animation_player.play("hit_flash")
+	
 func spawn_text_pooled(value):
 	var money_text = GlobalGameManager.label_pool[GlobalGameManager.label_pool_index]
 	money_text.visible = true

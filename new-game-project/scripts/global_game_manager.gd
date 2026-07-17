@@ -8,7 +8,7 @@ var label_pool_index = 0
 
 
 var god_mode = true
-var infinite_money = true
+var infinite_money = false
 var screenshake = false
 var paused = false
 
@@ -84,9 +84,9 @@ func toggle_pause(UI):
 #		child.update_text()
 func god_mode_check():
 	if god_mode:
-		global_speed = 1 # +20% each _
+		global_speed = 16 # +20% each _
 		global_size = 1 # +20% each _
-		global_ball_power = 30 # + 1 eac
+		global_ball_power = 5 # + 1 eac
 		
 func print_stats():
 	print("=== GLOBAL STATS ===")
