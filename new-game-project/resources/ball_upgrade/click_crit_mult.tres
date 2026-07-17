@@ -7,6 +7,6 @@
 script = ExtResource("1_suq71")
 stat = 9
 value = 0.2
-text = "Increases critical multiplier of clicks critical hits with each level by 20%"
+text = "Increases critical multiplier of clicks critical hits by 20%"
 texture = ExtResource("2_5iy3p")
 metadata/_custom_type_script = "uid://dba467il347bl"

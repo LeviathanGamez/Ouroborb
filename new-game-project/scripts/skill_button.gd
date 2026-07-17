@@ -44,6 +44,7 @@ var current_price_increment = 0
 
 
 func _ready():
+	add_to_group("Buttons")
 	price_increment = price_list[price_type]
 	check_prices()
 	await get_tree().process_frame
@@ -145,6 +146,9 @@ func _on_pressed() -> void:
 		self_modulate.a = 1
 		modulate.a = 1
 	update_text()
+	for button in get_tree().get_nodes_in_group("Buttons"):
+		if button.stats.StatType == stats.StatType:
+			button.update_text()
 
 func update_text():
 	var global_stat 
@@ -153,13 +157,13 @@ func update_text():
 	if str(stats.StatType.keys()[stats.stat].to_lower()).replace("_", " ").to_upper() in ["BALL POWER","CLICK POWER",]:
 		global_stat= ceil(GlobalGameManager.get(stats.stat_map[stats.stat]))
 		added_value = ceil(stats.value)
-		total_value = GlobalGameManager.numberphy(ceil(global_stat+added_value+1))
+		total_value = GlobalGameManager.numberphy(floor(global_stat+added_value+1))
 		global_stat = GlobalGameManager.numberphy(global_stat+1) 
 		
 	else:
 		global_stat = ceil(GlobalGameManager.get(stats.stat_map[stats.stat]) * 100)
 		added_value = ceil(stats.value * 100)
-		total_value = GlobalGameManager.numberphy(ceil(global_stat+added_value)) + "%"
+		total_value = GlobalGameManager.numberphy(floor(global_stat+added_value)) + "%"
 		global_stat = GlobalGameManager.numberphy(global_stat) + "%"
 	if level != max_level:
 		text_label.text = (
@@ -185,6 +189,7 @@ func update_text():
 		)
 	#text_label.reset_size()
 	#panel_container.reset_size()
+	
 
 func check_prices():
 	original_price = price

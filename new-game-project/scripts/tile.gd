@@ -37,7 +37,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	label.text = str(int(value))
-	if value <= 0:
+	if floor(value) <= 0:
 		kill()
 
 
@@ -70,7 +70,7 @@ func _on_button_pressed() -> void:
 		crit_value = int(round(crit_value))
 		spawn_text_pooled(crit_value)
 		
-		if value <= 0:
+		if floor(value) <= 0:
 			
 			if sound2.playing:
 				sound2.stop()
@@ -92,7 +92,7 @@ func _on_button_pressed() -> void:
 		
 		tile_value = int(round(tile_value))
 		spawn_text_pooled(tile_value)
-		if value <= 0:
+		if floor(value) <= 0:
 			if sound.playing:
 				sound.stop()
 			get_tree().current_scene.add_child(sound)

@@ -28,7 +28,7 @@ expand_margin_top = 4.0
 expand_margin_right = 4.0
 expand_margin_bottom = 4.0
 
-[node name="SkillButton" type="TextureButton" unique_id=1750277939]
+[node name="SkillButton" type="TextureButton" unique_id=1750277939 groups=["Buttons"]]
 process_mode = 3
 z_index = 5
 offset_right = 49.0

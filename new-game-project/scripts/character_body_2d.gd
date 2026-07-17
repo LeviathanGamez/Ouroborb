@@ -8,6 +8,7 @@ extends CharacterBody2D
 
 var money_text = preload("res://scenes/money.tscn")
 
+var fps_speed_factor = 60
 var speed 
 var power
 var value
@@ -27,7 +28,10 @@ var particle2
 
 func _ready():
 	add_to_group("balls")
-	velocity = Vector2(randf_range(-1,1),randf_range(-1,1))
+	if get_tree().get_nodes_in_group("group_name").size() == 1:
+		velocity = Vector2([-1,1].pick_random(),[-1,1].pick_random()) 
+	else:
+		velocity = Vector2(randf_range(-1,1),randf_range(-1,1)) 
 	set_up_variables()
 	
 	#spawn particles
@@ -75,9 +79,9 @@ func damage(collided):
 
 
 	
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 
-	var collision = move_and_collide(velocity)
+	var collision = move_and_collide(velocity * delta)
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
 		
@@ -111,7 +115,7 @@ func set_up_variables():
 	scale = Vector2(sizes,sizes)
 	color = stats.color
 	modulate = color
-	velocity = velocity.normalized()*speed
+	velocity = velocity.normalized()*speed * fps_speed_factor
 	sprite.texture = stats.texture
 	
 func spawn_text_pooled(collided,value):

@@ -5,9 +5,9 @@
 
 [resource]
 script = ExtResource("1_b2p0n")
-speed = 8.0
+speed = 6.0
 power = 10
-size = 2.0
+size = 1.75
 value = 40
 crit = 0.4
 texture = ExtResource("2_r2ga5")
