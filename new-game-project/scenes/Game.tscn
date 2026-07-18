@@ -1702,7 +1702,7 @@ position = Vector2(576, 324)
 script = ExtResource("4_kyk2p")
 
 [node name="Background" parent="." unique_id=157265212 instance=ExtResource("5_s0nni")]
-position = Vector2(-135, -146)
+position = Vector2(-215, -80)
 
 [node name="Diamonds (Unused)" type="Node" parent="." unique_id=1212530215]
 
@@ -1898,6 +1898,98 @@ autowrap_mode = 2
 script = ExtResource("17_vjgi4")
 metadata/_edit_use_anchors_ = true
 
+[node name="Comma2" type="Label" parent="Counter/Control/Money" unique_id=835658642]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.4187498
+anchor_top = 0.122463726
+anchor_right = 10.95625
+anchor_bottom = 0.122463726
+offset_left = -467.6
+offset_top = -13.45
+offset_right = -430.60004
+offset_bottom = 80.55
+pivot_offset = Vector2(18.5, 47)
+theme_override_colors/font_color = Color(1, 0.83137256, 0.3529412, 1)
+theme_override_colors/font_outline_color = Color(1, 0.5411765, 0.16470589, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("11_3xj3m")
+theme_override_font_sizes/font_size = 60
+text = ",     "
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Comma3" type="Label" parent="Counter/Control/Money" unique_id=1289025304]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.7437496
+anchor_top = 0.19746377
+anchor_right = 8.63125
+anchor_bottom = 0.19746377
+offset_left = -486.2
+offset_top = -18.625
+offset_right = -449.2
+offset_bottom = 75.375
+pivot_offset = Vector2(18.5, 47)
+theme_override_colors/font_color = Color(1, 0.83137256, 0.3529412, 1)
+theme_override_colors/font_outline_color = Color(1, 0.5411765, 0.16470589, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("11_3xj3m")
+theme_override_font_sizes/font_size = 60
+text = ",     "
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Comma4" type="Label" parent="Counter/Control/Money" unique_id=1412334549]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -5.0687504
+anchor_top = 0.19746377
+anchor_right = 6.3062496
+anchor_bottom = 0.19746377
+offset_left = -504.8
+offset_top = -18.625
+offset_right = -467.8
+offset_bottom = 75.375
+pivot_offset = Vector2(18.5, 47)
+theme_override_colors/font_color = Color(1, 0.83137256, 0.3529412, 1)
+theme_override_colors/font_outline_color = Color(1, 0.5411765, 0.16470589, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("11_3xj3m")
+theme_override_font_sizes/font_size = 60
+text = ",     "
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Comma1" type="Label" parent="Counter/Control/Money" unique_id=23782541]
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -9.51875
+anchor_top = 0.19746377
+anchor_right = 1.8562498
+anchor_bottom = 0.19746377
+offset_left = -86.399994
+offset_top = -18.625
+offset_right = -49.399963
+offset_bottom = 75.375
+pivot_offset = Vector2(18.5, 47)
+theme_override_colors/font_color = Color(1, 0.83137256, 0.3529412, 1)
+theme_override_colors/font_outline_color = Color(1, 0.5411765, 0.16470589, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("11_3xj3m")
+theme_override_font_sizes/font_size = 60
+text = ",     "
+horizontal_alignment = 2
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Money_back" type="Label" parent="Counter/Control" unique_id=590759194]
 modulate = Color(1, 1, 1, 0.46666667)
 z_index = 1
@@ -1937,31 +2029,31 @@ visible = false
 z_index = 20
 layout_mode = 3
 anchors_preset = 0
-mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="UI" unique_id=1608921813]
-z_index = 10
+z_index = 13
 z_as_relative = false
 layout_mode = 0
 offset_left = -264.0
 offset_top = -254.0
 offset_right = 1335.0
 offset_bottom = 775.0
-mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_45i86")
 
 [node name="SkillTree" parent="UI" unique_id=1918904098 instance=ExtResource("19_45i86")]
 layout_mode = 1
 offset_left = 0.0
-offset_top = 0.0
+offset_top = -20.0
 offset_right = 183.23999
-offset_bottom = 180.0
+offset_bottom = 160.0
 
 [node name="XButton" type="Control" parent="UI" unique_id=1876721426]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -80.0
+offset_top = -75.0
+offset_right = -40.0
+offset_bottom = -35.0
 
 [node name="xbutton" type="Button" parent="UI/XButton" unique_id=436596952]
 process_mode = 3

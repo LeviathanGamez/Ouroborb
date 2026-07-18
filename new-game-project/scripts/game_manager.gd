@@ -7,6 +7,7 @@ extends Node
 @onready var skill_tree = $"../UI/SkillTree"
 @onready var hamburger = $"../Hamburger/hamburger"
 @onready var resume = $"../Settings/Resume"
+@onready var settings = $"../Settings"
 var money_text = preload("res://scenes/money.tscn")
 
 var tile_scene = preload("res://scenes/tile.tscn")
@@ -44,7 +45,7 @@ func _input(event):
 	elif event.is_action_pressed("UPGRADE"):
 		GlobalGameManager.toggle_pause(UI)
 	elif event.is_action_pressed("PAUSE"):
-		if paused:
+		if not settings.visible:
 			hamburger._on_pressed()
 		else:
 			resume._on_pressed()

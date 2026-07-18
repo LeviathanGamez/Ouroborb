@@ -6,6 +6,11 @@ var pos
 var button_editor = preload("res://scripts/tweens.gd")
 @onready var dollar = $"../DollarSign"
 
+@onready var comma1 = $Comma1
+@onready var comma2 = $Comma2
+@onready var comma3 = $Comma3
+@onready var comma4 = $Comma4
+
 func _ready() -> void:
 	#princess treatment
 	GlobalGameManager.label = $"."
@@ -40,3 +45,19 @@ func _process(_delta: float) -> void:
 	get_theme_default_font_size()
 ).x
 	pivot_offset = Vector2(size.x - (text_width / 2), size.y / 2)
+	if GlobalGameManager.money >= 1000:
+		comma1.visible = true
+	else:
+		comma1.visible = false
+	if GlobalGameManager.money >= 1000000:
+		comma2.visible = true
+	else:
+		comma2.visible = false
+	if GlobalGameManager.money >= 1000000000:
+		comma3.visible = true
+	else:
+		comma3.visible = false
+	if GlobalGameManager.money >= 1000000000000:
+		comma4.visible = true
+	else:
+		comma4.visible = false

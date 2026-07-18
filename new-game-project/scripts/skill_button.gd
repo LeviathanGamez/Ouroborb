@@ -123,8 +123,8 @@ func _on_pressed() -> void:
 		for skill in skills:
 			if skill is Skill_Node and level == 1:
 				skill.disabled = false
-				tween_4.parallel().tween_property(skill, "self_modulate:a", 1.0, 0.5)
-				tween_4.parallel().tween_property(skill, "modulate:a", 1.0, 0.5)
+				tween_4.parallel().tween_property(skill, "self_modulate:a", 1.0, 0.3)
+				tween_4.parallel().tween_property(skill, "modulate:a", 1.0, 0.3)
 				tween_4.parallel().tween_property(skill.get_node("Line2D"), "modulate:a", 1.0, 0.5)
 		
 		#GlobalGameManager.print_stats()

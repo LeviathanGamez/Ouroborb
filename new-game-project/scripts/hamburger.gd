@@ -1,6 +1,6 @@
 extends Button
 
-
+@onready var GameManager = $"../../GameManager"
 
 @onready var settings = $"../../Settings"
 var activated = false
@@ -10,7 +10,7 @@ var activated = false
 @onready var sfx_slider = $"../../Settings/SFX"
 var music = AudioServer.get_bus_index("Music")
 var sfx = AudioServer.get_bus_index("SFX")
-
+@onready var UI = $"../../UI"
 @onready var add_ball = $"../../Buttons/Control/Add Ball Button"
 @onready var upgrades = $"../../Buttons/Control2/Upgrades Button"
 @onready var merge = $"../../Buttons/Control3/Merge Button"
@@ -27,14 +27,15 @@ func _ready():
 	disable_buttons(activated)
 	
 func _on_pressed() -> void:
-	settings.visible = true
-	for child in settings.get_children():
-		child.visible = true
-	disable_buttons(true)
-	add_ball.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	mouse_filter = Control.MOUSE_FILTER_IGNORE
-	upgrades.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	merge.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	if not UI.visible:
+		settings.visible = true
+		for child in settings.get_children():
+			child.visible = true
+		disable_buttons(true)
+		add_ball.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		mouse_filter = Control.MOUSE_FILTER_IGNORE
+		upgrades.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		merge.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	
 func disable_buttons(activated):
 	disabled = activated
