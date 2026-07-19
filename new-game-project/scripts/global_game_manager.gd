@@ -8,7 +8,7 @@ var label_pool_index = 0
 
 
 var god_mode = false
-var infinite_money = true
+var infinite_money = false
 var screenshake = false
 var paused = false
 
@@ -87,7 +87,50 @@ func god_mode_check():
 		global_speed = 16 # +20% each _
 		global_size = 1 # +20% each _
 		global_ball_power = 5 # + 1 eac
+	set_up_variables()
+	
+func set_up_variables():
+	player_strength = 1
+	player_value = 5
+	player_crit = 0.05
+	ball_crit_mult = 2
+	player_crit_mult = 2
+
+	global_speed = 1 # +20% each _
+	global_size = 1 # +20% each _
+	global_money_mult = 1 # +20% each _
+	global_ball_power = 0 # + 1 each _
+	global_ball_crit = 0 # + 5% each _
+	global_ball_crit_power = 1 # + 20% each _
+
+	global_ball_mult = 1 # +100% each
+	global_click_mult = 1 # +100% each
+	global_ball_worth = 1 # +100% each
+	global_click_worth = 1 # +100% each
+
+	global_click_power = 0 # + 1 each
+	global_click_crit = 0 # + 5% each
+	global_click_crit_power = 1 # + 20% each
+
+	global_steel_ball = 1  # + 20% each
+	global_pristine_ball = 1  # + 20% each
+
+
+	global_tile_worth = 0 # +1 each
+	global_gold_tiles = 0 # +5% chance each
+	global_diamond_tiles = 0 # +5% chance each
+	global_gold_mult = 1 # +5% chance each
+	global_diamond_mult = 1 # +5% chance each
 		
+	money = 0
+	ball_price = 50
+	ball_price_increase = 50
+	ball_price_increase_original = 50
+	
+	max_label_count = 2000
+	label_pool = []
+	label_pool_index = 0
+	
 func print_stats():
 	print("=== GLOBAL STATS ===")
 	print("Speed: x", global_speed,"%") # +20% each

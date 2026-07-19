@@ -6,7 +6,7 @@ extends CharacterBody2D
 @onready var sprite = $Sprite2D
 @export var stats: level_stats
 
-var money_text = preload("res://scenes/money.tscn")
+#var money_text = preload("res://scenes/money.tscn")
 
 var fps_speed_factor = 60
 var speed 

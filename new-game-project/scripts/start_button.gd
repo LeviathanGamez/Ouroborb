@@ -19,5 +19,7 @@ func _on_pressed() -> void:
 	await tween.finished
 	
 	await get_tree().create_timer(0.2).timeout
+	GlobalGameManager.set_up_variables()
 	get_tree().change_scene_to_file("res://scenes/Game.tscn") 
+	
 	
