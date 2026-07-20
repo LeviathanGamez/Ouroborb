@@ -29,13 +29,13 @@ var tween_4
 enum GrowthType{
 	FAST,
 	MEDIUM,
-	SLOW,
+	SUPER_FAST,
 		
 }
 var price_list = {
-	GrowthType.FAST: [1.5,2,5,7,10] ,
-	GrowthType.MEDIUM: [1.5,2,3,5,10],
-	GrowthType.SLOW: [1.5,2,4,6,8]
+	GrowthType.FAST: [1.5,2,5,8],
+	GrowthType.MEDIUM: [1.5,2,3,5],
+	GrowthType.SUPER_FAST: [1.5,2,5,10]
 }
 var price_increment
 @export var price_type : GrowthType

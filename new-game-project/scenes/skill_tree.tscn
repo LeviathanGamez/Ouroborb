@@ -180,7 +180,7 @@ offset_right = 130.0
 pivot_offset = Vector2(25, 23.5)
 disabled = true
 stats = ExtResource("10_qredw")
-price = 1000000000
+price = 5000000000
 price_type = 1
 
 [node name="UpgradeButton2" parent="UpgradeButton/UpgradeButton2/UpgradeButton3/UpgradeButton4" unique_id=784661668 instance=ExtResource("1_ty3n3")]
@@ -233,7 +233,7 @@ offset_bottom = 128.0
 pivot_offset = Vector2(24, 24)
 disabled = true
 stats = ExtResource("10_o5b3c")
-price = 100000
+price = 200000
 price_type = 1
 
 [node name="UpgradeButton8" parent="UpgradeButton/UpgradeButton2/UpgradeButton4/UpgradeButton7/UpgradeButton7" unique_id=916556453 instance=ExtResource("1_ty3n3")]
@@ -297,7 +297,7 @@ offset_right = 130.0
 pivot_offset = Vector2(25, 23.5)
 disabled = true
 stats = ExtResource("10_qredw")
-price = 500000000
+price = 10000000000
 price_type = 1
 
 [node name="UpgradeButton3" parent="UpgradeButton/UpgradeButton2/UpgradeButton4/UpgradeButton8/UpgradeButton7/UpgradeButton2" unique_id=1875156986 instance=ExtResource("1_ty3n3")]
@@ -358,7 +358,7 @@ pivot_offset = Vector2(24.5, 24)
 disabled = true
 stats = ExtResource("15_jrpp7")
 price = 100000000000
-price_type = 1
+price_type = 2
 
 [node name="UpgradeButton4" parent="UpgradeButton" unique_id=1001070309 instance=ExtResource("1_ty3n3")]
 layout_mode = 0
@@ -486,7 +486,7 @@ offset_bottom = 48.0
 pivot_offset = Vector2(24, 24)
 disabled = true
 stats = ExtResource("10_qredw")
-price = 500000000
+price = 10000000000
 price_type = 1
 
 [node name="UpgradeButton6" parent="UpgradeButton/UpgradeButton4/UpgradeButton5/UpgradeButton5" unique_id=1804944024 instance=ExtResource("1_ty3n3")]
@@ -508,7 +508,7 @@ offset_bottom = 48.0
 pivot_offset = Vector2(24, 24)
 disabled = true
 stats = ExtResource("10_p21vy")
-price = 30000
+price = 100000
 price_type = 1
 
 [node name="UpgradeButton6" parent="UpgradeButton/UpgradeButton4/UpgradeButton5" unique_id=1742294755 instance=ExtResource("1_ty3n3")]
@@ -519,7 +519,7 @@ offset_bottom = -32.0
 pivot_offset = Vector2(24, 24)
 disabled = true
 stats = ExtResource("10_p21vy")
-price = 10000
+price = 30000
 price_type = 1
 
 [node name="UpgradeButton3" parent="UpgradeButton/UpgradeButton4/UpgradeButton5/UpgradeButton6" unique_id=230584804 instance=ExtResource("1_ty3n3")]
@@ -594,7 +594,7 @@ offset_bottom = 48.0
 pivot_offset = Vector2(24, 24)
 disabled = true
 stats = ExtResource("9_n0rm1")
-price = 10000
+price = 30000
 price_type = 1
 
 [node name="UpgradeButton7" parent="UpgradeButton/UpgradeButton4/UpgradeButton7/UpgradeButton7/UpgradeButton7" unique_id=1348720838 instance=ExtResource("1_ty3n3")]
@@ -649,7 +649,7 @@ offset_bottom = 48.0
 pivot_offset = Vector2(24, 24)
 disabled = true
 stats = ExtResource("10_qredw")
-price = 1000000000
+price = 5000000000
 price_type = 1
 
 [node name="UpgradeButton8" parent="UpgradeButton/UpgradeButton4/UpgradeButton7/UpgradeButton7" unique_id=1710796109 instance=ExtResource("1_ty3n3")]

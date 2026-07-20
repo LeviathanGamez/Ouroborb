@@ -2,13 +2,13 @@ extends Node
 
 #global vairables
 
-var max_label_count = 2000
+var max_label_count = 3000
 var label_pool = []
 var label_pool_index = 0
 
 
 var god_mode = false
-var infinite_money = false
+var infinite_money = true
 var screenshake = false
 var paused = false
 
@@ -58,11 +58,16 @@ var label
 var tween 
 
 func _ready() -> void:
+	god_mode_check()
+	set_up_variables()
+	
+	
+	
+func _process(delta):
 	if infinite_money:
 		money = 1000000000000
-	god_mode_check()
 	
-
+	god_mode_check()
 		
 	
 
@@ -84,10 +89,9 @@ func toggle_pause(UI):
 #		child.update_text()
 func god_mode_check():
 	if god_mode:
-		global_speed = 16 # +20% each _
-		global_size = 1 # +20% each _
-		global_ball_power = 5 # + 1 eac
-	set_up_variables()
+		global_speed = 7 # +20% each _
+		global_size = 4 # +20% each _
+		global_ball_power = 1000 # + 1 eac
 	
 func set_up_variables():
 	player_strength = 1

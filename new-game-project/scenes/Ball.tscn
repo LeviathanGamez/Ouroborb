@@ -7,16 +7,18 @@
 [ext_resource type="AudioStream" uid="uid://bnpjl420xq3wf" path="res://assets/sounds/coinSound.MP3" id="5_iijjg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4vejd"]
-radius = 17.0
+radius = 16.0
 
 [node name="ball" type="Node2D" unique_id=1090286496]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=560353364 groups=["balls"]]
 collision_layer = 2
+safe_margin = 2.0
 script = ExtResource("1_eew57")
 stats = ExtResource("2_jj7gd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=787996050]
+z_index = 1
 shape = SubResource("CircleShape2D_4vejd")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=31458851]

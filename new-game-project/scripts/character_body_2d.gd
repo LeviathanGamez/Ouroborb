@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var audio_player2= $AudioStreamPlayer2D2
 @onready var sprite = $Sprite2D
 @export var stats: level_stats
-
+@onready var collision_shape = $CollisionShape2D
 #var money_text = preload("res://scenes/money.tscn")
 
 var fps_speed_factor = 60
@@ -93,9 +93,23 @@ func _physics_process(delta: float) -> void:
 		else:
 			play_sound(audio_player)
 			
-		#spawn_particles(collision)
-	
-		
+	var self_radius = collision_shape.shape.radius
+	#global_position.x = clamp(global_position.x,130+self_radius,1036-self_radius)
+	#global_position.y = clamp(global_position.y,66+self_radius,555-self_radius)
+	if global_position.x == 130 + self_radius and velocity.x < 0:
+		velocity.x *= -1
+
+	if global_position.x == 1030 - self_radius and velocity.x > 0:
+		velocity.x *= -1
+
+	if global_position.y == 74 + self_radius and velocity.y < 0:
+		velocity.y *= -1
+
+	if global_position.y == 555 - self_radius and velocity.y > 0:
+		velocity.y *= -1
+	#var margin = 2
+	#global_position.x = clamp(global_position.x, 130+self_radius+margin, 1036-self_radius-margin)
+	#global_position.y = clamp(global_position.y, 66+self_radius+margin, 555-self_radius-margin)
 		
 		
 func set_up_variables():
