@@ -2110,7 +2110,7 @@ environment = SubResource("Environment_2rd6h")
 
 [node name="Settings" type="Control" parent="." unique_id=1197722622]
 visible = false
-z_index = 200
+z_index = 4096
 layout_mode = 3
 anchors_preset = 0
 offset_left = 20.0
@@ -2129,6 +2129,7 @@ offset_bottom = 929.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jhsr3")
 
 [node name="Volume" type="HSlider" parent="Settings" unique_id=1801874725]
+process_mode = 3
 z_index = 15
 z_as_relative = false
 layout_mode = 0
@@ -2153,6 +2154,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Music" type="HSlider" parent="Settings" unique_id=1768293496]
+process_mode = 3
 z_index = 15
 z_as_relative = false
 layout_mode = 0
@@ -2177,6 +2179,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SFX" type="HSlider" parent="Settings" unique_id=800734921]
+process_mode = 3
 z_index = 15
 z_as_relative = false
 layout_mode = 0
@@ -2201,6 +2204,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Resume" type="Button" parent="Settings" unique_id=618275990]
+process_mode = 3
 self_modulate = Color(1, 1, 1, 0)
 z_index = 201
 z_as_relative = false
@@ -2234,6 +2238,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Quit" type="Button" parent="Settings" unique_id=897218552]
+process_mode = 3
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 405.0

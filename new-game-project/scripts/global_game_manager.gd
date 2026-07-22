@@ -8,7 +8,7 @@ var label_pool_index = 0
 
 
 var god_mode = false
-var infinite_money = true
+var infinite_money = false
 var screenshake = false
 var paused = false
 

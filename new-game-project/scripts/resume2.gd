@@ -19,4 +19,5 @@ func _on_pressed() -> void:
 	add_ball.mouse_filter = Control.MOUSE_FILTER_STOP
 	upgrades.mouse_filter = Control.MOUSE_FILTER_STOP
 	merge.mouse_filter = Control.MOUSE_FILTER_STOP
+	get_tree().paused = false
 	

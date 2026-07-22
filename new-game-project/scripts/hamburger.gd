@@ -36,6 +36,7 @@ func _on_pressed() -> void:
 		mouse_filter = Control.MOUSE_FILTER_IGNORE
 		upgrades.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		merge.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		get_tree().paused = true
 	
 func disable_buttons(activated):
 	disabled = activated

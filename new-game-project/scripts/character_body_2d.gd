@@ -80,7 +80,6 @@ func damage(collided):
 
 	
 func _physics_process(delta: float) -> void:
-
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		velocity = velocity.bounce(collision.get_normal())
@@ -92,25 +91,32 @@ func _physics_process(delta: float) -> void:
 			damage(collided_parent)
 		else:
 			play_sound(audio_player)
+	
+	check_walls()
 			
+	
+func check_walls():
 	var self_radius = collision_shape.shape.radius
-	#global_position.x = clamp(global_position.x,130+self_radius,1036-self_radius)
-	#global_position.y = clamp(global_position.y,66+self_radius,555-self_radius)
-	if global_position.x == 130 + self_radius and velocity.x < 0:
-		velocity.x *= -1
+	var margin := 5 #1 was good
+	var left_wall := 128
+	var right_wall := 1024
+	var top_wall := 74
+	var bottom_wall := 554
+	if global_position.x <= left_wall + self_radius and velocity.x < 0:
+		global_position.x = left_wall + self_radius + margin
+		velocity.x = abs(velocity.x)  # left
 
-	if global_position.x == 1030 - self_radius and velocity.x > 0:
-		velocity.x *= -1
+	if global_position.x >= right_wall - self_radius and velocity.x > 0:
+		global_position.x = right_wall - self_radius - margin
+		velocity.x = -abs(velocity.x) # right
 
-	if global_position.y == 74 + self_radius and velocity.y < 0:
-		velocity.y *= -1
+	if global_position.y <= top_wall + self_radius and velocity.y < 0:
+		global_position.y = top_wall + self_radius + margin
+		velocity.y = abs(velocity.y)  # top
 
-	if global_position.y == 555 - self_radius and velocity.y > 0:
-		velocity.y *= -1
-	#var margin = 2
-	#global_position.x = clamp(global_position.x, 130+self_radius+margin, 1036-self_radius-margin)
-	#global_position.y = clamp(global_position.y, 66+self_radius+margin, 555-self_radius-margin)
-		
+	if global_position.y >= bottom_wall - self_radius and velocity.y > 0:
+		global_position.y = bottom_wall - self_radius - margin
+		velocity.y = -abs(velocity.y) # bottom
 		
 func set_up_variables():
 	

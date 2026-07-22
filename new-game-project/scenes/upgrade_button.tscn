@@ -84,7 +84,7 @@ custom_minimum_size = Vector2(140, 0)
 layout_mode = 0
 offset_top = 35.475098
 offset_right = 140.0
-offset_bottom = 35.475098
+offset_bottom = 66.4751
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_o77qo")
 
@@ -94,7 +94,7 @@ z_index = 13
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 0
 offset_right = 140.0
-offset_bottom = 13.0
+offset_bottom = 31.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Tooltip/PanelContainer" unique_id=469439067]
 process_mode = 3

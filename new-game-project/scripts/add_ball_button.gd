@@ -15,7 +15,7 @@ func _on_pressed() -> void:
 		GlobalGameManager.add_count(-GlobalGameManager.ball_price)
 		GlobalGameManager.price_increase()
 		var ball_a = ball.instantiate() 
-		ball_a.get_node("CharacterBody2D").position = Vector2(550, 350)
+		ball_a.position = Vector2(550, 350)
 	
 		
 		balls.add_child(ball_a)
