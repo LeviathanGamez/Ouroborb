@@ -92,8 +92,9 @@ func _physics_process(delta: float) -> void:
 		else:
 			play_sound(audio_player)
 	
+	
 	check_walls()
-			
+		
 	
 func check_walls():
 	var self_radius = collision_shape.shape.radius
@@ -103,21 +104,36 @@ func check_walls():
 	var top_wall := 74
 	var bottom_wall := 554
 	if global_position.x <= left_wall + self_radius and velocity.x < 0:
+		info_print("BEFORE")
 		global_position.x = left_wall + self_radius + margin
 		velocity.x = abs(velocity.x)  # left
+		info_print("AFTER")
 
 	if global_position.x >= right_wall - self_radius and velocity.x > 0:
+		info_print("BEFORE")
 		global_position.x = right_wall - self_radius - margin
 		velocity.x = -abs(velocity.x) # right
+		info_print("AFTER")
 
 	if global_position.y <= top_wall + self_radius and velocity.y < 0:
+		info_print("BEFORE")
 		global_position.y = top_wall + self_radius + margin
-		velocity.y = abs(velocity.y)  # top
+		velocity.y = abs(velocity.y)
+		info_print("AFTER")
 
 	if global_position.y >= bottom_wall - self_radius and velocity.y > 0:
+		info_print("BEFORE")
 		global_position.y = bottom_wall - self_radius - margin
 		velocity.y = -abs(velocity.y) # bottom
-		
+		info_print("AFTER")
+func info_print(word):
+	print(word)
+	var r = collision_shape.shape.radius 
+	var left = 128 + r 
+	var right = 1024 - r 
+	var top = 74 + r 
+	var bottom = 554 - r
+	print( "[", self, "] ", "ID:", get_instance_id(), " | Pos:", global_position, " | Vel:", velocity, " | Radius:", r, " | L:", left, " | R:", right, " | T:", top, " | B:", bottom )
 func set_up_variables():
 	
 	speed = stats.speed * GlobalGameManager.global_speed
