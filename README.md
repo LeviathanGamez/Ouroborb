@@ -8,7 +8,7 @@ Full Game: https://levithangamez.itch.io/ouroborb
 ![Ouroborb Title-Screen](Ouroborb-img.png)
 
 Description:
-A 2D incremental video game about upgrading and merging bouncing balls to break tiles as fast as possible, then earning more money and increasing exponentially. Combine balls to explore unique upgrades and more powerful abilities to build an unstoppable ball army. Progress through three unique areas, unlocking new rewards, more balls, and increasingly chaotic gameplay.
+A 2D incremental video game about upgrading and merging bouncing balls to break tiles as fast as possible, then earning more money and increasing exponentially. Combine balls to make them stronger and grow you ball army and upgrade them to unleash mayhem! 
 
 Gameplay:
 Your goal is to collect every upgrade and max out the skill tree! Grow your economy by clicking, buying upgrades, adding new balls, and merging them into increasingly powerful versions to earn massive amounts of money.
