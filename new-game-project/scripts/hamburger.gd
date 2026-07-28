@@ -14,6 +14,7 @@ var sfx = AudioServer.get_bus_index("SFX")
 @onready var add_ball = $"../../Buttons/Control/Add Ball Button"
 @onready var upgrades = $"../../Buttons/Control2/Upgrades Button"
 @onready var merge = $"../../Buttons/Control3/Merge Button"
+@onready var ball_merge_stats = $"../../Stats/ball_merge_stats"
 func _ready():
 
 	settings.visible = false
@@ -29,6 +30,8 @@ func _ready():
 func _on_pressed() -> void:
 	if not UI.visible:
 		settings.visible = true
+		settings.z_index = 1000
+		ball_merge_stats.visible = false
 		for child in settings.get_children():
 			child.visible = true
 		disable_buttons(true)

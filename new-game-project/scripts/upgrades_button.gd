@@ -4,7 +4,7 @@ var button_editor = preload("res://scripts/tweens.gd")
 var tween 
 @onready var camera = $"../../../Camera2D"
 @onready var UI = $"../../../UI"
-
+@onready var ball_merge_stats = $"../../../Stats/ball_merge_stats"
 var particle_click = preload("res://scenes/particles_click.tscn")
 
 
@@ -21,6 +21,9 @@ func _on_mouse_exited() -> void:
 
 func _on_pressed() -> void:
 	camera.zoom_in(self) 
+	if ball_merge_stats.visible:
+		ball_merge_stats.visible = false
+		get_tree().paused = false
 	GlobalGameManager.toggle_pause(UI)
 	for i in range(0,GlobalGameManager.amount):
 		var particle_a = particle_click.instantiate()

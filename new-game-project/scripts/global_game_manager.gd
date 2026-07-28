@@ -6,9 +6,11 @@ var max_label_count = 3000
 var label_pool = []
 var label_pool_index = 0
 
+var upgrades_gotten = 0
 
+signal winner
 var god_mode = false
-var infinite_money = true
+var infinite_money = false
 var screenshake = false
 var paused = false
 
@@ -68,6 +70,8 @@ func _process(delta):
 		money = 1000000000000
 	
 	god_mode_check()
+	if upgrades_gotten >= 63:
+		winner.emit(1)
 		
 	
 

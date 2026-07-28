@@ -16,7 +16,7 @@ class_name Skill_Node
 var max_level = 5
 @export var price := 10
 var original_price
-
+var has_reached_max_level = false
 var particle_click = preload("res://scenes/particles_click.tscn")
 var button_editor = preload("res://scripts/tweens.gd")
 
@@ -175,6 +175,9 @@ func update_text():
 			"[center][color=#EFBF04]Cost: $" + GlobalGameManager.numberphy(price) + "[/color][/center]"
 		)
 	else:
+		if not has_reached_max_level:
+			GlobalGameManager.upgrades_gotten += 1
+			has_reached_max_level = true
 		max_rect.visible = true
 		var style := tooltip.get_theme_stylebox("panel").duplicate() as StyleBoxFlat
 		style.border_color = Color.html("#EFBF04")

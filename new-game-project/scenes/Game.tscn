@@ -23,6 +23,9 @@
 [ext_resource type="Script" uid="uid://d10pgp4yt8pk8" path="res://scripts/resume2.gd" id="21_attvq"]
 [ext_resource type="Script" uid="uid://bk2ptn0sbpbik" path="res://scripts/hamburger.gd" id="22_attvq"]
 [ext_resource type="Script" uid="uid://by3gou1pukssx" path="res://scripts/quit_to_menu.gd" id="22_bneo8"]
+[ext_resource type="Script" uid="uid://wh7c0345s5vd" path="res://scripts/balls_stats.gd" id="24_a85ww"]
+[ext_resource type="Texture2D" uid="uid://reswh1gnm66c" path="res://assets/sprites/entities/circle_sprite32.png" id="25_jhsr3"]
+[ext_resource type="PackedScene" uid="uid://bm8nys666xwux" path="res://scenes/ball_merge_stats.tscn" id="26_0bq3a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45i86"]
 texture = ExtResource("1_ibkli")
@@ -42,7 +45,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_45i86")
 sources/1 = SubResource("TileSetAtlasSource_sv1m6")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_attvq"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_754j2"]
 texture = ExtResource("6_qy1jj")
 0:0/0 = 0
 1:0/0 = 0
@@ -365,7 +368,7 @@ texture = ExtResource("6_qy1jj")
 18:15/0 = 0
 19:15/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bneo8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i4jil"]
 texture = ExtResource("7_3xj3m")
 0:0/0 = 0
 1:0/0 = 0
@@ -688,7 +691,7 @@ texture = ExtResource("7_3xj3m")
 18:15/0 = 0
 19:15/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ocgqw"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jai3c"]
 texture = ExtResource("8_mcffj")
 0:0/0 = 0
 1:0/0 = 0
@@ -1011,7 +1014,7 @@ texture = ExtResource("8_mcffj")
 18:15/0 = 0
 19:15/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jbgew"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1gdd5"]
 texture = ExtResource("9_2rd6h")
 0:0/0 = 0
 1:0/0 = 0
@@ -1334,7 +1337,7 @@ texture = ExtResource("9_2rd6h")
 18:15/0 = 0
 19:15/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a85ww"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_426vi"]
 texture = ExtResource("10_7ua8r")
 0:0/0 = 0
 1:0/0 = 0
@@ -1658,11 +1661,11 @@ texture = ExtResource("10_7ua8r")
 19:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_sv1m6"]
-sources/0 = SubResource("TileSetAtlasSource_attvq")
-sources/1 = SubResource("TileSetAtlasSource_bneo8")
-sources/2 = SubResource("TileSetAtlasSource_ocgqw")
-sources/3 = SubResource("TileSetAtlasSource_jbgew")
-sources/4 = SubResource("TileSetAtlasSource_a85ww")
+sources/0 = SubResource("TileSetAtlasSource_754j2")
+sources/1 = SubResource("TileSetAtlasSource_i4jil")
+sources/2 = SubResource("TileSetAtlasSource_jai3c")
+sources/3 = SubResource("TileSetAtlasSource_1gdd5")
+sources/4 = SubResource("TileSetAtlasSource_426vi")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45i86"]
 bg_color = Color(0, 0, 0, 0.6509804)
@@ -2352,6 +2355,32 @@ tile_set = SubResource("TileSet_sv1m6")
 format = 2
 layer_0/tile_data = PackedInt32Array(2621537, 524290, 4, 2687073, 524290, 5, 2752609, 524290, 6, 2818145, 524290, 7, 2621538, 589826, 4, 2687074, 589826, 5, 2752610, 589826, 6, 2818146, 589826, 7, 2621539, 655362, 4, 2687075, 655362, 5, 2752611, 655362, 6, 2818147, 655362, 7, 2621540, 720898, 4, 2687076, 720898, 5, 2752612, 720898, 6, 2818148, 720898, 7)
 
+[node name="Stats" type="Node" parent="." unique_id=1058127793]
+
+[node name="Balls_stats" type="Button" parent="Stats" unique_id=1297792875]
+process_mode = 3
+offset_left = 978.0
+offset_top = 596.0
+offset_right = 1048.0
+offset_bottom = 667.0
+script = ExtResource("24_a85ww")
+
+[node name="Sprite2D" type="Sprite2D" parent="Stats/Balls_stats" unique_id=1471344578]
+modulate = Color(0.99607843, 0.99607843, 0.5882353, 1)
+z_index = 1
+position = Vector2(36, 35)
+scale = Vector2(1.3, 1.243)
+texture = ExtResource("25_jhsr3")
+
+[node name="ButtonTileMap2" type="TileMap" parent="Stats/Balls_stats" unique_id=1800122968]
+position = Vector2(-1460, -1189)
+tile_set = SubResource("TileSet_sv1m6")
+format = 2
+layer_0/tile_data = PackedInt32Array(4849755, 524288, 0, 4915291, 524288, 1, 4980827, 524288, 2, 5046363, 524288, 2, 4849756, 589824, 0, 4915292, 589824, 1, 4980828, 589824, 2, 5046364, 589824, 2, 4849757, 589824, 0, 4915293, 589824, 1, 4980829, 589824, 2, 5046365, 589824, 2, 4849758, 655360, 0, 4915294, 655360, 1, 4980830, 655360, 2, 5046366, 655360, 2, 5111899, 524288, 3, 5111900, 589824, 3, 5111901, 589824, 3, 5111902, 655360, 3, 4980831, 720896, 2, 5046367, 720896, 2, 5111903, 720896, 3, 4849759, 720896, 0, 4915295, 720896, 1)
+
+[node name="ball_merge_stats" parent="Stats" unique_id=824932333 instance=ExtResource("26_0bq3a")]
+visible = false
+
 [connection signal="mouse_entered" from="Buttons/Control/Add Ball Button" to="Buttons/Control/Add Ball Button" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Buttons/Control/Add Ball Button" to="Buttons/Control/Add Ball Button" method="_on_mouse_exited"]
 [connection signal="pressed" from="Buttons/Control/Add Ball Button" to="Buttons/Control/Add Ball Button" method="_on_pressed"]
@@ -2367,3 +2396,4 @@ layer_0/tile_data = PackedInt32Array(2621537, 524290, 4, 2687073, 524290, 5, 275
 [connection signal="value_changed" from="Settings/SFX" to="Hamburger/hamburger" method="_on_sfx_value_changed"]
 [connection signal="pressed" from="Settings/Resume" to="Settings/Resume" method="_on_pressed"]
 [connection signal="pressed" from="Hamburger/hamburger" to="Hamburger/hamburger" method="_on_pressed"]
+[connection signal="pressed" from="Stats/Balls_stats" to="Stats/Balls_stats" method="_on_pressed"]

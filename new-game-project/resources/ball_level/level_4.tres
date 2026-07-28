@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("1_6msk1")
 speed = 2.0
-power = 5
+power = 20
 size = 2.5
 value = 30
 crit = 0.2
