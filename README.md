@@ -14,7 +14,7 @@ Gameplay:
 Your goal is to collect every upgrade and max out the skill tree! Grow your economy by clicking, buying upgrades, adding new balls, and merging them into increasingly powerful versions to earn massive amounts of money.
 
 ![Ouroborb Gameplay](Ouroborb-gameplay.png)
-
+![Ouroborb Gameplay2](Ouroborb_gameplay.png)
 Controls:
 - Click to interact
 - Space for Upgrade Menu
