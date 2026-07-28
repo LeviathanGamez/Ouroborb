@@ -41,4 +41,8 @@ Author: jfranciPX
 - Music: Chill
 Author: alex-morgan
 
-
+Steps to run locally:
+1. Download Godot Latest Version
+2. Clone repository with Github or Github Desktop
+3. Open Godot Project Manager and click Import
+4. Click on the project.godot file and click open
